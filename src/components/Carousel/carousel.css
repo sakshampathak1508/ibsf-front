@@ -1,0 +1,69 @@
+.carousel_caption
+{
+    --width: 100%;
+	--time: 0.7s;
+
+    /* background-color: black; */
+    color: white;
+    width: fit-content;
+    /* max-width: 40vw; */
+    /* max-height: 30vh; */
+    
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    overflow: hidden;
+    z-index: 1;
+
+
+    
+}
+
+.carousel_caption h3 , p
+{
+    font-size: 1.4rem;
+}
+
+
+.carousel_caption:hover
+{
+    /* background-color:white; */
+    color: white;
+    cursor: pointer;
+}
+
+
+.carousel_caption span {
+	position: absolute;
+	display: block;
+	content: "";
+	z-index: -1;
+	width: 0;
+	height: 0px;
+	
+	border-radius: 100%;
+	background:  rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+	
+	transform: translate(-50%, -50%);
+	transition: width var(--time), padding-top var(--time);
+}
+
+.carousel_caption:hover span {
+	width: calc(var(--width) * 2.25);
+	padding-top: calc(var(--width) * 2.25);
+}
+
+
+
+@media screen and (max-width:723px) {
+
+    .carousel-caption
+    {
+
+        max-width:70%;
+        
+    }
+
+
+}

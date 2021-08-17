@@ -1,0 +1,58 @@
+.continent_card
+{
+    position: relative;
+    height: 40vh;
+    width: 25vw;
+    min-width: 300px;
+    overflow: hidden;
+    transition: all linear 1s;
+    margin-right: 2vh;
+    margin-bottom: 2vh;
+    cursor: pointer;
+
+
+}
+
+.overlap_div
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    transition: all linear 0.1s;
+
+
+}
+.continent_card:hover .overlap_div
+{
+     background: linear-gradient(rgba(13, 161, 255,0) 65%, rgba(13, 161, 255,0.7) 98%)
+}
+.continent_card .overlap_text
+{
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    align-items: center;
+    text-align: center;
+   
+}
+.overlap_text h4
+{
+    color: #FFF;
+    font-weight: 900;
+    margin: 0rem 1rem;
+    font-size: 1.3rem;
+    /* transition: all linear 1s; */
+
+}
+.continent_card:hover .overlap_text
+{
+    /* transform-origin: 50% 50% 0; */
+    
+    position: absolute;
+    transform: translate(-50% , -50%);
+    top: 82%;
+    transition: all linear 0.3s;
+}

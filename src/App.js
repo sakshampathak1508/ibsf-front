@@ -1,24 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/header/Header';
+import Main_page from './components/MainPage/Main_page';
+import NewsPage from './components/News/NewsPage';
+
+import { BrowserRouter, BrowserRouter as Router, Route } from "react-router-dom";
+import NewsGallery from './components/Paginate/NewsGallery';
+import About from './components/About/About';
+import MemberCountries from './components/MemberCountries/MemberCountries';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    
+    <div >
+    
+    <BrowserRouter  basename={'/'}>
+
+
+    <Route exact path="/">
+        <Main_page />
+      </Route>
+
+    
+      <Route exact path="/news">
+        <NewsPage />
+      </Route>
+
+
+      
+
+      <Route exact path="/aboutus">
+        <About />
+      </Route>
+
+      <Route exact path="/member_countries">
+        <MemberCountries />
+      </Route>
+
+      <Route path="/news/:id">
+        <NewsGallery />
+      </Route>
+
+
+      </BrowserRouter>
+
+
+
+
+
+      </div>
+      
+    
   );
 }
 

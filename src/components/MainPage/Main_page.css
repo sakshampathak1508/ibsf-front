@@ -1,0 +1,60 @@
+.headlines{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    
+    overflow: scroll;
+    overflow-y: scroll;
+    
+    /* z-index: 1; */
+}
+.headline_content
+{
+    background-color: black;
+    max-width: 90vw;
+    max-height: 10vh;
+    border-radius: 3px;
+    overflow: auto;
+    cursor: pointer;
+    /* z-index: 3; */
+}
+
+.headlines h4
+{
+    width: auto;
+    /* width: 100%; */
+    /* letter-spacing: normal; */
+    font-size: 1.5rem;
+}
+
+.headlines_title h4
+{
+    /* height: 50%;
+    font-size: 1.6rem; */
+    font-weight: 600;
+    color: rgb(238, 46, 46);
+}
+.headlines .headline_content::-webkit-scrollbar
+{
+    display: none;
+}
+.headlines::-webkit-scrollbar
+{
+    display: none;
+
+}
+
+.headlines .headline_content h4
+{
+
+    padding: 0.5rem 1.2rem;
+    font-size:1.4rem;
+    font-weight: 100;
+    line-height: 1.7rem;
+
+    color: white;
+}

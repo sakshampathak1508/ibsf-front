@@ -1,0 +1,20 @@
+.aboutus
+{
+    width: 100%;
+    padding:0rem 10rem;
+}
+
+.aboutus .aboutus_title{
+    width: fit-content ;
+}
+.aboutus_section
+{
+    padding: 1.5rem;
+}
+
+@media only screen and (max-width: 600px){
+
+        .aboutus{
+        padding: 0rem 2rem;
+        }
+}
