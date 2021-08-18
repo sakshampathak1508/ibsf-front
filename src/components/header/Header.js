@@ -9,6 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import DirectionsIcon from '@material-ui/icons/Directions';
 import { useHistory } from 'react-router-dom';
+import IBSF_LOGO from "../../assets/IBSF_LOGO.png"
 import 'bootstrap/dist/css/bootstrap.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -57,7 +58,7 @@ function Header() {
       <div className="ui container" style={{}}>
         <img
           className="ui_small_image"
-          src="http://ibsf.info/images/banners/IBSF%20LOGO%20half4.png"
+          src={IBSF_LOGO}
           onClick={()=>history.push("/")}
           style={{objectFit:"contain" , position:"absolute" }}
           

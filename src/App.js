@@ -14,8 +14,6 @@ function App() {
     
     <div >
     
-    <BrowserRouter  basename={'/'}>
-
 
     <Route exact path="/">
         <Main_page />
@@ -40,12 +38,6 @@ function App() {
       <Route path="/news/:id">
         <NewsGallery />
       </Route>
-
-
-      </BrowserRouter>
-
-
-
 
 
       </div>

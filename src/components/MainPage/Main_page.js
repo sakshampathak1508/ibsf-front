@@ -22,10 +22,10 @@ const Main_page = () => {
 
   useEffect(()=>
   {
-  axios.get("http://billiardsports.in/api/news/latest/")
+  axios.get("https://billiardsports.in/api/news/latest/")
           .then((response) => setlatestnews(response.data.data))
 
-          axios.get("http://billiardsports.in/api/sponsers/")
+          axios.get("https://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
 
 
@@ -135,7 +135,7 @@ const Main_page = () => {
     {latestnews&&latestnews.slice(0 , 3).map((e , index)=>
     (
   
-        <Card key={index} size="50vh" image={`http://billiardsports.in/${e.image}`} title={e.title} description={e.content} />
+        <Card key={index} size="50vh" image={`https://billiardsports.in/${e.image}`} title={e.title} description={e.content} />
     ))    
     }
     </div>
