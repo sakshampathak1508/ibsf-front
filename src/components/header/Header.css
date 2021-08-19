@@ -43,6 +43,12 @@ body {
     
     /* height: 5vh !important; */
   }
+
+  #myTopnav a{
+
+    transition: color 0.3s linear 0s;
+
+  }
   
   .topnav a {
     float: left;
@@ -54,7 +60,7 @@ body {
     font-size: 15px;
     font-weight: 700;
     font-family: "Oswald", sans-serif;
-    transition: color 0.5s linear 0s;
+    
   }
   
   .topnav .icon {
@@ -79,8 +85,10 @@ body {
     background-color: inherit;
     font-family: inherit;
     margin: 0 !important;
-    transition: color 0.5s linear 0s;
+    transition: color 0.3s linear 0s;
   }
+
+
   
   .dropdown-content {
     display: none;
@@ -104,8 +112,8 @@ body {
     text-align: left !important;
     font-weight: 700;
     font-family: "Oswald", sans-serif;
-    transition: color 0.3s linear 0.1ms;
-    transition: transform 0.3s linear 0s;
+    /* transition: colo 100s linear 100s; */
+    /* transition: transform 0.3s linear 0s; */
   } 
   
   .topnav a:hover,
@@ -147,7 +155,7 @@ body {
   left: 0%;
   position: absolute;
   background: #0a85d1ab;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.2s ease 0s, left 0.2s ease 0s;
   width: 0px;
 
   }

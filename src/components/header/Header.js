@@ -48,7 +48,7 @@ function myFunction() {
   }
 }
 
-function Header() {
+function Header({active}) {
   const history = useHistory();
   const classes = useStyles();
     return (
@@ -68,8 +68,8 @@ function Header() {
 
     <div className="topnav" id="myTopnav">
       <div className="ui container" style={{backgroundColor: ""}}>
-        <a className="" onClick={()=>history.push("/")} >Home </a>
-        <a className="" onClick={()=>history.push("/news")}>News</a>
+        <a className="" onClick={()=>history.push("/")} style={active == "home" ? { color: "#0da1ff"}:{}} >Home </a>
+        <a className="" onClick={()=>history.push("/news")} style={active == "news" ? { color: "#0da1ff"}:{}}>News</a>
         <a className="" onClick={()=>history.push("/")}>Results</a>
         <a className="" onClick={()=>history.push("/")}>Calendar</a>
 
@@ -80,7 +80,7 @@ function Header() {
           </button>
           <div className="dropdown-content">
             <a href="#">IBSF Executives</a>
-            <a href="#">Member Countries</a>
+            <a href="#" onClick={()=>history.push("/member_countries")}>Member Countries</a>
             <a href="#">Past Champions</a>
             <a href="#">Downloads</a>
             <a href="#">Rules of Snooker</a>

@@ -7,6 +7,9 @@ import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
 import axios from "axios"
 import Header from '../header/Header';
 import "./Main_page.css"
+import image1 from '../../assets/example1.jpg'
+import image2 from '../../assets/example3.jpg'
+import Current_Score from '../Card/Current_Score';
 
 
 
@@ -22,10 +25,10 @@ const Main_page = () => {
 
   useEffect(()=>
   {
-  axios.get("https://billiardsports.in/api/news/latest/")
+  axios.get("http://billiardsports.in/api/news/latest/")
           .then((response) => setlatestnews(response.data.data))
 
-          axios.get("https://billiardsports.in/api/sponsers/")
+          axios.get("http://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
 
 
@@ -39,7 +42,7 @@ const Main_page = () => {
   return (
     <>
 
-    <Header/>
+    <Header active="home"/>
     <div style={{height:"auto"}}>
       
     
@@ -53,24 +56,27 @@ const Main_page = () => {
     <div className="headlines">
 
         
-          <div style={{height:"100%" }}>
+          <div style={{width:"100%" }}>
 
 
 
               <div className="headlines_title">
-                  <h4>DHOL</h4>
+                  <h2>DHOL</h2>
               </div>
+
+              <div className="headlines_current_score" style={{display:"flex"}}>
+                <Current_Score title="Draw" image={image1}/>
+                <Current_Score title="Results" image={image2}/>
+                <Current_Score title="Knockout Results" image={image1}/>
+                <Current_Score title="Photographs" image={image2}/>
+                <Current_Score title="Knockout Results" image={image1}/>
+                <Current_Score title="Submit Entry" image={image2}/>
+                
+
+              </div>
+              
           
-            <div className="headline_content" style={{display:"flex" , justifyContent:"center"}}>
-
-            <h4>DRAW</h4>
-            <h4>Results</h4>
-            <h4>Knockout Results</h4>
-            <h4>Photographs</h4>
-            <h4>Knockout Results</h4>
-            <h4>Submit Entry</h4>
-
-            </div>
+            
           
 
 
@@ -81,43 +87,38 @@ const Main_page = () => {
           
 
           <div className="headlines_title">
-                  <h4>IBSF Tournament Entry</h4>
+                  <h2>IBSF Tournament Entry</h2>
               </div>
 
           
-            <div className="headline_content" style={{display:"flex" , justifyContent:"center"}}>
-            <h4>DRAW</h4>
-            <h4>Results</h4>
-            <h4>Knockout Results</h4>
-            <h4>Photographs</h4>
-            <h4>Knockout Results</h4>
-            <h4>Submit Entry</h4>
+              <div  className="headlines_current_score" style={{display:"flex"}}>
+                <Current_Score title="Draw"/>
+                <Current_Score title="Results"/>
+                <Current_Score title="Knockout Results"/>
+                <Current_Score title="Photographs"/>
+                <Current_Score title="Knockout Results"/>
+                <Current_Score title="Submit Entry"/>
+                
 
-          
-        </div>
-        
-
+              </div>
 
 
-        <div className="headlines_title">
+
+        {/* <div className="headlines_title">
                   <h4>DHOL</h4>
               </div>
 
 
-            <div className="headline_content" style={{display:"flex" , justifyContent:"center"}}>
+              <div  className="headlines_current_score" style={{display:"flex"}}>
+                <Current_Score title="Draw"/>
+                <Current_Score title="Results"/>
+                <Current_Score title="Knockout Results"/>
+                <Current_Score title="Photographs"/>
+                <Current_Score title="Knockout Results"/>
+                <Current_Score title="Submit Entry"/>
+                
 
-
-    
-
-            <h4>DRAW</h4>
-            <h4>Results</h4>
-            <h4>Knockout Results</h4>
-            <h4>Photographs</h4>
-            <h4>Knockout Results</h4>
-            <h4>Submit Entry</h4>
-
-            </div>
-
+              </div> */}
         </div>
         </div>
 
