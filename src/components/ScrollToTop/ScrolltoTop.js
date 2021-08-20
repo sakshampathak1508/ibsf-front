@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ScrollToTop.css'
 const ScrolltoTop = props => {
+    const [visible , setvisible] = useState(false);
 
     const changeBackground = () => {
         
 
-        if(document.getElementById("return-to-top")!=undefined)
-        {
+        
+        
         if (window.scrollY >= 300) {
-            document.getElementById("return-to-top").style.display = "block";
+            setvisible(true)
         } else {
-            document.getElementById("return-to-top").style.display = "none";
+            setvisible(false);
         }
-    }
     }
 
     
@@ -20,7 +20,7 @@ const ScrolltoTop = props => {
     return (
         <div>
 
-<a onClick={()=>window.scrollTo({top:0 , behavior:"smooth"})} id="return-to-top"><strong>^</strong></a>
+<a onClick={()=>window.scrollTo({top:0 , behavior:"smooth"})} style={{display:visible?"inline":"none"}} id="return-to-top"><strong>^</strong></a>
             
         </div>
     );

@@ -52,15 +52,21 @@ function Header({active}) {
   const history = useHistory();
   const classes = useStyles();
   const [navbar , setNavbar] = useState(false);
+  const [visible , setvisible] = useState(false);
 
+    const changeBackground = () => {
+        
 
-  const changeBackground = () => {
-    if (window.scrollY >= 300) {
-        document.getElementById("myTopnav").style.display = "none";
-    } else {
-      document.getElementById("myTopnav").style.display = "block";
+        
+        
+        if (window.scrollY >= 300) {
+            setvisible(true)
+        } else {
+            setvisible(false);
+        }
     }
-}
+
+
 
 window.addEventListener('scroll', changeBackground);
 
@@ -80,7 +86,7 @@ window.addEventListener('scroll', changeBackground);
       </div>
     </div>
 
-    <div className="topnav" id="myTopnav">
+    <div className="topnav" id="myTopnav" style={{display:visible?"block":"none"}}>
       <div className="ui container" style={{backgroundColor: ""}}>
         <a className="" onClick={()=>history.push("/")} style={active == "home" ? { color: "#0da1ff"}:{}} >Home </a>
         <a className="" onClick={()=>history.push("/news")} style={active == "news" ? { color: "#0da1ff"}:{}}>News</a>
