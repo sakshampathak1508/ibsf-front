@@ -52,7 +52,7 @@ function Header({active}) {
   const history = useHistory();
   const classes = useStyles();
   const [navbar , setNavbar] = useState(false);
-  const [visible , setvisible] = useState(false);
+  const [visible , setvisible] = useState(true);
 
     const changeBackground = () => {
         
