@@ -60,9 +60,9 @@ function Header({active}) {
         
         
         if (window.scrollY >= 300) {
-            setvisible(true)
+            setvisible(false)
         } else {
-            setvisible(false);
+            setvisible(true);
         }
     }
 
