@@ -1,3 +1,18 @@
+.parrent-return-to-top
+{
+    animation: fadeIn 2s linear 1s both;
+}
+
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
 #return-to-top {
     position: fixed;
     bottom: 20px;
@@ -12,7 +27,7 @@
     -webkit-border-radius: 35px;
     -moz-border-radius: 35px;
     border-radius: 35px;
-    display: none;
+    /* display: none; */
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;

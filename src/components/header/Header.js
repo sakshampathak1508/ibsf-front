@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState  , useEffect} from 'react';
 import "./Header.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -52,23 +52,8 @@ function Header({active}) {
   const history = useHistory();
   const classes = useStyles();
   const [navbar , setNavbar] = useState(false);
-  const [visible , setvisible] = useState(true);
+  
 
-    const changeBackground = () => {
-        
-
-        
-        
-        if (window.scrollY >= 300) {
-            setvisible(false)
-        } else {
-            setvisible(true);
-        }
-    }
-
-
-
-window.addEventListener('scroll', changeBackground);
 
 
     return (
@@ -86,7 +71,8 @@ window.addEventListener('scroll', changeBackground);
       </div>
     </div>
 
-    <div className="topnav" id="myTopnav" style={{display:visible?"block":"none"}}>
+      <div className="parent_topnav">
+    <div className="topnav" id="myTopnav">
       <div className="ui container" style={{backgroundColor: ""}}>
         <a className="" onClick={()=>history.push("/")} style={active == "home" ? { color: "#0da1ff"}:{}} >Home </a>
         <a className="" onClick={()=>history.push("/news")} style={active == "news" ? { color: "#0da1ff"}:{}}>News</a>
@@ -150,8 +136,11 @@ window.addEventListener('scroll', changeBackground);
           onClick={myFunction}
           >&#9776;</a>
       </div>
-    </div>
 
+
+      
+    </div>
+    </div>
       </header>
       
     );
