@@ -10,6 +10,7 @@ import "./Main_page.css"
 import image1 from '../../assets/example1.jpg'
 import image2 from '../../assets/example3.jpg'
 import Current_Score from '../Card/Current_Score';
+import Footer from '../Footer/Footer';
 
 
 
@@ -21,6 +22,8 @@ const Main_page = () => {
 
   const [latestnews , setlatestnews] = useState([]);
   const [sponsor , setSponsor] = useState()
+  
+
   
 
   useEffect(()=>
@@ -51,12 +54,10 @@ const Main_page = () => {
       
 </div>  
 
-    <br></br>
-
+  
     <div className="headlines">
 
-        
-          <div style={{width:"100%" }}>
+          <div style={{width:"100%"  , backgroundColor: "rgba(0, 0, 0, 0.8)"}}>
 
 
 
@@ -65,12 +66,12 @@ const Main_page = () => {
               </div>
 
               <div className="headlines_current_score" style={{display:"flex"}}>
-                <Current_Score title="Draw" image={image1}/>
-                <Current_Score title="Results" image={image2}/>
-                <Current_Score title="Knockout Results" image={image1}/>
-                <Current_Score title="Photographs" image={image2}/>
-                <Current_Score title="Knockout Results" image={image1}/>
-                <Current_Score title="Submit Entry" image={image2}/>
+                <Current_Score title="Draw" />
+                <Current_Score title="Results" />
+                <Current_Score title="Knockout Results" />
+                <Current_Score title="Photographs" />
+                <Current_Score title="Knockout Results" />
+                <Current_Score title="Submit Entry" />
                 
 
               </div>
@@ -128,17 +129,17 @@ const Main_page = () => {
       <br></br>
       <br></br>
 
-
-
-
     <div className="news_section" style={{display:"flex" , flexDirection:"row" , justifyContent:"center" , flexWrap:"wrap"}}>
   
     {latestnews&&latestnews.slice(0 , 3).map((e , index)=>
     (
   
-        <Card key={index} size="50vh" image={`https://billiardsports.in/${e.image}`} title={e.title} description={e.content} />
+        <Card key={index} size="50vh" image={`http://billiardsports.in/${e.image}`} title={e.title} description={e.content} />
     ))    
     }
+
+
+     
     </div>
    
 
@@ -146,9 +147,7 @@ const Main_page = () => {
 
     <Caroufredsel_wrapper data = {sponsor}/>
       
-    
-    <br></br>
-    <br></br>
+    <Footer/>
       </>
   );
 };

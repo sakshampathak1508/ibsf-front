@@ -6,7 +6,9 @@ import { BrowserRouter, BrowserRouter as Router, Route } from "react-router-dom"
 import NewsGallery from './components/Paginate/NewsGallery';
 import About from './components/About/About';
 import MemberCountries from './components/MemberCountries/MemberCountries';
-
+import ExecutiveMember from './components/ExecutiveMember/ExecutiveMember';
+import './App.css'
+import ScrolltoTop from './components/ScrollToTop/ScrolltoTop';
 
 function App() {
   return (
@@ -38,6 +40,11 @@ function App() {
       <Route path="/news/:id">
         <NewsGallery />
       </Route>
+      <Route exact path="/executive_member">
+        <ExecutiveMember />
+      </Route>
+
+      <ScrolltoTop/>
 
 
       </div>

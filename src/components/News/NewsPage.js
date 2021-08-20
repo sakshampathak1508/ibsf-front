@@ -53,12 +53,12 @@ function NewsPage() {
                 </li> */}
                     <li className="shareLinks">
                             
-                            <PrintIcon onClick={()=>window.print()} style={{fontSize:"3.5rem" ,marginRight:"1rem"}}></PrintIcon>
-                            <MailOutlineIcon onClick={()=>window.location.href="mailto: damnnotme@gmail.com "} style={{fontSize:"3.5rem" ,marginRight:"1rem"}} ></MailOutlineIcon>
-                            <FacebookShareButton url={shareUrl} quote={"oo"}>  <FacebookIcon style={{fontSize:"3.5rem" ,marginRight:"1rem"}}  round={true}/></FacebookShareButton>
-                            <InstagramIcon  onClick={()=>{window.open('http://www.instagram.com' , 'blank')}} style={{cursor:"pointer"  , marginRight:"1rem", fontSize:"3.5rem" , color:"black" }}/>
-                            <TwitterShareButton  url={shareUrl}> <TwitterIcon style={{fontSize:"3.5rem" ,marginRight:"1rem"}}  round={true}/> </TwitterShareButton>
-                            <WhatsappShareButton url={shareUrl} separator=":: "> <WhatsappIcon style={{fontSize:"3.5rem" ,marginRight:"1rem"}}  round={true}/></WhatsappShareButton>
+                            <PrintIcon onClick={()=>window.print()} style={{fontSize:"3rem" ,marginRight:"1rem"}}></PrintIcon>
+                            <MailOutlineIcon onClick={()=>window.location.href="mailto: ibsfinfo@gmail.com "} style={{fontSize:"3rem" ,marginRight:"1rem"}} ></MailOutlineIcon>
+                            <FacebookShareButton url={shareUrl} quote={"oo"}>  <FacebookIcon style={{fontSize:"3rem" ,marginRight:"1rem"}}  round={true}/></FacebookShareButton>
+                            <InstagramIcon  onClick={()=>{window.open('http://www.instagram.com' , 'blank')}} style={{cursor:"pointer"  , marginRight:"1rem", fontSize:"3rem" }}/>
+                            <TwitterShareButton  url={shareUrl}> <TwitterIcon style={{fontSize:"3rem" ,marginRight:"1rem"}}  round={true}/> </TwitterShareButton>
+                            <WhatsappShareButton url={shareUrl} separator=":: "> <WhatsappIcon style={{fontSize:"3rem" ,marginRight:"1rem"}}  round={true}/></WhatsappShareButton>
 
                     
                     </li>

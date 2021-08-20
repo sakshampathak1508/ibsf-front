@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Header.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -51,9 +51,23 @@ function myFunction() {
 function Header({active}) {
   const history = useHistory();
   const classes = useStyles();
+  const [navbar , setNavbar] = useState(false);
+
+
+  const changeBackground = () => {
+    if (window.scrollY >= 300) {
+        document.getElementById("myTopnav").style.display = "none";
+    } else {
+      document.getElementById("myTopnav").style.display = "block";
+    }
+}
+
+window.addEventListener('scroll', changeBackground);
+
+
     return (
       
-      <div className = "MainHeader">
+      <header className = "MainHeader">
       <div className="pre-header">
       <div className="ui container" style={{}}>
         <img
@@ -79,16 +93,16 @@ function Header({active}) {
             <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
-            <a href="#">IBSF Executives</a>
-            <a href="#" onClick={()=>history.push("/member_countries")}>Member Countries</a>
-            <a href="#">Past Champions</a>
-            <a href="#">Downloads</a>
-            <a href="#">Rules of Snooker</a>
+            <a className="" onClick={()=>history.push("/executive_member")}>IBSF Executives</a>
+            <a className=""  onClick={()=>history.push("/member_countries")}>Member Countries</a>
+            <a className="">Past Champions</a>
+            <a className="">Downloads</a>
+            <a className="">Rules of Snooker</a>
           </div>
         </div>
 
-        <a href="#home">Women Ranking</a>
-        <a href="#home">Coaching</a>
+        <a className="#home">Women Ranking</a>
+        <a className="#home">Coaching</a>
 
 
         <div className="dropdown">
@@ -132,7 +146,7 @@ function Header({active}) {
       </div>
     </div>
 
-      </div>
+      </header>
       
     );
 }

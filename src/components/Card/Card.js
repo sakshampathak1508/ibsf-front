@@ -3,7 +3,7 @@ import "./Card.css"
 
 function Card(props) {
     return (
-        <div className="card_body" style={{height:`${props.size}`}}>
+        <div className="card_body" style={{height:`${props.size}` ,  overflow:"hidden"}}>
 
             <div className = "card_image" style={{backgroundImage:`url(${props.image})`, backgroundSize:"cover" , backgroundRepeat:"no-repeat"}}>
             {/* <img src={props.image} style={{width:"auto", backgroundSize:"cover"}}/>              */}
@@ -12,15 +12,12 @@ function Card(props) {
             <div className="card_container">
 
             <h4>{props.title}</h4>
-            {/* <code>
-                {props.description}
-            </code> */}
-
-            <div dangerouslySetInnerHTML={{ __html: props.description }} />
-
-            
+            {/* <hr></hr> */}
+            <div style={{height:"100%"  , paddingBottom:"1rem", overflow:"hidden", textOverflow:"ellipsis"}}  dangerouslySetInnerHTML={{ __html: props.description }}>
+            {/* <p>wlmdpmed wkf</p> */}
+                {/* <span>ddfpjfopj foc d c;d ckd pc kwpwpfm pwpfn wfnwwnfdemwmf wo fpkwn fow</span> */}
             </div>
-            
+            </div>
         </div>
     );
 }

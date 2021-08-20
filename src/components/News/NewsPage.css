@@ -20,6 +20,11 @@
     align-items: center;
     flex-wrap: wrap;
 }
+.shareLinks *:hover
+{
+    cursor: pointer;
+    color: rgb(26, 113, 167);
+}
 @media print {
     @page { margin: 2rem; }
     .MainHeader

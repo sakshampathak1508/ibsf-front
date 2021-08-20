@@ -1,6 +1,6 @@
 .card_body
 {
-    height: 45vh;
+    height: 48vh;
     width: 20vw;
     border : 2px solid #ebebeb;
     outline: 0;
@@ -8,19 +8,19 @@
     margin-right: 2rem;
     min-width: 300px;
     margin-bottom: 2rem;
+    cursor: pointer;
 }
 
 .card_image
 {
-    height: 65%;
-    /* width: 50%; */
-    
+    height: 62%;
 }
 .card_container
 {
     
-    height: 50%;
+    height: 35%;
     padding: 1rem;
+    overflow: hidden;
 }
 
 

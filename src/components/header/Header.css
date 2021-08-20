@@ -23,6 +23,7 @@ body {
       z-index: 100;
       width: 100%;
       backdrop-filter: blur(10px);
+      
   
   }
   
@@ -48,8 +49,7 @@ body {
 
     transition: color 0.3s linear 0s;
 
-  }
-  
+  } 
   .topnav a {
     float: left;
     display: block;
