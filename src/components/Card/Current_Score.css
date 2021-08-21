@@ -14,7 +14,7 @@
 {
     content: "";
   display: block;
-  padding-top: 60%;
+  padding-top: 30%;
 
 }
 
@@ -22,15 +22,15 @@
 {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.3);
     transition: all linear 0.1s;
 
 
 }
-.current_score:hover .overlap_div
+/* .current_score:hover .overlap_div
 {
      background: linear-gradient(rgba(13, 161, 255,0) 65%, rgba(13, 161, 255,0.7) 98%)
-}
+} */
 .current_score .overlap_text
 {
 
@@ -46,9 +46,9 @@
 .overlap_text h3
 {
     color: #FFF;
-    font-weight: 800;
-    margin: 0rem 1rem;
-    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0rem 0rem;
+    font-size: 1.4rem;
     /* transition: all linear 1s; */
 
 }
@@ -57,12 +57,12 @@
 
     .current_score
     {
-        width: 100%;
+        width:50%;
     }
 
     .overlap_text h3
     {
-        font-size: 2.2rem;
+        font-size: 1.7rem;
 
     }
 

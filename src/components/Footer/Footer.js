@@ -34,13 +34,15 @@ function Footer(props) {
             
             </div>
             <div>
-            <h2><strong className="first_letter_effect">A</strong>bout us</h2>
+            <h2><strong className="first_letter_effect">E</strong>vent Name</h2>
             <hr></hr>
             <ul className="quick_links">
-                <li><a>About IBSF</a></li>
-                <li><a>Member Countries</a></li>
-                <li><a>Past Champions</a></li>
-                <li><a>Downloads</a></li>
+                <li><a>World Championships</a></li>
+                <li><a>World Under-21</a></li>
+                <li><a>World Under-18</a></li>
+                <li><a>World Team</a></li>
+                <li><a>World 6 Red</a></li>
+                <li><a>World Billiards</a></li>
             </ul>
             </div>
             <div>

@@ -10,6 +10,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import DirectionsIcon from '@material-ui/icons/Directions';
 import { useHistory } from 'react-router-dom';
 import IBSF_LOGO from "../../assets/IBSF_LOGO.png"
+import axios from "axios"
 import 'bootstrap/dist/css/bootstrap.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -55,7 +56,17 @@ function Header({active}) {
   
 
 
+    useEffect(()=>
+    {
 
+          axios.get("http://billiardsports.in/api/news/featured/")
+          .then((response) => setNavbar(response.data.data))
+
+
+          console.log(navbar)
+    } , [])
+
+    console.log(navbar)
     return (
       
       <header className = "MainHeader">
@@ -120,6 +131,7 @@ function Header({active}) {
         className="header_input"
         placeholder="Search"
         inputProps={{ 'aria-label': 'search google maps' }}
+        
       />
       <IconButton type="submit" className={classes.iconButton} aria-label="search">
         <SearchIcon style={{fontSize:"2rem" , outline:"none" , border:"none"}} />
@@ -130,7 +142,6 @@ function Header({active}) {
 
         </div>
         <a
-          href="javascript:void(0);"
           style={{fontSize: "15px"}}
           className="icon"
           onClick={myFunction}

@@ -6,7 +6,7 @@ function ExecutiveMember(props) {
     return (
         <>
         <Header/>
-        <div style={{display:"flex"  ,  flexWrap:"wrap" , backgroundColor:"#0da1ff"}}>
+        <div style={{display:"flex"  ,  flexWrap:"wrap"}}>
                 <ExecutiveCard image={image1} position="President" name="Arun Sharma"/>
                 <ExecutiveCard image={image1}  position="Vice President" name="Arun Sharma"/>
                 <ExecutiveCard  image={image1}  position="Vice President" name="Arun Sharma"/>

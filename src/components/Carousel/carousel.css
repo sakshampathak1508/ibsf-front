@@ -19,11 +19,14 @@
     
 }
 
-.carousel_caption h3 , p
+.carousel_caption h3
 {
-    font-size: 1.4rem;
+    font-size: 2rem;
 }
 
+.carousel-caption p{
+    font-size: 1.6rem;
+}
 
 .carousel_caption:hover
 {
@@ -64,6 +67,17 @@
         max-width:70%;
         
     }
+
+    .carousel_caption h3
+{
+    font-size: 1.5rem;
+}
+
+.carousel-caption p{
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
 
 
 }

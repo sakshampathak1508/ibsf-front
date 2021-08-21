@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState , useEffect } from 'react';
 import Header from '../header/Header';
 import image1 from '../../assets/image4.jpg';
 import {WhatsappShareButton      , LinkedinShareButton , FacebookShareButton  ,TwitterShareButton} from "react-share"
@@ -9,11 +9,43 @@ import WhatsappIcon from '@material-ui/icons/WhatsApp';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import PrintIcon from '@material-ui/icons/Print';
 import TwitterIcon from '@material-ui/icons/Twitter';
-
+import { useLocation } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import "./NewsPage.css"
 import Instagram from '@material-ui/icons/Instagram';
-function NewsPage() {
+import axios from 'axios';
+const NewsPage=()=> {
     const shareUrl = 'http://github.com';
+    const [newsData , setNewsData] =useState("");
+    const location =  useLocation()
+    let id = new URLSearchParams(location.search).get("id");
+    const [date , setdate] = useState();
+
+    
+
+      
+        
+
+    useEffect(()=>
+    {
+    
+
+        
+
+        axios.get(`http://billiardsports.in/api/news/?id=${id}`)
+        .then((res)=>setNewsData(res.data.data))
+        .catch((e)=>console.log(e))
+        setdate(new Date(newsData.timestamp));
+
+
+    } , [id])
+    
+
+    // var date=  new Date(newsData.timestamp);
+    // if(date!=undefined)
+
+      
+    
     return (
 
         <div style={{display:"flex" , flexDirection:"column"}}>
@@ -22,9 +54,9 @@ function NewsPage() {
 
         <div style={{maxWidth:"1200px" , marginLeft:"auto" ,marginRight:"auto"}}>
         <h2 style={{ marginRight:"auto" , marginLeft:"auto" , color: "#282828",
-            fontFamily: "PT Serif,serif",fontWeight: '800'}}>Make Govt Reveal if it Used Pegasus: Editors N. Ram, Sashi Kumar File Petition in Supreme Court</h2>
+            fontFamily: "PT Serif,serif",fontWeight: '800'}}>{ newsData.title}</h2>
         
-        <p style={{ width:"fit-content" ,  marginLeft:"auto" , marginRight:"3rem" }}>Thursday, 04 March 2021</p>
+        <p style={{ width:"fit-content" ,  marginLeft:"auto" , marginRight:"3rem" }}>{date  && date.toLocaleDateString("en-US")}</p>
         <div style={{width:"96%" , maxHeight:"80vh" , overflow:"hidden" , margin:"auto"}}>
 
         <img src ={image1} style={{ width:"100%", maxHeight:"100%" , objectFit:"cover" , border:"1px solid"}}/>

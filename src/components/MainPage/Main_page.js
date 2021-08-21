@@ -22,6 +22,7 @@ const Main_page = () => {
 
   const [latestnews , setlatestnews] = useState([]);
   const [sponsor , setSponsor] = useState()
+  const [eventFront , seteventFront] = useState();
   
 
   
@@ -34,14 +35,16 @@ const Main_page = () => {
           axios.get("http://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
 
+        axios.get("http://billiardsports.in/api/event/front/")
+        .then((response)=>seteventFront(response.data.data))
 
 
-          console.log(latestnews)
+          console.log(eventFront)
       
 
   } , [])
 
-
+console.log(eventFront)
   return (
     <>
 
@@ -57,53 +60,45 @@ const Main_page = () => {
   
     <div className="headlines">
 
-          <div style={{width:"100%"  , backgroundColor: "rgba(0, 0, 0, 0.8)"}}>
+          <div style={{width:"100%"  , backgroundColor: "rgba(0, 0, 0, 0.9)"}}>
 
 
 
-              <div className="headlines_title">
-                  <h2>DHOL</h2>
-              </div>
+          {
+                  eventFront && eventFront.map((data ,i)=>
+                  {
+                    if(!data.is_active)
+                    return(<></>);
 
-              <div className="headlines_current_score" style={{display:"flex"}}>
-                <Current_Score title="Draw" />
-                <Current_Score title="Results" />
-                <Current_Score title="Knockout Results" />
-                <Current_Score title="Photographs" />
-                <Current_Score title="Knockout Results" />
-                <Current_Score title="Submit Entry" />
-                
+                  return(
+                    
+                    <>
+                    <div className="headlines_title">
+                    <h2>{data.event_name}</h2>
 
-              </div>
-              
-          
-            
-          
+                    </div>
+                    
+                    <hr></hr>
 
+                    <div className="headlines_current_score" style={{display:"flex" , flexWrap:"wrap" ,flexDirection:"row"}}>
+                          {
+                            (
+                              <>
+                            <Current_Score title={data.name1} />
+                            <Current_Score title = {data.name2}/>
+                            <Current_Score title = {data.name3}/>
+                            <Current_Score title = {data.name4}/>
+                            <Current_Score title = {data.name5}/>
+                            <Current_Score title = {data.name6}/>
+                              </>
+                            )
+                          }
+                      </div>
 
+                      </>
 
-      
-          
-
-          
-
-          <div className="headlines_title">
-                  <h2>IBSF Tournament Entry</h2>
-              </div>
-
-          
-              <div  className="headlines_current_score" style={{display:"flex"}}>
-                <Current_Score title="Draw"/>
-                <Current_Score title="Results"/>
-                <Current_Score title="Knockout Results"/>
-                <Current_Score title="Photographs"/>
-                <Current_Score title="Knockout Results"/>
-                <Current_Score title="Submit Entry"/>
-                
-
-              </div>
-
-
+                  )})
+            }
 
         {/* <div className="headlines_title">
                   <h4>DHOL</h4>

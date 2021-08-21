@@ -69,7 +69,18 @@
     /* transition: all linear 1s; */
 
 }
+.executive_overlap_div .executive_social_links> *
+{
+    margin-top: 0;
+    font-size: 2.3rem;
+    color: white;
+    margin-right: 1rem;
+}
 
+.executive_overlap_div .executive_social_links> *:hover
+{
+    color: rgb(13, 161, 255);
+}
 @media only screen and (max-width: 767px) {
 
     .executive_card
