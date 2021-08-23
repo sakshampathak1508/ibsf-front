@@ -34,7 +34,7 @@ function Footer(props) {
             
             </div>
             <div>
-            <h2><strong className="first_letter_effect">E</strong>vent Name</h2>
+            <h2><strong className="first_letter_effect">C</strong>ategories</h2>
             <hr></hr>
             <ul className="quick_links">
                 <li><a>World Championships</a></li>

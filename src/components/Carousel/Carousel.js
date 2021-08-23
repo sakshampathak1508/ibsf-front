@@ -3,6 +3,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import image1 from '../../assets/example1.jpg';
 import image2 from "../../assets/example2.jpg";
 import axios from "axios"
+import { useHistory } from 'react-router';
 import './carousel.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Navbar } from 'react-bootstrap';
@@ -11,7 +12,7 @@ import { Navbar } from 'react-bootstrap';
 function ControlledCarousel() {
 
   const [navbar , setNavbar] = useState();
-  
+  const history = useHistory();
 
 
     useEffect(()=>
@@ -42,7 +43,7 @@ function ControlledCarousel() {
           style = {{ height:"100%" }}
           alt="First slide"
         />
-        <Carousel.Caption className="carousel_caption">
+        <Carousel.Caption onClick={()=> history.push(`/news/${data.id}`)} className="carousel_caption">
           <span></span>
           <h3>{data.title}</h3>
          

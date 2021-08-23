@@ -15,8 +15,6 @@ const Posts = ({ posts, loading }) => {
           {post.title}
         </li>
 
-        <Card size="45vh" image="https://dtwhistledev.wpengine.com/wp-content/uploads/2016/02/c7.jpg" title="okbr" description="kokf"/>
-
         </div>
         
       ))}

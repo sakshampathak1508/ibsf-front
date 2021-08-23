@@ -75,7 +75,7 @@ function Header({active}) {
     <div className="topnav" id="myTopnav">
       <div className="ui container" style={{backgroundColor: ""}}>
         <a className="" onClick={()=>history.push("/")} style={active == "home" ? { color: "#0da1ff"}:{}} >Home </a>
-        <a className="" onClick={()=>history.push("/news/?id=3")} style={active == "news" ? { color: "#0da1ff"}:{}}>News</a>
+        <a className="" onClick={()=>history.push("/news/")} style={active == "news" ? { color: "#0da1ff"}:{}}>News</a>
         <a className="" onClick={()=>history.push("/")}>Results</a>
         <a className="" onClick={()=>history.push("/")}>Calendar</a>
 
