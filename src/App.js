@@ -2,30 +2,34 @@ import Header from './components/header/Header';
 import Main_page from './components/MainPage/Main_page';
 import NewsPage from './components/News/NewsPage';
 
-import { BrowserRouter, BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, BrowserRouter as Router} from "react-router-dom";
+import { Route, Switch } from "react-router"
 import NewsGallery from './components/Paginate/NewsGallery';
 import About from './components/About/About';
+import MemberContinent from './components/MemberCountries/MemberContinent';
 import MemberCountries from './components/MemberCountries/MemberCountries';
 import ExecutiveMember from './components/ExecutiveMember/ExecutiveMember';
+
+import { createBrowserHistory } from 'history'
+import browserHistory from 'history/createBrowserHistory'
 import './App.css'
 import ScrolltoTop from './components/ScrollToTop/ScrolltoTop';
+import MemberCountry from './components/Card/MemberCountry';
 
 function App() {
   return (
 
-    
-    <div>
+      <Switch>
+
+        <Router>
+
     
 
-    <Route exact path="/">
+      <Route exact path="/">
         <Main_page />
       </Route>
 
     
-      <Route exact path="/news">
-        <NewsPage />
-      </Route>
-
 
       
 
@@ -33,22 +37,32 @@ function App() {
         <About />
       </Route>
 
-      <Route exact path="/member_countries">
-        <MemberCountries />
+      
+      
+      
+      <Route exact path="/member_countries" exact component={MemberContinent}/>
+
+      <Route path="/member_countries/:id" component={MemberCountries}>
+      </Route>
+
+
+      <Route exact path="/news">
+        <NewsGallery />
       </Route>
 
       <Route path="/news/:id">
-        <NewsGallery />
+        <NewsPage />
       </Route>
+
       <Route exact path="/executive_member">
         <ExecutiveMember />
       </Route>
 
       <ScrolltoTop/>
 
-
-      </div>
-      
+      </Router>
+      </Switch>
+          
     
   );
 }

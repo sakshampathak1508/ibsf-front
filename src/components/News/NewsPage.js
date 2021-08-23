@@ -10,45 +10,53 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import PrintIcon from '@material-ui/icons/Print';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import { useLocation } from 'react-router-dom';
+import search from "../../assets/search.gif"
 import { useParams } from "react-router-dom";
 import "./NewsPage.css"
 import Instagram from '@material-ui/icons/Instagram';
+import Lottie from 'react-lottie';
+import animationData from '../../assets/search_file.json';
 import axios from 'axios';
-const NewsPage=()=> {
+
+
+const NewsPage=({match})=> {
     const shareUrl = 'http://github.com';
     const [newsData , setNewsData] =useState("");
     const location =  useLocation()
-    let id = new URLSearchParams(location.search).get("id");
-    const [date , setdate] = useState();
+    // let id = new URLSearchParams(location.search).get("id");
+    const {id } =useParams();
 
-    
 
       
+    const defaultOptions = {
+        loop: true,
+        autoplay: true, 
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+      };
+   
         
 
     useEffect(()=>
     {
-    
-
-        
-
         axios.get(`http://billiardsports.in/api/news/?id=${id}`)
         .then((res)=>setNewsData(res.data.data))
         .catch((e)=>console.log(e))
-        setdate(new Date(newsData.timestamp));
+        
 
-
-    } , [id])
+    } , [])
     
 
     // var date=  new Date(newsData.timestamp);
     // if(date!=undefined)
 
-      
-    
+
+    if(newsData)
     return (
 
-        <div style={{display:"flex" , flexDirection:"column"}}>
+    <div style={{display:"flex" , flexDirection:"column"}}>
 
         <Header active="news"/>
 
@@ -56,10 +64,15 @@ const NewsPage=()=> {
         <h2 style={{ marginRight:"auto" , marginLeft:"auto" , color: "#282828",
             fontFamily: "PT Serif,serif",fontWeight: '800'}}>{ newsData.title}</h2>
         
-        <p style={{ width:"fit-content" ,  marginLeft:"auto" , marginRight:"3rem" }}>{date  && date.toLocaleDateString("en-US")}</p>
+        
+        <p style={{ width:"fit-content" ,  marginLeft:"auto" , marginRight:"3rem" }}>{  newsData.timestamp && new Date(newsData.timestamp).toLocaleDateString("en", {weekday: "long",
+        year: "numeric",
+        month: "2-digit",
+        day: "numeric"})}</p>
+
         <div style={{width:"96%" , maxHeight:"80vh" , overflow:"hidden" , margin:"auto"}}>
 
-        <img src ={image1} style={{ width:"100%", maxHeight:"100%" , objectFit:"cover" , border:"1px solid"}}/>
+        <img src ={`http://billiardsports.in/${newsData.image}`}  style={{ width:"100%", maxHeight:"100%" ,  border:"1px solid"}}/>
 
         </div>
 
@@ -71,7 +84,7 @@ const NewsPage=()=> {
             <div className="newspage_share_links" style={{display:"flex" , flexDirection:"column" ,width:"27%"   }}>
 
                 <ul style={{listStyleType:"none" , width:"100%"}}>
-                <li style={{marginBottom:"1.2rem"}}>Read 1234 times</li>
+                <li style={{marginBottom:"1.2rem"}}>Read {newsData.views} times</li>
 
                 {/* <li style={{display:"flex" , cursor:"pointer" , fontWeight:"600" , marginTop:"0.5rem"}}>
                     <p  onClick={()=>window.print()}>
@@ -101,7 +114,7 @@ const NewsPage=()=> {
 
                 <hr></hr>
 
-                <div class="author">
+                <div className="author">
 
                 <Avatar style={{width: "6rem",height: "6rem"}} alt="Remy Sharp" src="https://cdn.thewire.in/wp-content/uploads/2019/02/13133501/wire-logo.png" />
 
@@ -110,6 +123,17 @@ const NewsPage=()=> {
 
                 <hr></hr>
             
+                <div className="news_tags">
+                        {
+                            newsData && newsData.tags.map((data , index)=>
+                            (   
+                                <>
+                                <p key={index} style={{width:"fit-content" , padding:"1rem" , color:"white" , fontWeight:"500"  , backgroundColor:"#b71c1c", marginRight:"0.5rem"}}>{data}</p>
+                                </>
+
+                            )
+                        )}
+                </div>
 
 
 
@@ -124,13 +148,11 @@ const NewsPage=()=> {
     
     
         <br></br>
-        <p style={{fontFamily: "PT Serif", fontWeight: '400' , fontSize: '1.7rem',letterSpacing: '2px',color: "#282828",lineHeight: '1.3em'}}><strong>New Delhi:</strong> Two veteran journalists – former editor of The Hindu N. Ram and chairman of the Asian College of Journalism Sashi Kumar – have filed a petition in the Supreme Court seeking a court-ordered investigation into the Pegasus spyware revelations.<br></br>
-            <br></br>Over the last 10 days, a global consortium of 17 media groups including The Wire have been publishing a series known as the Pegasus Project. The project is based on a leaked database of phone numbers of people who were either persons of interest or forensically identified as having been targeted by clients of the Israeli NSO Group’s Pegasus spyware. The NSO Group has repeatedly said that it only sells Pegasus to “vetted governments”.
-            <br></br>In India, forensic evaluation showed that at least 10 devices – belonging to a political strategist, senior journalists and others – had either been successfully infected or witnessed a hacking attempt.The petition </p>
-            <p style={{fontFamily: "PT Serif", fontWeight: '400' , fontSize: '1.7rem',letterSpacing: '2px',color: "#282828",lineHeight: '1.3em'}}><strong>New Delhi:</strong> Two veteran journalists – former editor of The Hindu N. Ram and chairman of the Asian College of Journalism Sashi Kumar – have filed a petition in the Supreme Court seeking a court-ordered investigation into the Pegasus spyware revelations.<br></br>
-            <br></br>Over the last 10 days, a global consortium of 17 media groups including The Wire have been publishing a series known as the Pegasus Project. The project is based on a leaked database of phone numbers of people who were either persons of interest or forensically identified as having been targeted by clients of the Israeli NSO Group’s Pegasus spyware. The NSO Group has repeatedly said that it only sells Pegasus to “vetted governments”.
-            <br></br>In India, forensic evaluation showed that at least 10 devices – belonging to a political strategist, senior journalists and others – had either been successfully infected or witnessed a hacking attempt.The petition </p>
-            
+
+        <div dangerouslySetInnerHTML={{ __html: newsData.content }}>
+
+        </div>
+        
             
 
         </div>
@@ -146,6 +168,16 @@ const NewsPage=()=> {
         </div>
         </div>
     );
+    else
+    {
+        return(
+            <>
+            <Header/>
+            <Lottie options={defaultOptions} style={{marginTop:"2rem"}}
+            height={400} width={350} />
+            </>
+        )
+    }
 }
 
 export default NewsPage;

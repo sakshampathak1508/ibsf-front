@@ -21,14 +21,13 @@ import { useMediaQuery } from 'react-responsive'
 const Caroufredsel_wrapper = (props) => {
 
 
-    console.log(props.data)
-    const [slidesToShow , setslidesToShow] = useState(4);
+    const [slidesToShow , setslidesToShow] = useState(2);
     
     useEffect(()=>
     {
         const width = window.innerWidth;
 
-        width>768? setslidesToShow(4):setslidesToShow(1)
+        width>768? setslidesToShow(2):setslidesToShow(1)
         
     })
 
@@ -40,7 +39,7 @@ const Caroufredsel_wrapper = (props) => {
 
       const handleMediaQueryChange1 = (matches) => {
         if(matches)
-        setslidesToShow(4);
+        setslidesToShow(2);
       }
 
     

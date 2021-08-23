@@ -5,7 +5,7 @@ body{
 }
 .carouselwrapper_container{
     
-    padding: 1rem 10rem;
+    padding:2rem 30vw;
 }
 .carouselwrapper_container h3
 {
@@ -31,6 +31,14 @@ h2{
     min-width: 120px;
     overflow: hidden;
     margin: auto;
+}
+
+@media screen and (max-width:723px) {
+    
+    .carouselwrapper_container{
+    
+        padding:1rem 10rem;
+    }
 }
 /*
 .slick-slide{

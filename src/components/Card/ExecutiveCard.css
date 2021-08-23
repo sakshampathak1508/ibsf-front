@@ -29,39 +29,41 @@
 
 .executive_card .executive_overlap_text
 {
-
     position: absolute;
-    left:2rem;
-    bottom: 2rem;
-    width: auto;
-   
+    /* left:2rem; */
+    bottom: 0rem;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(2px);
+    /* padding-left: 2rem; */
+    padding: 0.5rem  0 0.5rem 1rem;
 }
 .executive_overlap_text p{
     color: #FFF;
     font-weight: 530;
-    margin: 0 0 .7rem;
+    margin: 0;
     line-height: 2rem;
     font-family: 'bebas_neueregular',sans-serif;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .executive_overlap_text h3::before
 {
     content: '';
     display: block;
-    height: .5rem;
+    height: .3rem;
     width: 6rem;
     background: #fff;
-    margin: 0 0 1rem;
+    /* margin: 0 0 1rem; */
     transition: width .25s ease .5s;
 }
 .executive_overlap_text h3
 {
     color: #FFF;
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 3rem;
-    margin: .5rem 0 2rem;
+    margin: .5rem 0 0.5rem;
     position: relative;
     /* order: 2; */
     /* flex-grow: 1; */

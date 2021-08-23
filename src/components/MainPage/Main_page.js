@@ -21,30 +21,33 @@ import Footer from '../Footer/Footer';
 const Main_page = () => {
 
   const [latestnews , setlatestnews] = useState([]);
-  const [sponsor , setSponsor] = useState()
-  const [eventFront , seteventFront] = useState();
+  const [sponsor , setSponsor] = useState([])
+  const [eventFront , seteventFront] = useState([]);
   
 
   
 
   useEffect(()=>
   {
+    if(latestnews.length==0)
   axios.get("http://billiardsports.in/api/news/latest/")
           .then((response) => setlatestnews(response.data.data))
 
+          if(sponsor.length==0)
           axios.get("http://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
 
+        if(eventFront.length==0)
         axios.get("http://billiardsports.in/api/event/front/")
         .then((response)=>seteventFront(response.data.data))
 
 
-          console.log(eventFront)
+        
       
 
   } , [])
+  
 
-console.log(eventFront)
   return (
     <>
 
@@ -68,7 +71,7 @@ console.log(eventFront)
                   eventFront && eventFront.map((data ,i)=>
                   {
                     if(!data.is_active)
-                    return(<></>);
+                    return(<></>)
 
                   return(
                     
@@ -100,21 +103,7 @@ console.log(eventFront)
                   )})
             }
 
-        {/* <div className="headlines_title">
-                  <h4>DHOL</h4>
-              </div>
-
-
-              <div  className="headlines_current_score" style={{display:"flex"}}>
-                <Current_Score title="Draw"/>
-                <Current_Score title="Results"/>
-                <Current_Score title="Knockout Results"/>
-                <Current_Score title="Photographs"/>
-                <Current_Score title="Knockout Results"/>
-                <Current_Score title="Submit Entry"/>
-                
-
-              </div> */}
+      
         </div>
         </div>
 
@@ -126,10 +115,10 @@ console.log(eventFront)
 
     <div className="news_section" style={{display:"flex" , flexDirection:"row" , justifyContent:"center" , flexWrap:"wrap"}}>
   
-    {latestnews&&latestnews.slice(0 , 3).map((e , index)=>
+    {latestnews&&latestnews.slice(0 , 4).map((e , index)=>
     (
   
-        <Card key={index} size="50vh" image={`http://billiardsports.in/${e.image}`} title={e.title} description={e.content} />
+        <Card key={index} data={e} />
     ))    
     }
 

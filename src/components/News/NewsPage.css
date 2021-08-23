@@ -25,6 +25,13 @@
     cursor: pointer;
     color: rgb(26, 113, 167);
 }
+
+.news_tags
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 @media print {
     @page { margin: 2rem; }
     .MainHeader

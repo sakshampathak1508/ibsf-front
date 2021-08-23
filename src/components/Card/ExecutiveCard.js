@@ -6,7 +6,7 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import './ExecutiveCard.css'
 const componentName = (props) => {
     return (
-        <div className="executive_card" style={{backgroundImage:`url(${props.image}` , backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
+        <div className="executive_card" style={{backgroundImage:`url(http://ibsf.info/images/board/jimleacy1.png)` , backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
 
             <div className="executive_overlap_div">
 

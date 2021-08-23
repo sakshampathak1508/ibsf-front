@@ -10,7 +10,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import DirectionsIcon from '@material-ui/icons/Directions';
 import { useHistory } from 'react-router-dom';
 import IBSF_LOGO from "../../assets/IBSF_LOGO.png"
-import axios from "axios"
 import 'bootstrap/dist/css/bootstrap.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -56,17 +55,7 @@ function Header({active}) {
   
 
 
-    useEffect(()=>
-    {
 
-          axios.get("http://billiardsports.in/api/news/featured/")
-          .then((response) => setNavbar(response.data.data))
-
-
-          console.log(navbar)
-    } , [])
-
-    console.log(navbar)
     return (
       
       <header className = "MainHeader">
@@ -86,7 +75,7 @@ function Header({active}) {
     <div className="topnav" id="myTopnav">
       <div className="ui container" style={{backgroundColor: ""}}>
         <a className="" onClick={()=>history.push("/")} style={active == "home" ? { color: "#0da1ff"}:{}} >Home </a>
-        <a className="" onClick={()=>history.push("/news")} style={active == "news" ? { color: "#0da1ff"}:{}}>News</a>
+        <a className="" onClick={()=>history.push("/news/?id=3")} style={active == "news" ? { color: "#0da1ff"}:{}}>News</a>
         <a className="" onClick={()=>history.push("/")}>Results</a>
         <a className="" onClick={()=>history.push("/")}>Calendar</a>
 

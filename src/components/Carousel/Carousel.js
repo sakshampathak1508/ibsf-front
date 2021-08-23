@@ -24,10 +24,9 @@ function ControlledCarousel() {
           
     } , [])
 
-    console.log(navbar)
-    
+  
     return (
-      <Carousel interval={3000} style={{ height:"auto" }}>
+      <Carousel className="mainPage_carousel" interval={3000}>
 
       {
       
@@ -35,17 +34,18 @@ function ControlledCarousel() {
         (
         
       
-              <Carousel.Item style={{height:"auto"}}>
+              <Carousel.Item key={index} style={{height:"100%" , overflow:"hidden"}}>
         <img
+        loading='lazy'
           className="d-block w-100"
           src={`http://billiardsports.in/${data.image}`}
-          style = {{ objectFit:"cover" , maxHeight:"80vh"}}
+          style = {{ height:"100%" }}
           alt="First slide"
         />
         <Carousel.Caption className="carousel_caption">
           <span></span>
           <h3>{data.title}</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+         
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -55,17 +55,18 @@ function ControlledCarousel() {
       
     }
 
-<Carousel.Item style={{height:"auto"}}>
+<Carousel.Item style={{height:"100%"}}>
         <img
+          loading="lazy"
           className="d-block w-100"
           src={image2}
-          style = {{ objectFit:"cover" , maxHeight:"80vh"}}
+          style = {{ height:"100%"}}
           alt="First slide"
         />
         <Carousel.Caption className="carousel_caption">
           <span></span>
-          <h3>data.title</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Title of the day</h3>
+      
         </Carousel.Caption>
       </Carousel.Item>
 
