@@ -9,9 +9,8 @@ import About from './components/About/About';
 import MemberContinent from './components/MemberCountries/MemberContinent';
 import MemberCountries from './components/MemberCountries/MemberCountries';
 import ExecutiveMember from './components/ExecutiveMember/ExecutiveMember';
-
-import { createBrowserHistory } from 'history'
-import browserHistory from 'history/createBrowserHistory'
+import Rules from './components/Rules/Rules'
+import PastChampion from './components/PastChampion/PastChampion'
 import './App.css'
 import ScrolltoTop from './components/ScrollToTop/ScrolltoTop';
 import MemberCountry from './components/Card/MemberCountry';
@@ -57,6 +56,15 @@ function App() {
       <Route exact path="/executive_member">
         <ExecutiveMember />
       </Route>
+
+      <Route exact path="/rules">
+        <Rules />
+      </Route>
+
+      <Route exact path="/past_champion">
+        <PastChampion />
+      </Route>
+
 
       <ScrolltoTop/>
 

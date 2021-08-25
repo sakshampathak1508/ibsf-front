@@ -1,0 +1,70 @@
+.federation
+{
+    position: relative;
+    width: 20%;
+    overflow: hidden;
+    transition: all linear 1s;
+    margin-bottom: 2vh;
+    cursor: pointer;
+
+
+}
+
+.federation_overlap_div:after
+{
+    content: "";
+  display: block;
+  padding-top: 100%;
+
+}
+
+.federation_overlap_div
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    transition: all linear 0.1s;
+
+
+}
+/* .federation:hover .federation_overlap_div
+{
+     background: linear-gradient(rgba(13, 161, 255,0) 65%, rgba(13, 161, 255,0.7) 98%)
+} */
+.federation .federation_overlap_text
+{
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    align-items: center;
+    text-align: center;
+   
+}
+.federation_overlap_text h3
+{
+    color: #FFF;
+    font-weight: 700;
+    margin: 0rem 0rem;
+    font-size: 1.4rem;
+    /* transition: all linear 1s; */
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    .federation
+    {
+        width:50%;
+    }
+
+    .federation_overlap_text h3
+    {
+        font-size: 1.7rem;
+
+    }
+
+
+}

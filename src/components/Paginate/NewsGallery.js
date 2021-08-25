@@ -1,47 +1,137 @@
-import React , {useState , useEffect} from 'react';
+import React , {useState , useEffect, createElement} from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+
 import Posts from './Post';
 import Pagination from './Pagination';
 import axios from 'axios';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Header from "../header/Header"
+import Card from '../Card/Card';
+import "./NewsGallery.css"
+import { CodeSharp } from '@material-ui/icons';
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    
+    minWidth:150,
+    // marginLeft:"2rem"
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(1),
+  },
+}));
+
 
 function NewsGallery() {
 
-
-const [posts, setPosts] = useState([]);
-const [loading, setLoading] = useState(false);
-const [currentPage, setCurrentPage] = useState(1);
-const [postsPerPage] = useState(10);
+const [state, setState] = useState('all')
+const [data , setdata] = useState();
+const [latest_year , setLatestyear] = useState(13);  
+const classes = useStyles();
 
 useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true);
-      const res = await axios.get('https://jsonplaceholder.typicode.com/todos');
-      setPosts(res.data);
-      setLoading(false);
-    };
+  var currentyear = new Date().getFullYear();
+  
+  
+    var select = document.getElementById('outlined-age-native-simple')
 
-    fetchPosts();
-  }, []);
+    if(select[1]===undefined)
+    {
+    for(let i = currentyear; i>=2013;i--)
+    {
+
+    
+    var option = document.createElement("option");
+option.text = i.toString();
+option.value = i;
+console.log(option)
+  select.appendChild(option)
+    }
+
+    }
+
+  } ,[]);
+
+  useEffect(()=>
+  {
+
+    if(state==='all')
+    {
+    axios.get(`http://billiardsports.in/api/news/${state}/`).
+    then((res)=>setdata(res.data.data))
+    .catch((e)=> console.log(e));
+    }
+    else
+    {
+    axios.get(`http://billiardsports.in/api/news/year/?year=${state}`).
+    then((res)=>setdata(res.data.data))
+    .catch((e)=> console.log(e));
+    }
 
 
-   // Get current posts
-   const indexOfLastPost = currentPage * postsPerPage;
-   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
- 
-   // Change page
-   const paginate = pageNumber => setCurrentPage(pageNumber);
 
+
+  } , [state])
+
+  const handleChange = (event) => {
+    setState(event.target.value);
+  };
     return (
-        <div className='container mt-5'>
 
-    <h1 className='text-primary mb-3'>Data</h1>
-      <Posts posts={currentPosts} loading={loading} />
-      <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={posts.length}
-        paginate={paginate}
-      />
-            
+      <div className="news-gallery">
+        <Header active="news"/>
+        
+
+        <div style={{maxWidth:"1400px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
+    
+        <h1> IBSF News</h1>
+<div className="news-gallery-search_bar">
+<FormControl className="news_gallery" variant="outlined" className={classes.formControl} >
+        <InputLabel  className="news_gallery-input-label"  htmlFor="outlined-year-native-simple">Year</InputLabel>
+        <Select
+          native
+          className="input-label-select"
+          value={state}
+          onChange={handleChange}
+          label="Year"
+          inputProps={{
+            name: 'year',
+            id: 'outlined-age-native-simple',
+          }}
+        >
+
+<option className="input-label-option"   value="all" >All</option>
+        </Select>
+      </FormControl>
+
+      {
+        state!=='all'?
+      <p>News in the <span style={{color:"#0da1ff"}}>{state}</span> year are -</p>
+      :<p>Showing all the News.</p>
+      }
+
+
+
+</div>
+
+          <div style={{display:"flex" , flexWrap:"wrap" , justifyContent:"center" ,marginTop:"2rem"}}>
+
+          
+
+        {
+          data && data.map((val , index)=>
+          (
+              <Card key={index} data={val}/>
+          ))
+        }
+
+          </div>
+        
+            </div>
+
         </div>
     );
 }

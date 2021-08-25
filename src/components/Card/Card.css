@@ -1,32 +1,49 @@
 .card_body
 {
-    height: 48vh;
-    width: 20vw;
+    height: 33rem;
+    width: 30rem;
     border : 1px solid #ebebeb;
     outline: 0;
     transition: all 0.5s linear;
     margin-right: 2rem;
-    min-width: 300px;
+    min-width: 250px;
+    /* min-height: 350px; */
     margin-bottom: 2rem;
     cursor: pointer;
 }
 
 .card_image
 {
-    height: 62%;
+    height: 50%;
 }
 .card_container
 {
     
-    height: 35%;
+    height: 50%;
     padding: 1rem;
     overflow: hidden;
 }
+.card_container h4{
+    font-weight: 600 !important;
+    color: #000000d9;
+    margin-top: 0;
+}
+.card_container p{
 
+    font-size: 1.42rem;
+}
 
 .card_body:hover
 {
     border: 1px solid rgba(0, 0, 0, 0.726);
 
     transition: all 0.5s linear;
+}
+
+@media screen and (max-width:723px) {
+
+    .card_body{
+    margin-right: 0;
+    }
+    
 }

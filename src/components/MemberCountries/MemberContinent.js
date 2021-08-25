@@ -16,8 +16,8 @@ function MemberContinent() {
     }, [])
     return (
         <>
-        <Header/>
-        <div style={{display:"flex" , flexWrap:"wrap" , justifyContent:"center"  ,width:"100%" , height:"auto" , padding:"2rem 5rem"}}>
+        <Header active="aboutus"/>
+        <div style={{display:"flex" , flexWrap:"wrap" , justifyContent:"center"  ,width:"100%" , height:"auto" , padding:"2rem 2rem"}}>
 
             {
                 country&&country.map((data  , index)=>

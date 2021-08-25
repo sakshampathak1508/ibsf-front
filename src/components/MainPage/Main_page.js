@@ -11,6 +11,7 @@ import image1 from '../../assets/example1.jpg'
 import image2 from '../../assets/example3.jpg'
 import Current_Score from '../Card/Current_Score';
 import Footer from '../Footer/Footer';
+import Federation from '../Card/Federation';
 
 
 
@@ -65,7 +66,15 @@ const Main_page = () => {
 
           <div style={{width:"100%"  , backgroundColor: "rgba(0, 0, 0, 0.9)"}}>
 
+        <div className="headlines_federations" style={{display:"flex" , flexWrap:"wrap" ,flexDirection:"row"}}>
 
+              <Federation image={"http://www.ibsf.info/images/banners/african-logo.png"}/>
+              <Federation image={"http://www.ibsf.info/images/banners/Asia.jpg"}/>
+              <Federation image={"http://www.ibsf.info/images/banners/EBSA.jpg"}/>
+              <Federation image={"http://www.ibsf.info/images/banners/OBSF-LOGO.png"}/>
+              <Federation image={"http://www.ibsf.info/images/banners/pabsa-logo-200x200.jpg"}/>
+
+        </div>
 
           {
                   eventFront && eventFront.map((data ,i)=>

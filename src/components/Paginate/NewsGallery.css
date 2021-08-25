@@ -1,0 +1,41 @@
+.news-gallery
+{
+    background-color: white;
+    
+}
+.news-gallery h1
+{
+
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color:  #0da1ff;
+    text-align: center;
+
+}
+.news-gallery .news_gallery-input-label{
+    font-size: 1.5rem;
+    margin-top: -2px;
+    margin-left: auto;
+}
+.news-gallery .input-label-select
+{
+    font-size: 1.5rem;
+    cursor: pointer;
+
+}
+.news-gallery .input-label-option
+{
+    
+    cursor: pointer;
+}
+
+.news_gallery_search_bar
+{
+    margin-left: auto;
+}
+.news-gallery-search_bar
+{
+    /* float: right; */
+    text-align: center;
+    margin-bottom: 5rem;
+}

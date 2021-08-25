@@ -80,16 +80,16 @@ function Header({active}) {
         <a className="" onClick={()=>history.push("/")}>Calendar</a>
 
         <div className="dropdown">
-          <button className="dropbtn" onClick={()=>history.push("/aboutus")}>
+          <button className="dropbtn" onClick={()=>history.push("/aboutus")} style={active == "aboutus" ? { color: "#0da1ff"}:{}}>
             About Us
             <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
             <a className="" onClick={()=>history.push("/executive_member")}>IBSF Executives</a>
             <a className=""  onClick={()=>history.push("/member_countries")}>Member Countries</a>
-            <a className="">Past Champions</a>
+            <a className="" onClick={()=>history.push("/past_champion")}>Past Champions</a>
             <a className="">Downloads</a>
-            <a className="">Rules of Snooker</a>
+            <a className="" onClick={()=>history.push("/rules")}>Rules of Snooker</a>
           </div>
         </div>
 

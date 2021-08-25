@@ -70,7 +70,7 @@ const NewsPage=({match})=> {
         month: "2-digit",
         day: "numeric"})}</p>
 
-        <div style={{width:"96%" , maxHeight:"80vh" , overflow:"hidden" , margin:"auto"}}>
+        <div style={{width:"96%" , maxHeight:"auto" , overflow:"hidden" , margin:"auto"}}>
 
         <img src ={`http://billiardsports.in/${newsData.image}`}  style={{ width:"100%", maxHeight:"100%" ,  border:"1px solid"}}/>
 
