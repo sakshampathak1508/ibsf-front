@@ -14,6 +14,7 @@ import PastChampion from './components/PastChampion/PastChampion'
 import './App.css'
 import ScrolltoTop from './components/ScrollToTop/ScrolltoTop';
 import MemberCountry from './components/Card/MemberCountry';
+import Particular_rules from './components/Rules/Particular_rules';
 
 function App() {
   return (
@@ -51,6 +52,10 @@ function App() {
 
       <Route path="/news/:id">
         <NewsPage />
+      </Route>
+
+      <Route path="/all-rules/:id">
+        <Particular_rules />
       </Route>
 
       <Route exact path="/executive_member">

@@ -36,7 +36,7 @@
     background-color: rgba(0,0,0,0.6);
     backdrop-filter: blur(2px);
     /* padding-left: 2rem; */
-    padding: 0.5rem  0 0.5rem 1rem;
+    padding: 0.5rem  0 0.5rem 0.5rem;
 }
 .executive_overlap_text p{
     color: #FFF;

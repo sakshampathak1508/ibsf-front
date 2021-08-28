@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
-
+import Lottie from 'react-lottie';
 import Header from '../header/Header';
 import image1 from "../../assets/example1.jpg"
 
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     flex: '1 0 auto',
   },
   cover: {
-    width: 151,
+    width: 180,
   },
   controls: {
     display: 'flex',
@@ -48,7 +48,6 @@ export default function MemberCountry(props){
   const theme = useTheme();
 
   props= props.data
-  console.log(props)
   return (
     <Card className={classes.root}>
 
@@ -59,28 +58,36 @@ export default function MemberCountry(props){
       />
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">
+          <Typography component="h5" variant="h6">
             {props.name}
           </Typography>
-          <Typography component="h5" variant="h5">
+          <Typography component="h5" variant="h6">
             {props.federation}
           </Typography>
+          {
+            props.president&&
           <Typography variant="h5" color="textSecondary">
             President: {props.president}
           </Typography>
-
+          }
+          {
+            props.secretary &&
           <Typography variant="h5" color="textSecondary">
           secretary: {props.secretary}
           </Typography>
-    
+          }
+          {
+            props.email_id &&
           <Typography variant="h5" color="textSecondary">
           email_id: <strong style={{color:"rgba(255 , 0 , 0 , 0.7)"}} onClick={()=>window.location.href=`mailto: ${props.email_id}`}>{props.email_id}</strong>
           </Typography>
-        
+          }
+          {
+            props.website&&
           <Typography variant="h5" color="textSecondary" >
           website:<strong style={{color:"rgba(0 , 0 , 255 , 0.7)"}} onClick={()=>{window.open(props.website , 'blank')}}> {props.website}</strong>
-        
           </Typography>
+          }
 
           
           

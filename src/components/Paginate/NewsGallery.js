@@ -10,6 +10,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Header from "../header/Header"
 import Card from '../Card/Card';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import "./NewsGallery.css"
 import { CodeSharp } from '@material-ui/icons';
 
@@ -28,9 +29,12 @@ const useStyles = makeStyles((theme) => ({
 function NewsGallery() {
 
 const [state, setState] = useState('all')
-const [data , setdata] = useState();
-const [latest_year , setLatestyear] = useState(13);  
+const [data , setdata] = useState([]);
 const classes = useStyles();
+const [page, setpage]= useState(1)
+const [loading, setloading]=useState(false)
+const [preload, setpreload]=useState()
+const [bottom, setBottom] = useState(false)
 
 useEffect(() => {
   var currentyear = new Date().getFullYear();
@@ -47,7 +51,6 @@ useEffect(() => {
     var option = document.createElement("option");
 option.text = i.toString();
 option.value = i;
-console.log(option)
   select.appendChild(option)
     }
 
@@ -60,28 +63,74 @@ console.log(option)
 
     if(state==='all')
     {
-    axios.get(`http://billiardsports.in/api/news/${state}/`).
-    then((res)=>setdata(res.data.data))
+      if(page===1){
+      setdata([])
+      setBottom(false);
+
+      }
+      setloading(true)
+    axios.get(`http://billiardsports.in/api/news/${state}/?num=${page}`).
+    then((res)=>setdata((prev)=> {
+      console.log(res.data.data)
+      if(res.data.data.length===0)
+      setBottom(true)
+
+      setloading(false)
+      return (prev.concat(res.data.data))}))
     .catch((e)=> console.log(e));
     }
     else
     {
+      setdata([]);
+      setpage(1)
+      setBottom(false)
+      setloading(true)
     axios.get(`http://billiardsports.in/api/news/year/?year=${state}`).
-    then((res)=>setdata(res.data.data))
+    then((res)=>
+    {setdata(res.data.data)
+      setloading(false)
+      setBottom(true)
+    })
     .catch((e)=> console.log(e));
     }
 
 
 
 
-  } , [state])
+  } , [state , page])
 
   const handleChange = (event) => {
     setState(event.target.value);
   };
+
+  const handleScroll = (e) => {
+    if(state!='all')
+    return
+    const {scrollTop , clientHeight , scrollHeight} = e.currentTarget
+
+    // console.log("Here"  ,scrollTop , clientHeight);
+    if(clientHeight + scrollTop >= scrollHeight)
+        {
+            
+
+                if(clientHeight + scrollTop === scrollHeight &&bottom!=true)
+                {
+                    
+                    setloading(true)
+                    setpage((prev)=>  prev+1)
+                }
+            return
+              
+        }
+
+
+
+  }
+
+  console.log( data)
     return (
 
-      <div className="news-gallery">
+      <div onScroll={handleScroll} style={{height:"100vh" , overflow:"scroll"}}className="news-gallery">
         <Header active="news"/>
         
 
@@ -117,8 +166,9 @@ console.log(option)
 
 </div>
 
-          <div style={{display:"flex" , flexWrap:"wrap" , justifyContent:"center" ,marginTop:"2rem"}}>
+          <div style={{height:"auto",display:"flex" , flexWrap:"wrap" , justifyContent:"center" ,marginTop:"2rem" }}>
 
+        
           
 
         {
@@ -127,6 +177,10 @@ console.log(option)
               <Card key={index} data={val}/>
           ))
         }
+
+{(loading && bottom!=true) && <div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <CircularProgress/> </div>}
+
+
 
           </div>
         

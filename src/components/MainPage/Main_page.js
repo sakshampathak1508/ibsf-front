@@ -18,14 +18,11 @@ import Federation from '../Card/Federation';
 
 
 
-
 const Main_page = () => {
 
   const [latestnews , setlatestnews] = useState([]);
   const [sponsor , setSponsor] = useState([])
   const [eventFront , seteventFront] = useState([]);
-  
-
   
 
   useEffect(()=>
@@ -68,11 +65,11 @@ const Main_page = () => {
 
         <div className="headlines_federations" style={{display:"flex" , flexWrap:"wrap" ,flexDirection:"row"}}>
 
-              <Federation image={"http://www.ibsf.info/images/banners/african-logo.png"}/>
-              <Federation image={"http://www.ibsf.info/images/banners/Asia.jpg"}/>
-              <Federation image={"http://www.ibsf.info/images/banners/EBSA.jpg"}/>
-              <Federation image={"http://www.ibsf.info/images/banners/OBSF-LOGO.png"}/>
-              <Federation image={"http://www.ibsf.info/images/banners/pabsa-logo-200x200.jpg"}/>
+              <Federation id='1' image={"http://www.ibsf.info/images/banners/african-logo.png"}/>
+              <Federation id='2' image={"http://www.ibsf.info/images/banners/Asia.jpg"}/>
+              <Federation id='3' image={"http://www.ibsf.info/images/banners/EBSA.jpg"}/>
+              <Federation id='4' image={"http://www.ibsf.info/images/banners/OBSF-LOGO.png"}/>
+              <Federation id='5' image={"http://www.ibsf.info/images/banners/pabsa-logo-200x200.jpg"}/>
 
         </div>
 

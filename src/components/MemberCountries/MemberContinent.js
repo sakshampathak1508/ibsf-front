@@ -10,10 +10,11 @@ function MemberContinent() {
 
     useEffect(() =>
     {
-        axios.get('http://billiardsports.in/api/regions/')
+        axios.get('http://billiardsports.in/api/all-regions/')
         .then((res)=>setCountry(res.data.data))
 
     }, [])
+    
     return (
         <>
         <Header active="aboutus"/>

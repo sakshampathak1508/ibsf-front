@@ -22,7 +22,6 @@ import axios from 'axios';
 const NewsPage=({match})=> {
     const shareUrl = 'http://github.com';
     const [newsData , setNewsData] =useState("");
-    const location =  useLocation()
     // let id = new URLSearchParams(location.search).get("id");
     const {id } =useParams();
 
@@ -125,7 +124,7 @@ const NewsPage=({match})=> {
             
                 <div className="news_tags">
                         {
-                            newsData && newsData.tags.map((data , index)=>
+                            newsData && newsData.tags_name.map((data , index)=>
                             (   
                                 <>
                                 <p key={index} style={{width:"fit-content" , padding:"1rem" , color:"white" , fontWeight:"500"  , backgroundColor:"#b71c1c", marginRight:"0.5rem"}}>{data}</p>

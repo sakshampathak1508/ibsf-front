@@ -5,7 +5,7 @@ import Header from "../header/Header"
 function ExecutiveMember(props) {
     return (
         <>
-        <Header/>
+        <Header active="aboutus"/>
         <div style={{display:"flex"  ,  flexWrap:"wrap"}}>
                 <ExecutiveCard image={image1} position="President" name="Arun Sharma"/>
                 <ExecutiveCard image={image1}  position="Vice President" name="Arun Sharma"/>

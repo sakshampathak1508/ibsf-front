@@ -23,6 +23,7 @@ const useStyles = makeStyles({
 export default function ContinentCard(props) {
   const history = useHistory();
   props =props.data
+  console.log(props)
   const classes = useStyles();
 
   return (
