@@ -15,6 +15,7 @@ import './App.css'
 import ScrolltoTop from './components/ScrollToTop/ScrolltoTop';
 import MemberCountry from './components/Card/MemberCountry';
 import Particular_rules from './components/Rules/Particular_rules';
+import NewsbyTag from './components/NewsByTag/NewsbyTag';
 
 function App() {
   return (
@@ -57,7 +58,9 @@ function App() {
       <Route path="/all-rules/:id">
         <Particular_rules />
       </Route>
-
+      <Route path="/newsbytag/:tagname">
+        <NewsbyTag />
+      </Route>
       <Route exact path="/executive_member">
         <ExecutiveMember />
       </Route>

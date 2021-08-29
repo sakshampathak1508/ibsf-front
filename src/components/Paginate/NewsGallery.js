@@ -39,23 +39,26 @@ const [bottom, setBottom] = useState(false)
 useEffect(() => {
   var currentyear = new Date().getFullYear();
   
-  
+
     var select = document.getElementById('outlined-age-native-simple')
 
-    if(select[1]===undefined)
+    while(select.firstChild)
     {
+      select.removeChild(select.lastChild);
+    }
+    let Alloption = document.createElement('option');
+    Alloption.text = "All";
+    Alloption.value="all";
+    select.appendChild(Alloption)
     for(let i = currentyear; i>=2013;i--)
     {
 
     
-    var option = document.createElement("option");
+  let option = document.createElement("option");
 option.text = i.toString();
 option.value = i;
   select.appendChild(option)
     }
-
-    }
-
   } ,[]);
 
   useEffect(()=>
@@ -108,17 +111,16 @@ option.value = i;
     return
     const {scrollTop , clientHeight , scrollHeight} = e.currentTarget
 
-    // console.log("Here"  ,scrollTop , clientHeight);
-    if(clientHeight + scrollTop >= scrollHeight)
+    console.log("Here"  ,scrollTop + clientHeight + 200 , scrollHeight);
+    if(clientHeight + scrollTop + 300 >= scrollHeight && bottom!=true && loading==false)
         {
             
 
-                if(clientHeight + scrollTop === scrollHeight &&bottom!=true)
-                {
+              
                     
                     setloading(true)
                     setpage((prev)=>  prev+1)
-                }
+                
             return
               
         }
@@ -159,7 +161,7 @@ option.value = i;
       {
         state!=='all'?
       <p>News in the <span style={{color:"#0da1ff"}}>{state}</span> year are -</p>
-      :<p>Showing all the News.</p>
+      :<p>Showing <span style={{color:"#0da1ff"}}>{state}</span> the News.</p>
       }
 
 
@@ -174,9 +176,15 @@ option.value = i;
         {
           data && data.map((val , index)=>
           (
+            <>
               <Card key={index} data={val}/>
+              {/* <Card key={index} data={val}/> */}
+              </>
           ))
+
+          
         }
+        
 
 {(loading && bottom!=true) && <div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <CircularProgress/> </div>}
 

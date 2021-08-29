@@ -84,7 +84,7 @@ function MemberCountries() {
                     <p  style={{cursor:"pointer" , color:"rgba(0 , 0 , 255 , 0.7)"}} onClick={()=>{window.open(continent.website , 'blank')}}>{continent.website}</p>
                 </div>
             </div>
-            <hr style={{border:"0", backgroundImage:"linear-gradient(to right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0))"}}></hr>
+            <hr ></hr>
 
 
             <div style={{display:"flex" , flexWrap:"wrap" }}>

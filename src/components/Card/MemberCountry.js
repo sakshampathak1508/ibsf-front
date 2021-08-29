@@ -19,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
     cursor:"pointer" , 
     minWidth:"35rem"
   },
+  key:
+  {
+    // fontWeight:"550",
+    color:'black'
+  },
   details: {
     display: 'flex',
     flexDirection: 'column',
@@ -58,34 +63,35 @@ export default function MemberCountry(props){
       />
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          <Typography component="h5" variant="h6">
+          <Typography component="h5" variant="h5">
             {props.name}
           </Typography>
           <Typography component="h5" variant="h6">
             {props.federation}
           </Typography>
+        
           {
             props.president&&
           <Typography variant="h5" color="textSecondary">
-            President: {props.president}
+            <span className={classes.key}>President</span>: {props.president}
           </Typography>
           }
           {
             props.secretary &&
           <Typography variant="h5" color="textSecondary">
-          secretary: {props.secretary}
+          <span className={classes.key}>secretary</span>: {props.secretary}
           </Typography>
           }
           {
             props.email_id &&
           <Typography variant="h5" color="textSecondary">
-          email_id: <strong style={{color:"rgba(255 , 0 , 0 , 0.7)"}} onClick={()=>window.location.href=`mailto: ${props.email_id}`}>{props.email_id}</strong>
+          <span className={classes.key}>Email</span>: <strong style={{color:"rgba(255 , 0 , 0 , 0.7)"}} onClick={()=>window.location.href=`mailto: ${props.email_id}`}>{props.email_id}</strong>
           </Typography>
           }
           {
             props.website&&
           <Typography variant="h5" color="textSecondary" >
-          website:<strong style={{color:"rgba(0 , 0 , 255 , 0.7)"}} onClick={()=>{window.open(props.website , 'blank')}}> {props.website}</strong>
+          <span className={classes.key}>Website</span>:<strong style={{color:"rgba(0 , 0 , 255 , 0.7)"}} onClick={()=>{window.open(props.website , 'blank')}}> {props.website}</strong>
           </Typography>
           }
 

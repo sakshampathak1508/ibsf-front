@@ -9,7 +9,7 @@ import WhatsappIcon from '@material-ui/icons/WhatsApp';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import PrintIcon from '@material-ui/icons/Print';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import search from "../../assets/search.gif"
 import { useParams } from "react-router-dom";
 import "./NewsPage.css"
@@ -24,6 +24,7 @@ const NewsPage=({match})=> {
     const [newsData , setNewsData] =useState("");
     // let id = new URLSearchParams(location.search).get("id");
     const {id } =useParams();
+    const history = useHistory()
 
 
       
@@ -115,9 +116,9 @@ const NewsPage=({match})=> {
 
                 <div className="author">
 
-                <Avatar style={{width: "6rem",height: "6rem"}} alt="Remy Sharp" src="https://cdn.thewire.in/wp-content/uploads/2019/02/13133501/wire-logo.png" />
+                <Avatar style={{width: "6rem",height: "6rem"}} alt="Remy Sharp" src={`http://billiardsports.in/${newsData.writer_data.profile_pic}`} />
 
-                    <h5>IBSF, Media officer</h5>
+                    <h5>{newsData.writer_data.name}, {newsData.writer_data.position}</h5>
                 </div>
 
                 <hr></hr>
@@ -127,7 +128,7 @@ const NewsPage=({match})=> {
                             newsData && newsData.tags_name.map((data , index)=>
                             (   
                                 <>
-                                <p key={index} style={{width:"fit-content" , padding:"1rem" , color:"white" , fontWeight:"500"  , backgroundColor:"#b71c1c", marginRight:"0.5rem"}}>{data}</p>
+                                <p onClick={()=>history.push(`/newsbytag/${data}`)} key={index} style={{cursor:"pointer" , width:"fit-content" , padding:"1rem" , color:"white" , fontWeight:"500"  , backgroundColor:"#b71c1c", marginRight:"0.5rem"}}>{data}</p>
                                 </>
 
                             )
