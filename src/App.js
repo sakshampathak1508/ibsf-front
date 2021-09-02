@@ -10,12 +10,15 @@ import MemberContinent from './components/MemberCountries/MemberContinent';
 import MemberCountries from './components/MemberCountries/MemberCountries';
 import ExecutiveMember from './components/ExecutiveMember/ExecutiveMember';
 import Rules from './components/Rules/Rules'
-import PastChampion from './components/PastChampion/PastChampion'
+import Champion from './components/Champion/Champion_List'
+import Particular_Champ from './components/Champion/Particular_Champ'
 import './App.css'
 import ScrolltoTop from './components/ScrollToTop/ScrolltoTop';
 import MemberCountry from './components/Card/MemberCountry';
 import Particular_rules from './components/Rules/Particular_rules';
 import NewsbyTag from './components/NewsByTag/NewsbyTag';
+import EventPage from './components/Event/EventPage';
+import ParticularEvent from './components/Event/ParticularEvent';
 
 function App() {
   return (
@@ -61,6 +64,14 @@ function App() {
       <Route path="/newsbytag/:tagname">
         <NewsbyTag />
       </Route>
+      <Route exact path='/events'>
+        <EventPage/>
+      </Route>
+      <Route path='/events/:id'>
+      <ParticularEvent/>
+
+      </Route>
+
       <Route exact path="/executive_member">
         <ExecutiveMember />
       </Route>
@@ -69,8 +80,12 @@ function App() {
         <Rules />
       </Route>
 
-      <Route exact path="/past_champion">
-        <PastChampion />
+      <Route exact path="/champion">
+        <Champion />
+      </Route>
+
+      <Route  path="/champion/:id">
+        <Particular_Champ />
       </Route>
 
 

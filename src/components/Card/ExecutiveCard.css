@@ -30,9 +30,9 @@
 .executive_card .executive_overlap_text
 {
     position: absolute;
-    /* left:2rem; */
+    left:3px;
     bottom: 0rem;
-    width: 96%;
+    width: 97%;
     background-color: rgba(0,0,0,0.6);
     backdrop-filter: blur(2px);
     /* padding-left: 2rem; */

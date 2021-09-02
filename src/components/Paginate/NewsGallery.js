@@ -33,7 +33,6 @@ const [data , setdata] = useState([]);
 const classes = useStyles();
 const [page, setpage]= useState(1)
 const [loading, setloading]=useState(false)
-const [preload, setpreload]=useState()
 const [bottom, setBottom] = useState(false)
 
 useEffect(() => {
@@ -168,7 +167,7 @@ option.value = i;
 
 </div>
 
-          <div style={{height:"auto",display:"flex" , flexWrap:"wrap" , justifyContent:"center" ,marginTop:"2rem" }}>
+          <div style={{height:"auto",display:"grid" ,gridTemplateColumns: "repeat(auto-fit, minmax(30rem, 1fr))" ,justifyContent:"center",marginTop:"2rem" }}>
 
         
           
@@ -184,13 +183,11 @@ option.value = i;
 
           
         }
-        
+        </div>
 
 {(loading && bottom!=true) && <div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <CircularProgress/> </div>}
 
 
-
-          </div>
         
             </div>
 

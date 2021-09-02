@@ -71,7 +71,7 @@ function MemberCountries() {
         <div style={{maxWidth:'110rem' , margin:"auto"}}>
 
         <div className="federation_info" style={{maxWidth:"70rem", padding:"2rem" , margin:"auto"}}>
-            <h3 style={{textAlign:"center" ,marginBottom:"2rem"}}>International Billiards & Snooker Federation</h3>
+            <h3 style={{textAlign:"center", lineHeight:"2.5rem" , fontWeight:"600" ,marginBottom:"3rem"}}>{continent.name}</h3>
             
             <div className="frderation_info_contact" style={{display:"flex" , justifyContent:"space-between"}}>
 
@@ -147,8 +147,8 @@ function MemberCountries() {
     </TableContainer>
                 </div>
 
-                <div style={matches?{width:'80%', margin:"auto"}:{width:'40%'}}>
-                    <img width="100%" src={`http://billiardsports.in/${continent.logo}`}/>
+                <div style={matches?{width:'80%',paddingLeft:"auto" , margin:"auto"}:{width:'40%'}}>
+                    <img style={{marginLeft:"1rem" , marginTop:"1rem"}} width="100%" src={`http://billiardsports.in/${continent.logo}`}/>
                 </div>
 
             </div>

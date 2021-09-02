@@ -18,7 +18,9 @@ function MemberContinent() {
     return (
         <>
         <Header active="aboutus"/>
-        <div style={{display:"flex" , flexWrap:"wrap" , justifyContent:"center"  ,width:"100%" , height:"auto" , padding:"2rem 2rem"}}>
+        <div style={{maxWidth:"1400px"  , margin:"auto"}}>
+
+        <div style={{display:"flex" ,flexWrap:"wrap" ,justifyContent:"center", textAlign:"center"  , padding:"4rem" }}>
 
             {
                 country&&country.map((data  , index)=>
@@ -30,6 +32,7 @@ function MemberContinent() {
             
         </div>
 
+        </div>
         </>
     );
 }

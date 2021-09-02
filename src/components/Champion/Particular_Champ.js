@@ -20,7 +20,7 @@ const Particular_rules = (props) => {
       };
     useState(()=>
     {
-        axios.get(`http://billiardsports.in/api/rule/?id=${id}`)
+        axios.get(`http://billiardsports.in/api/champs/?id=${id}`)
         .then((res)=>setData(res.data.data))
         .catch((e)=>console.log(e))
         
@@ -60,6 +60,7 @@ const Particular_rules = (props) => {
 
 
         </div>
+        <br></br>
         </div>
     );
         }

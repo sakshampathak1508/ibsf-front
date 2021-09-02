@@ -5,7 +5,8 @@
     border : 1px solid #ebebeb;
     outline: 0;
     transition: all 0.5s linear;
-    margin-right: 2rem;
+    margin-right: auto;
+    margin-left: auto;
     /* min-height: 350px; */
     margin-bottom: 2rem;
     cursor: pointer;
@@ -34,7 +35,7 @@
 
 .rules_champ_card_body:hover
 {
-    border: 1px solid rgba(0, 0, 0, 0.726);
+    border: 1px solid #0da1ff;
 
     transition: all 0.5s linear;
 }

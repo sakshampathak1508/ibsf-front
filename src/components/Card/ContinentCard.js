@@ -12,6 +12,8 @@ import { useHistory } from 'react-router-dom';
 const useStyles = makeStyles({
   root: {
     maxWidth: "30rem",
+    // width:"100%" ,
+    marginLeft:"1rem",
     marginRight:"1rem", 
     marginBottom:"2rem"
   },
@@ -27,7 +29,7 @@ export default function ContinentCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} onClick={()=>history.push(`/member_countries/${props.id}`)}>
+    <Card className={classes.root} onClick={()=>history.push(`/member_countries/${props.id}/${props.slug}`)}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -36,7 +38,7 @@ export default function ContinentCard(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h4" component="h2" style={{padding:"0"}}>
-            IBSF
+            {props.short_form}
           </Typography>
           <Typography variant="body2"variant="h5" component="h2" style={{fontSize:"1.5rem"}}>
            {props.name}

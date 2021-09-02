@@ -37,12 +37,14 @@ function Footer(props) {
             <h2><strong className="first_letter_effect">C</strong>ategories</h2>
             <hr></hr>
             <ul className="quick_links">
-                <li><a>World Championships</a></li>
-                <li><a>World Under-21</a></li>
-                <li><a>World Under-18</a></li>
-                <li><a>World Team</a></li>
-                <li><a>World 6 Red</a></li>
+                <li><a>World Snooker</a></li>
                 <li><a>World Billiards</a></li>
+                <li><a>World 6Reds</a></li>
+                <li><a>World Team</a></li>
+                <li><a>World U21</a></li>
+                <li><a>World U17</a></li>
+                <li><a>World U16</a></li>
+                <li><a>World Cup</a></li>
             </ul>
             </div>
             <div>

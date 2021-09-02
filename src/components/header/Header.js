@@ -76,7 +76,7 @@ function Header({active}) {
       <div className="ui container" style={{backgroundColor: ""}}>
         <a className="" onClick={()=>history.push("/")} style={active == "home" ? { color: "#0da1ff"}:{}} >Home </a>
         <a className="" onClick={()=>history.push("/news/")} style={active == "news" ? { color: "#0da1ff"}:{}}>News</a>
-        <a className="" onClick={()=>history.push("/")}>Results</a>
+        <a className="" onClick={()=>history.push("/events")}  style={active == "events" ? { color: "#0da1ff"}:{}}>Events</a>
         <a className="" onClick={()=>history.push("/")}>Calendar</a>
 
         <div className="dropdown">
@@ -87,7 +87,7 @@ function Header({active}) {
           <div className="dropdown-content">
             <a className="" onClick={()=>history.push("/executive_member")}>IBSF Executives</a>
             <a className=""  onClick={()=>history.push("/member_countries")}>Member Countries</a>
-            <a className="" onClick={()=>history.push("/past_champion")}>Past Champions</a>
+            <a className="" onClick={()=>history.push("/champion")}>Past Champions</a>
             <a className="">Downloads</a>
             <a className="" onClick={()=>history.push("/rules")}>Rules of Snooker</a>
           </div>

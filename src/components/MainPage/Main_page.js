@@ -12,8 +12,13 @@ import image2 from '../../assets/example3.jpg'
 import Current_Score from '../Card/Current_Score';
 import Footer from '../Footer/Footer';
 import Federation from '../Card/Federation';
-
-
+import Middle_widget_Heading from './widgets/Middle_widget_Heading';
+import Caroufredsel_federation from '../Carousel/carousel_federation';
+import WorldChampion from './widgets/WorldChampion';
+import Twitter from './widgets/Twitter';
+import {IoIosArrowForward , IoLogoTwitter} from 'react-icons/io'
+import {BiWorld, BiCalendarEvent} from 'react-icons/bi'
+import LatestEvents from './widgets/LatestEvents';
 
 
 
@@ -27,15 +32,15 @@ const Main_page = () => {
 
   useEffect(()=>
   {
-    if(latestnews.length==0)
+    
   axios.get("http://billiardsports.in/api/news/latest/")
           .then((response) => setlatestnews(response.data.data))
 
-          if(sponsor.length==0)
+        
           axios.get("http://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
 
-        if(eventFront.length==0)
+        
         axios.get("http://billiardsports.in/api/event/front/")
         .then((response)=>seteventFront(response.data.data))
 
@@ -63,16 +68,8 @@ const Main_page = () => {
 
           <div style={{width:"100%"  , backgroundColor: "rgba(0, 0, 0, 0.9)"}}>
 
-        <div className="headlines_federations" style={{display:"flex" , flexWrap:"wrap" ,flexDirection:"row"}}>
-
-              <Federation id='1' image={"http://www.ibsf.info/images/banners/african-logo.png"}/>
-              <Federation id='2' image={"http://www.ibsf.info/images/banners/Asia.jpg"}/>
-              <Federation id='3' image={"http://www.ibsf.info/images/banners/EBSA.jpg"}/>
-              <Federation id='4' image={"http://www.ibsf.info/images/banners/OBSF-LOGO.png"}/>
-              <Federation id='5' image={"http://www.ibsf.info/images/banners/pabsa-logo-200x200.jpg"}/>
-
-        </div>
-
+          <Caroufredsel_federation/>
+          <br></br>
           {
                   eventFront && eventFront.map((data ,i)=>
                   {
@@ -109,19 +106,38 @@ const Main_page = () => {
                   )})
             }
 
-      
+            
         </div>
         </div>
 
 
       </div>
+      <div className="middle_widgets">
+            <div className="current_champion">
+              <Middle_widget_Heading icon={BiWorld} link="champion" text="World Champion"/>
+              <WorldChampion/>
 
+            </div>
+
+            <div className="tweeter_field">
+            <Middle_widget_Heading icon={IoLogoTwitter} text="Tweets"/>
+            <Twitter/>
+
+            </div>
+
+            <div className="event_name">
+            <Middle_widget_Heading icon={BiCalendarEvent} link="events" text="Latest Events"/>
+            <LatestEvents/>
+
+            </div>
+
+      </div>
       <br></br>
       <br></br>
 
-    <div className="news_section" style={{display:"flex" , flexDirection:"row" , justifyContent:"center" , flexWrap:"wrap"}}>
+    <div className="news_section" style={{display:"flex" , margin:"0 3rem" , flexDirection:"row" , justifyContent:"center" , flexWrap:"wrap"}}>
   
-    {latestnews&&latestnews.slice(0 , 4).map((e , index)=>
+    {latestnews&&latestnews.slice(0 , 3).map((e , index)=>
     (
   
         <Card key={index} data={e} />

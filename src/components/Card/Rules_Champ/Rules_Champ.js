@@ -20,7 +20,7 @@ function Rules_Champ(props) {
             <h4>{props.name}</h4>
             {/* <hr></hr> */}
             <p style={{lineHeight:"2rem" , marginBottom:"0rem",whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis"}} >
-            {props.caption}174 (Billiards); 123 (Snooker)
+            {props.caption}
             </p>
             </div>
         </div>

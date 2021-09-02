@@ -20,10 +20,11 @@ import axios from 'axios';
 
 
 const NewsPage=({match})=> {
-    const shareUrl = 'http://github.com';
-    const [newsData , setNewsData] =useState("");
+    const [newsData , setNewsData] =useState([]);
     // let id = new URLSearchParams(location.search).get("id");
     const {id } =useParams();
+    const shareUrl = `http://billiardsports.in/news/?id=${id}/${newsData.slug}`;
+    console.log(shareUrl)
     const history = useHistory()
 
 
@@ -53,7 +54,7 @@ const NewsPage=({match})=> {
     // if(date!=undefined)
 
 
-    if(newsData)
+    if(newsData.length!=0)
     return (
 
     <div style={{display:"flex" , flexDirection:"column"}}>
@@ -65,7 +66,7 @@ const NewsPage=({match})=> {
             fontFamily: "PT Serif,serif",fontWeight: '800'}}>{ newsData.title}</h2>
         
         
-        <p style={{ width:"fit-content" ,  marginLeft:"auto" , marginRight:"3rem" }}>{  newsData.timestamp && new Date(newsData.timestamp).toLocaleDateString("en", {weekday: "long",
+        <p style={{ width:"max-content"  ,  marginLeft:"auto" , marginRight:"3rem" }}>{  newsData.timestamp && new Date(newsData.timestamp).toLocaleDateString("en", {weekday: "long",
         year: "numeric",
         month: "2-digit",
         day: "numeric"})}</p>
@@ -128,7 +129,7 @@ const NewsPage=({match})=> {
                             newsData && newsData.tags_name.map((data , index)=>
                             (   
                                 <>
-                                <p onClick={()=>history.push(`/newsbytag/${data}`)} key={index} style={{cursor:"pointer" , width:"fit-content" , padding:"1rem" , color:"white" , fontWeight:"500"  , backgroundColor:"#b71c1c", marginRight:"0.5rem"}}>{data}</p>
+                                <p onClick={()=>history.push(`/newsbytag/${data}`)} key={index} style={{cursor:"pointer" , width:"fit-content" , padding:"1rem" , color:"white" , fontWeight:"500"  , backgroundColor:"#0da1ff", marginRight:"0.5rem"}}>{data}</p>
                                 </>
 
                             )

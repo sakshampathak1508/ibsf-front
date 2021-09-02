@@ -8,7 +8,7 @@ const Rules = (props) => {
     const [loading, setloading]=useState(true)
     useState(()=>
     {
-        axios.get(`http://billiardsports.in/api/all-rules/`)
+        axios.get(`http://billiardsports.in/api/allchamps/`)
         .then((res)=> {
         setData(res.data.data)
         setloading(false)
@@ -21,7 +21,7 @@ const Rules = (props) => {
         
         <Header active="aboutus"/>
         <div style={{maxWidth:"1400px" , padding:"2rem" , margin:"auto"}}>
-            <h1 style={{textAlign:"center" , fontWeight:"600" , marginBottom:"3rem"}}>IBSF Rules</h1>
+            <h1 style={{textAlign:"center" , fontWeight:"600" , marginBottom:"3rem"}}>CHAMPIONS</h1>
 
             <div style={{display:"grid" ,gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" ,justifyContent:"center"}}>
 
@@ -29,7 +29,7 @@ const Rules = (props) => {
                 data.map((data, index)=>
                 (
                     
-                    <Rules_Champ key={index} path="all-rules" data ={data}/>
+                    <Rules_Champ key={index} path="champion" data ={data}/>
                     
                 ))
             }
