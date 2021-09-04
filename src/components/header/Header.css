@@ -45,12 +45,12 @@ body {
 
   @-moz-document url-prefix() {
     .pre-header {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: #1f2226;
         opacity: 1;
     }
     .parent_topnav
     {
-      background-color: #222529;
+      background-color: rgba(33, 33, 33, 0.98);
       opacity: 1;
     }
     .topnav

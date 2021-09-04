@@ -10,10 +10,14 @@
     text-align: center; */
     width: 100%;
     height: auto;
-    
+    scrollbar-width: none;
     overflow: scroll;
     overflow-y: scroll;
     /* z-index: 1; */
+}
+.headlines::-webkit-scrollbar
+{
+    display: none;
 }
 
 .headlines h4
