@@ -128,11 +128,11 @@ option.value = i;
 
   }
 
-  console.log( data)
     return (
-
+      <>
+      <Header active="news"/>
       <div onScroll={handleScroll} style={{height:"100vh" , overflow:"scroll"}}className="news-gallery">
-        <Header active="news"/>
+        
         
 
         <div style={{maxWidth:"1400px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
@@ -192,6 +192,7 @@ option.value = i;
             </div>
 
         </div>
+        </>
     );
 }
 

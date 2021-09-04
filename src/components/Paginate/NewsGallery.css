@@ -1,7 +1,14 @@
 .news-gallery
 {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
     background-color: white;
     
+}
+.news-gallery::-webkit-scrollbar
+
+{
+    display: none;
 }
 .news-gallery h1
 {

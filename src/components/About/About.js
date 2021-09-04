@@ -19,7 +19,7 @@ function About() {
   } , [])
     return (
         <>
-         <Header/>
+         <Header active="aboutus"/>
         <div className="aboutus">
 
             

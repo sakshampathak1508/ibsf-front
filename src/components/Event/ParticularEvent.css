@@ -11,7 +11,7 @@
 .particulat_event .event_details
 {
     width: 100%;
-    background: rgba(25,25,25,.81);
+    background: rgba(25,25,25,.91);
     border: 5px solid rgb(13, 161, 255);
     border-width: 5px 0;
     display: flex;

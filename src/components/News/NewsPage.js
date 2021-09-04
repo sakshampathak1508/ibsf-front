@@ -173,8 +173,8 @@ const NewsPage=({match})=> {
     {
         return(
             <>
-            <Header/>
-            <Lottie options={defaultOptions} style={{marginTop:"2rem"}}
+            <Header active="news"/>
+            <Lottie options={defaultOptions} style={{marginTop:"2rem" , marginBottom:"7rem"}}
             height={400} width={350} />
             </>
         )

@@ -11,10 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+html{
+	scroll-behavior: smooth;
+}
 hr{
   /* margin-top: 25px; */
     /* margin-bottom: 25px !important; */
     border: 0 !important;
     height: 1px !important;
     background-image: linear-gradient( to right,rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0) );
+}
+@media print {
+  @page { margin: 2rem; }
+  .MainHeader , .home_footer
+  {
+      display: none;
+  }
 }

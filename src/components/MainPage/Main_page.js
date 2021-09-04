@@ -32,7 +32,6 @@ const Main_page = () => {
 
   useEffect(()=>
   {
-    
   axios.get("http://billiardsports.in/api/news/latest/")
           .then((response) => setlatestnews(response.data.data))
 
@@ -152,8 +151,8 @@ const Main_page = () => {
     <br></br>
 
     <Caroufredsel_wrapper data = {sponsor}/>
-      
-    <Footer/>
+    {/* <Footer/> */}
+
       </>
   );
 };

@@ -9,7 +9,6 @@ import {BiTimeFive, BiWorld} from 'react-icons/bi'
 import {AiOutlineLink} from 'react-icons/ai'
 import {FaPhotoVideo} from "react-icons/fa"
 import Header from '../header/Header';
-import Footer from '../Footer/Footer'
 
 const ParticularEvent = (props) => {
     const [data , setdata] = useState([]);
@@ -121,8 +120,6 @@ const ParticularEvent = (props) => {
 
                 </div>
             </section>
-
-            <Footer/>
         </div>
     );
 
@@ -130,8 +127,8 @@ const ParticularEvent = (props) => {
     {
         return(
             <>
-            <Header/>
-            <Lottie options={defaultOptions} style={{marginTop:"2rem"}}
+            <Header active="events"/>
+            <Lottie options={defaultOptions} style={{marginTop:"2rem" , marginBottom:"7rem"}}
             height={400} width={350} />
             </>
         )

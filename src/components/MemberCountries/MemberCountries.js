@@ -12,7 +12,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles';
+import {withStyles , makeStyles } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import animationData from "../../assets/search_file.json"
 import CallIcon from '@material-ui/icons/Call';
@@ -30,6 +30,14 @@ const useStyles = makeStyles({
         fontSize:"1.4rem" ,
     }
 });
+
+const StyledTableRow = withStyles((theme) => ({
+    root: {
+      '&:nth-of-type(odd)': {
+        backgroundColor: theme.palette.action.hover,
+      }
+    },
+  }))(TableRow);
 
 
 function MemberCountries() {
@@ -95,52 +103,52 @@ function MemberCountries() {
         <TableHead>
         {
               continent.president&&
-          <TableRow>
+          <StyledTableRow>
             <TableCell className={classes.key} >President</TableCell>
             <TableCell className={classes.value}  align="right">{continent.president}</TableCell>
-          </TableRow>
+          </StyledTableRow>
           }
           {continent.vice_president&&
-        <TableRow>
+        <StyledTableRow>
             <TableCell className={classes.key}>Vice President</TableCell>
             <TableCell className={classes.value} align="right">{continent.vice_president}</TableCell>
-        </TableRow>
+        </StyledTableRow>
         }
         {continent.secretary&&
-        <TableRow>
+        <StyledTableRow>
             <TableCell className={classes.key}>Secretary</TableCell>
             <TableCell className={classes.value} align="right">{continent.secretary}</TableCell>
-        </TableRow>
+        </StyledTableRow>
         }
         {continent.treasurer&&
-        <TableRow>
+        <StyledTableRow>
             <TableCell className={classes.key}>Treasurer</TableCell>
             <TableCell className={classes.value} align="right">{continent.treasurer}</TableCell>
-        </TableRow>
+        </StyledTableRow>
         }
         {continent.exe1&&
-        <TableRow>
+        <StyledTableRow>
             <TableCell className={classes.key}>Executive</TableCell>
             <TableCell className={classes.value} align="right">{continent.exe1}</TableCell>
-        </TableRow>
+        </StyledTableRow>
         }
         {continent.exe2&&
-        <TableRow>
+        <StyledTableRow>
             <TableCell className={classes.key}>Executive</TableCell>
             <TableCell className={classes.value} align="right">{continent.exe2}</TableCell>
-        </TableRow>
+        </StyledTableRow>
         }
         {continent.exe3&&
-        <TableRow>
+        <StyledTableRow>
             <TableCell className={classes.key}>Executive</TableCell>
             <TableCell className={classes.value} align="right">{continent.exe3}</TableCell>
-        </TableRow>
+        </StyledTableRow>
         }
         {continent.exe4&&
-        <TableRow>
+        <StyledTableRow>
             <TableCell className={classes.key}>Executive</TableCell>
             <TableCell className={classes.value} align="right">{continent.exe4}</TableCell>
-        </TableRow>
+        </StyledTableRow>
         }
         </TableHead>
         </Table>
@@ -179,7 +187,7 @@ function MemberCountries() {
         {
             return(<>
             <Header/>
-            <Lottie options={defaultOptions} style={{marginTop:"2rem"}}
+            <Lottie options={defaultOptions} style={{marginTop:"2rem" ,marginBottom:"7rem"}}
             height={400} width={350} />
             </>
             )

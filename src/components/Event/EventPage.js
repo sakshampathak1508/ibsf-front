@@ -44,6 +44,7 @@ const EventPage = props => {
     const [data , setdata] = useState([]);
     const history = useHistory()
     const classes = useStyles();
+    const [loading , setloading] = useState(true)
     const handleChange = (event) => {
         setState(event.target.value);
       };
@@ -110,9 +111,12 @@ const EventPage = props => {
         } ,[]);
 
         useEffect(() => {
-            
+            setdata([])
+            setloading(true)
             axios.get(`http://billiardsports.in/api/event/year/?year=${state}`)
-            .then((res)=> setdata(res.data.data))
+            .then((res)=> 
+            {setdata(res.data.data)
+            setloading(false)})
             .catch((e)=> console.log(e))
 
         },[state])
@@ -176,8 +180,12 @@ const EventPage = props => {
         </TableBody>
       </Table>
     </TableContainer></>
-    :<div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <CircularProgress/> </div>
-
+    :<>
+    {
+      loading?<div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <p><CircularProgress/></p> </div>:
+      <div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <h4>Nothing Found...</h4> </div>
+    }
+    </>
           }
 
 </div>
@@ -186,6 +194,7 @@ const EventPage = props => {
           
         </div>
     );
+    
 };
 
 

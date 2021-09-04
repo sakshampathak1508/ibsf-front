@@ -35,7 +35,7 @@
 
 .rules_champ_card_body:hover
 {
-    border: 1px solid #0da1ff;
+    border: 1px solid black;
 
     transition: all 0.5s linear;
 }

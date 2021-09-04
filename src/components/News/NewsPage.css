@@ -34,7 +34,7 @@
 }
 @media print {
     @page { margin: 2rem; }
-    .MainHeader
+    .MainHeader , .home_footer
     {
         display: none;
     }
