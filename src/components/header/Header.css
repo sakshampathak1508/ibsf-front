@@ -15,16 +15,6 @@ body {
     box-sizing: border-box;
   }
 
-  .MainHeader
-  {
-      /* position: relative; */
-      position: sticky;
-      top: -1px;
-      z-index: 100;
-      width: 100%;
-      backdrop-filter: blur(10px);
-  
-  }
   
   .pre-header {
     padding: 3rem;
@@ -35,7 +25,16 @@ body {
 
     /* position: fixed; */
   }
-  
+  .parent_topnav
+  {
+    position: sticky;
+      top: 0px;
+      z-index: 100;
+      width: 100%;
+      backdrop-filter: blur(10px);
+
+  }
+ 
   .topnav {
     /* overflow: hidden; */
     background-color: rgba(0, 0, 0, 0.8);
@@ -43,6 +42,22 @@ body {
     
     /* height: 5vh !important; */
   }
+
+  @-moz-document url-prefix() {
+    .pre-header {
+        background-color: rgba(0, 0, 0, 0.8);
+        opacity: 1;
+    }
+    .parent_topnav
+    {
+      background-color: #222529;
+      opacity: 1;
+    }
+    .topnav
+    {
+      background-color: rgba(0, 0, 0, 0);
+    }
+}
 
   #myTopnav a{
 

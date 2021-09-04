@@ -58,7 +58,7 @@ function Header({active}) {
 
     return (
       
-      <header className = "MainHeader">
+      <>
       <div className="pre-header">
       <div className="ui container" style={{}}>
         <img
@@ -141,7 +141,7 @@ function Header({active}) {
       
     </div>
     </div>
-      </header>
+      </>
       
     );
 }

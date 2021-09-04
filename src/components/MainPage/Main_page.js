@@ -117,18 +117,17 @@ const Main_page = () => {
               <WorldChampion/>
 
             </div>
+            <div className="event_name">
+            <Middle_widget_Heading icon={BiCalendarEvent} link="events" text="Latest Events"/>
+            <LatestEvents/>
 
+            </div>
             <div className="tweeter_field">
             <Middle_widget_Heading icon={IoLogoTwitter} text="Tweets"/>
             <Twitter/>
 
             </div>
 
-            <div className="event_name">
-            <Middle_widget_Heading icon={BiCalendarEvent} link="events" text="Latest Events"/>
-            <LatestEvents/>
-
-            </div>
 
       </div>
       <br></br>
