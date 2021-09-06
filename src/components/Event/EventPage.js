@@ -147,9 +147,9 @@ const EventPage = props => {
 <option className="input-label-option"   value="all" >All</option>
     </Select>
   </FormControl>
-
+      <br></br>
   
-  <p>Events in the <span style={{color:"#0da1ff"}}>{state}</span> year are -</p>
+  {data.length!=0 && <p>Events in the <span style={{color:"#0da1ff"}}>{state}</span> year are -</p>}
   <br></br>
 
   {

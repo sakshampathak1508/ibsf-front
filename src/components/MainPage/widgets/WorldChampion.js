@@ -87,8 +87,8 @@ export default function WorldChampion() {
         <TableBody>
           {data.map((row) => (
             <StyledTableRow key={row.name}>
-              <StyledTableCell onClick={()=>history.push(`/champion/${row.id}`)} className={classes.champion} align="left">
-                {row.name}   <img src={`http://billiardsports.in/${row.flag}`} height='17rem' alt="flag"/>
+              <StyledTableCell  className={classes.champion} align="left">
+                {row.name}   <img src={`http://billiardsports.in/${row.flag}`} alt={row.flag} height='17rem' alt="flag"/>
               </StyledTableCell>
               <StyledTableCell align="left">{row.event_name}</StyledTableCell>
               {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}

@@ -20,6 +20,8 @@ import NewsbyTag from './components/NewsByTag/NewsbyTag';
 import EventPage from './components/Event/EventPage';
 import ParticularEvent from './components/Event/ParticularEvent';
 import Footer from './components/Footer/Footer';
+import Contact from './components/Contact/Contact';
+import Download from './components/Download/Download'
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
   
 
       <Route  path="/champion/:id" component={Particular_Champ}/>
+      <Route path='/contact' component={Contact}/>
+      <Route path='/download' component={Download}/>
     
       </Switch>
       <Footer/>

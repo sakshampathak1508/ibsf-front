@@ -88,13 +88,13 @@ function Header({active}) {
             <a className="" onClick={()=>history.push("/executive_member")}>IBSF Executives</a>
             <a className=""  onClick={()=>history.push("/member_countries")}>Member Countries</a>
             <a className="" onClick={()=>history.push("/champion")}>Past Champions</a>
-            <a className="">Downloads</a>
+            <a className="" onClick={()=>history.push("/download")}>Downloads</a>
             <a className="" onClick={()=>history.push("/rules")}>Rules of Snooker</a>
           </div>
         </div>
 
         <a className="#home">Women Ranking</a>
-        <a className="#home">Coaching</a>
+        <a className="">Coaching</a>
 
 
         <div className="dropdown">
@@ -107,7 +107,7 @@ function Header({active}) {
           </div>
         </div>
         
-        <a href="#about">Contacts</a>
+        <a className=""  onClick={()=>history.push("/contact")}  style={active == "contactus" ? { color: "#0da1ff"}:{}}>Contacts</a>
         
       
         <div className="search-container">

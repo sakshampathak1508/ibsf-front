@@ -27,7 +27,7 @@ function ControlledCarousel() {
 
   
     return (
-      <Carousel className="mainPage_carousel" interval={30000000}>
+      <Carousel className="mainPage_carousel" interval={3000}>
 
       {
       
@@ -57,21 +57,6 @@ function ControlledCarousel() {
         ))
       
     }
-
-<Carousel.Item style={{height:"100%"}}>
-        <img
-          loading="lazy"
-          className="d-block w-100"
-          src={image2}
-          style = {{ height:"100%"}}
-          alt="First slide"
-        />
-        <Carousel.Caption className="carousel_caption">
-          <span></span>
-          <h3>Title is one of the worst of my Life</h3>
-      
-        </Carousel.Caption>
-      </Carousel.Item>
 
     </Carousel>
     );

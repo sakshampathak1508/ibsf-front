@@ -7,8 +7,17 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import "./Footer.css"
 function Footer(props) {
     return (
-        <footer className="home_footer" >
+        <footer className="all_footer">
+            
+            <div className="doping_image">
+                <img src="http://ibsf.info/images/banners/wada_header.png" width="500vw"/>
+            </div>
+
+    
+        <div className="home_footer" >
+        
             <div>
+                
 
                 <h2><strong className="first_letter_effect">R</strong>egional Links</h2>
                 <hr></hr>
@@ -42,6 +51,7 @@ function Footer(props) {
                 <li><a>World 6Reds</a></li>
                 <li><a>World Team</a></li>
                 <li><a>World U21</a></li>
+                <li><a>World U18</a></li>
                 <li><a>World U17</a></li>
                 <li><a>World U16</a></li>
                 <li><a>World Cup</a></li>
@@ -56,10 +66,8 @@ function Footer(props) {
             <InstagramIcon/>
             <TwitterIcon/>
             </div>
-            
-            
             </div>
-
+        </div>
         </footer>
     );
 }

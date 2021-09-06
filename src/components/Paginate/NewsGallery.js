@@ -131,7 +131,7 @@ option.value = i;
     return (
       <>
       <Header active="news"/>
-      <div onScroll={handleScroll} style={{height:"100vh" , overflow:"scroll"}}className="news-gallery">
+      <div onScroll={handleScroll} style={data.length!=0 ? {height:"100vh" ,overflow:"scroll"}:{height:"auto"}}className="news-gallery">
         
         
 
@@ -158,9 +158,9 @@ option.value = i;
       </FormControl>
 
       {
-        state!=='all'?
+        data.length!=0 && (state!=='all'?
       <p>News in the <span style={{color:"#0da1ff"}}>{state}</span> year are -</p>
-      :<p>Showing <span style={{color:"#0da1ff"}}>{state}</span> the News.</p>
+      :<p>Showing <span style={{color:"#0da1ff"}}>{state}</span> the News.</p>)
       }
 
 
@@ -182,6 +182,10 @@ option.value = i;
           ))
 
           
+        }
+
+        {
+          data.length==0 && loading==false && <div style={{margin:"auto"}}><h3>Nothing Found...</h3></div>
         }
         </div>
 

@@ -11,7 +11,7 @@ function About() {
     useEffect(()=>
   {
   axios.get("http://billiardsports.in/api/about/")
-          .then((response) => setData(response.data.data.content))
+          .then((response) => setData(response.data.data.content_about))
 
           console.log(data)
       
