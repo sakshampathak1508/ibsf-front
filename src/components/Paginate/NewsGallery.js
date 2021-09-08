@@ -137,6 +137,8 @@ option.value = i;
 
         <div style={{maxWidth:"1400px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
     
+      <div style={{display:'flex'}}>
+
         <h1> IBSF News</h1>
 <div className="news-gallery-search_bar">
 <FormControl className="news_gallery" variant="outlined" className={classes.formControl} >
@@ -157,17 +159,15 @@ option.value = i;
         </Select>
       </FormControl>
 
-      {
-        data.length!=0 && (state!=='all'?
-      <p>News in the <span style={{color:"#0da1ff"}}>{state}</span> year are -</p>
-      :<p>Showing <span style={{color:"#0da1ff"}}>{state}</span> the News.</p>)
-      }
+    
 
 
 
 </div>
-
-          <div style={{height:"auto",display:"grid" ,gridTemplateColumns: "repeat(auto-fit, minmax(30rem, 1fr))" ,justifyContent:"center",marginTop:"2rem" }}>
+</div>
+<br></br>
+<br></br>
+          <div style={{height:"auto",display:"flex", flexWrap:"wrap" ,justifyContent:"start",marginTop:"2rem" }}>
 
         
           
@@ -177,7 +177,6 @@ option.value = i;
           (
             <>
               <Card key={index} data={val}/>
-              {/* <Card key={index} data={val}/> */}
               </>
           ))
 

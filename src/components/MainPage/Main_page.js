@@ -67,7 +67,7 @@ const Main_page = () => {
 
           <div style={{width:"100%"  , backgroundColor: "rgba(0, 0, 0, 0.9)"}}>
 
-          <Caroufredsel_federation/>
+        
           <br></br>
           {
                   eventFront && eventFront.map((data ,i)=>
@@ -79,7 +79,7 @@ const Main_page = () => {
                     
                     <>
                     <div className="headlines_title">
-                    <h2>{data.event_name}</h2>
+                    <h2><span style={{color:'#0da1ff'}}>{data.event_name[0]}</span>{data.event_name.substr(1)}</h2>
 
                     </div>
                     
@@ -89,12 +89,12 @@ const Main_page = () => {
                           {
                             (
                               <>
-                            <Current_Score title={data.name1} />
-                            <Current_Score title = {data.name2}/>
-                            <Current_Score title = {data.name3}/>
-                            <Current_Score title = {data.name4}/>
-                            <Current_Score title = {data.name5}/>
-                            <Current_Score title = {data.name6}/>
+                            <Current_Score title={data.name1} url={data.url1} />
+                            <Current_Score title = {data.name2} url={data.url2}/>
+                            <Current_Score title = {data.name3} url={data.url3}/>
+                            <Current_Score title = {data.name4} url={data.url4}/>
+                            <Current_Score title = {data.name5} url={data.url5}/>
+                            <Current_Score title = {data.name6} url={data.url6}/>
                               </>
                             )
                           }
@@ -130,12 +130,10 @@ const Main_page = () => {
 
 
       </div>
-      <br></br>
-      <br></br>
 
-    <div className="news_section" style={{display:"flex" , margin:"0 3rem" , flexDirection:"row" , justifyContent:"center" , flexWrap:"wrap"}}>
+    <div className="news_section" style={{display:"flex" ,flexDirection:"row", justifyContent:"center" ,backgroundColor: "rgba(0, 0, 0, 0.8)" ,paddingTop:"2rem"}}>
   
-    {latestnews&&latestnews.slice(0 , 3).map((e , index)=>
+    {latestnews&&latestnews.slice(0 , 4).map((e , index)=>
     (
   
         <Card key={index} data={e} />
@@ -143,13 +141,15 @@ const Main_page = () => {
     }
 
 
-     
     </div>
-   
 
     <br></br>
 
+
     <Caroufredsel_wrapper data = {sponsor}/>
+    <br></br>
+
+    <Caroufredsel_federation/>
     {/* <Footer/> */}
 
       </>

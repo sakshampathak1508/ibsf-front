@@ -13,10 +13,11 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import './EventPage.css'
+import '../Paginate/NewsGallery.css'
 import Card from '../Card/Card';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { useHistory } from 'react-router';
+import './EventPage.css'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -126,8 +127,8 @@ const EventPage = props => {
         <div>
             {/* <h1>Event Page</h1> */}
             <Header active="events"/>
-            <div className="news-gallery" style={{maxWidth:"1400px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
-    
+            <div className="news-gallery" style={{maxWidth:"900px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
+            <div style={{display:'flex'}}>
     <h1> IBSF Events</h1>
 <div className="news-gallery-search_bar">
 <FormControl className="news_gallery" variant="outlined" className={classes.formControl} >
@@ -148,20 +149,22 @@ const EventPage = props => {
     </Select>
   </FormControl>
       <br></br>
-  
-  {data.length!=0 && <p>Events in the <span style={{color:"#0da1ff"}}>{state}</span> year are -</p>}
+  </div>
+  </div>
   <br></br>
 
   {
   data.length!=0 ?
-  <>
-  <TableContainer style={{borderRadius:"0" , maxWidth:"75rem" , margin:"auto"}} component={Paper}>
+  <div style={{height:"auto",display:"flex", flexWrap:"wrap" ,justifyContent:"start",marginTop:"2rem" }}>
+  <TableContainer className="table_event" style={{borderRadius:"0" , maxWidth:"85rem"}} component={Paper}>
       <Table className={classes.table}  stickyHeader aria-label="sticky table">
         <TableHead>
             <TableRow>
             <StyledTableCell align="center" style={{fontSize:"1.2rem"  ,width:"2rem"}}>S.No</StyledTableCell>
-            <StyledTableCell align="center" style={{fontSize:"1.2rem" , width:"20rem"}}>Date</StyledTableCell>
-            <StyledTableCell align="left"  style={{fontSize:"1.2rem" , maxWidth:"10rem"}} >Event</StyledTableCell>
+            <StyledTableCell align="center" style={{fontSize:"1.2rem" , width:"15rem"}}>Start Date</StyledTableCell>
+            <StyledTableCell align="center"  style={{fontSize:"1.2rem" , width:"15rem"}} >End Date</StyledTableCell>
+            <StyledTableCell align="left"  style={{fontSize:"1.2rem" , width:"15rem"}} >Location</StyledTableCell>
+            <StyledTableCell align="left"  style={{fontSize:"1.2rem" , minWidth:"20rem"}} >Event</StyledTableCell>
             </TableRow>
         </TableHead>
         <TableBody>
@@ -173,13 +176,23 @@ const EventPage = props => {
               <StyledTableCell align="center">
                 {row.start_date}
               </StyledTableCell>
+
+              <StyledTableCell align="center">
+                {row.end_date}
+              </StyledTableCell>
+
+              <StyledTableCell className="hoverable_title" align="left" onClick={()=>history.push(`/events/${row.id}/${props.slug}`)}>{row.location}</StyledTableCell>
+              {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}
+  
+
               <StyledTableCell className="hoverable_title" align="left" onClick={()=>history.push(`/events/${row.id}/${props.slug}`)}>{row.name}</StyledTableCell>
               {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}
             </StyledTableRow>
           ))}
         </TableBody>
       </Table>
-    </TableContainer></>
+    </TableContainer>
+    </div>
     :<>
     {
       loading?<div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <p><CircularProgress/></p> </div>:
@@ -192,7 +205,6 @@ const EventPage = props => {
         </div>
 
           
-        </div>
     );
     
 };

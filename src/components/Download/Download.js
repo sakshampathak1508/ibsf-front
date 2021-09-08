@@ -43,7 +43,7 @@ function About() {
                     downloads.map((row,  index)=>
                     
                         (
-                        <a style={{fontSize:"1.5rem"}} href={`http://localhost:3000/${row.file}`} download target="_blank"> <h4> {row.name} <BsDownload/></h4></a>
+                        <a style={{fontSize:"1.5rem"}} href={`http://billiardsports.in${row.file}`} download target="_blank"> <h4> {row.name} <BsDownload/></h4></a>
                         )
                     
                     )

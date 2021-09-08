@@ -76,19 +76,14 @@ export default function WorldChampion() {
   } , [])
 
   return (
-    <TableContainer style={{borderRadius:"0"}} component={Paper}>
+    <TableContainer style={{borderRadius:"5px"}} component={Paper}>
       <Table className={classes.table}  stickyHeader aria-label="sticky table">
-        <TableHead>
-            <TableRow>
-            <StyledTableCell align="left" style={{fontSize:"1.rem"}}>Name</StyledTableCell>
-            <StyledTableCell align="left">Event</StyledTableCell>
-            </TableRow>
-        </TableHead>
+      
         <TableBody>
           {data.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell  className={classes.champion} align="left">
-                {row.name}   <img src={`http://billiardsports.in/${row.flag}`} alt={row.flag} height='17rem' alt="flag"/>
+              <img src={`http://billiardsports.in/${row.flag}`} alt={row.flag} height='17rem' alt="flag"/> {row.name}
               </StyledTableCell>
               <StyledTableCell align="left">{row.event_name}</StyledTableCell>
               {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}

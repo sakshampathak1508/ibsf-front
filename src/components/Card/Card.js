@@ -19,7 +19,7 @@ function Card(props) {
             {/* <hr></hr> */}
             <p style={{marginBottom:"0rem", overflow:"hidden", textOverflow:"ellipsis"}} >
            {props.cf}
-           {props.cf.length === 100 && <span>....</span>}
+           {props.cf.length === 60 && <span>....</span>}
             </p>
             </div>
         </div>

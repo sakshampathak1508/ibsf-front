@@ -5,7 +5,9 @@ import WhatsappIcon from '@material-ui/icons/WhatsApp';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import "./Footer.css"
+import { useHistory } from 'react-router';
 function Footer(props) {
+    const history = useHistory();
     return (
         <footer className="all_footer">
             
@@ -46,15 +48,15 @@ function Footer(props) {
             <h2><strong className="first_letter_effect">C</strong>ategories</h2>
             <hr></hr>
             <ul className="quick_links">
-                <li><a>World Snooker</a></li>
-                <li><a>World Billiards</a></li>
-                <li><a>World 6Reds</a></li>
-                <li><a>World Team</a></li>
-                <li><a>World U21</a></li>
-                <li><a>World U18</a></li>
-                <li><a>World U17</a></li>
-                <li><a>World U16</a></li>
-                <li><a>World Cup</a></li>
+                <li onClick={()=>history.push('/category/1')}><a>World Snooker</a></li>
+                <li onClick={()=>history.push('/category/2')}><a>World Billiards</a></li>
+                <li onClick={()=>history.push('/category/3')}><a>World 6Reds</a></li>
+                <li onClick={()=>history.push('/category/4')}><a>World Team</a></li>
+                <li onClick={()=>history.push('/category/5')}><a>World U21</a></li>
+                <li onClick={()=>history.push('/category/6')}><a>World U18</a></li>
+                <li onClick={()=>history.push('/category/7')}><a>World U17</a></li>
+                <li onClick={()=>history.push('/category/8')}><a>World U16</a></li>
+                <li onClick={()=>history.push('/category/9')}><a>World Cup</a></li>
             </ul>
             </div>
             <div>

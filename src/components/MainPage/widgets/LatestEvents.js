@@ -63,7 +63,7 @@ export default function LatestEvents() {
   } , [])
 
   return (
-    <TableContainer style={{borderRadius:"0"}} component={Paper}>
+    <TableContainer style={{borderRadius:"5px"}} component={Paper}>
       <Table className={classes.table} aria-label="customized table">
         
         <TableBody>

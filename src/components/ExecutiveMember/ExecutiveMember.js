@@ -20,7 +20,10 @@ function ExecutiveMember(props) {
 
             {
                 data.map((data , index)=>(
+                    <>
                 <ExecutiveCard data={data}/>
+                <ExecutiveCard data={data}/>
+                </>
                 ))
             }
         </div>

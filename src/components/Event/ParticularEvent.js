@@ -9,10 +9,15 @@ import {BiTimeFive, BiWorld} from 'react-icons/bi'
 import {AiOutlineLink} from 'react-icons/ai'
 import {FaPhotoVideo} from "react-icons/fa"
 import Header from '../header/Header';
+import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
 
 const ParticularEvent = (props) => {
     const [data , setdata] = useState([]);
     const {id} =useParams()
+    
+
+ const [sponsor , setSponsor] = useState([])
+
 
     const defaultOptions = {
         loop: true,
@@ -28,6 +33,12 @@ const ParticularEvent = (props) => {
         axios.get(`http://billiardsports.in/api/event/?id=${id}`)
         .then((res)=> setdata(res.data.data))
         .catch((e)=> console.log(e))
+
+        
+        axios.get("http://billiardsports.in/api/sponsers/")
+        .then((response) => setSponsor(response.data.data))
+
+
 
     }, [])
         
@@ -67,7 +78,7 @@ const ParticularEvent = (props) => {
                     
                     <div>
                         
-                    <h4>FINISH DATE
+                    <h4>END DATE
                         </h4>
 
                         <p> <span><BiTimeFive className="event_icon"/></span>{data.end_date}</p>
@@ -75,38 +86,63 @@ const ParticularEvent = (props) => {
                     </div>
 
 
-                    <div>
-                    <h4>RESULTS
+                
+                        {
+                        data.results!=null?
+                        <div>
+                    <h4 >RESULTS <AiOutlineLink />
                         </h4>
 
-                        <p> <span><AiOutlineLink className="event_icon"/></span>Download </p>
-                    </div>
-                        
-                        
-                    <div>
-                    <h4>PHOTOGRAPHS
-                        </h4>
+                        <p> </p>
+                        </div>
+                        :
+                        <></>
+                        }
+                
 
-                        <p> <span><FaPhotoVideo className="event_icon"/></span>Download </p>
 
-                    </div>
+                        
                     
-                    <div>
-                    <h4>VIDEO
-                        </h4>
-
-                        <p> <span><FaPhotoVideo className="event_icon"/></span>Download </p>
-
-                    </div>
-                    
-                    <div>
+                        {
                         
-                    <h4>LIVE
+                        data.photographs!=null?
+                        <div>
+                    <h4>PHOTOGRAPHS  <AiOutlineLink />
                         </h4>
 
-                        <p> <span><FaPhotoVideo className="event_icon"/></span>Download </p>
+                        <p></p>
+                        </div>
+                        :
+                        <></>
+                        
+                        } 
+                
+                    {
+                        data.photographs!=null?
+                        <div>
+                    <h4>VIDEO  <AiOutlineLink />
+                        </h4>
 
-                    </div>
+                        <p>  </p>
+                        </div>
+                        :
+                        <></>
+                    }
+                    
+                
+                    {
+                        data.photographs!=null?
+                        <div>
+                        
+                    <h4>LIVE  <AiOutlineLink />
+                        </h4>
+
+                        <p></p>
+                        </div>
+                        :
+                        <></>
+                    }
+                    
 
 
             </section>
@@ -120,6 +156,8 @@ const ParticularEvent = (props) => {
 
                 </div>
             </section>
+
+            <Caroufredsel_wrapper data={sponsor}/>
         </div>
     );
 

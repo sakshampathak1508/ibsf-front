@@ -12,6 +12,7 @@ import { useHistory } from 'react-router-dom';
 import {GoLocation , GoCreditCard , GoPerson} from 'react-icons/go'
 import {BsFillPersonFill} from 'react-icons/bs'
 import Header from '../header/Header'
+import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -71,11 +72,17 @@ const Contact = props => {
     const [data, setdata] = useState([])
     const history = useHistory()
     const classes = useStyles();
+    const [sponsor , setSponsor] = useState([])
     useEffect(()=>
     {
         axios.get('http://billiardsports.in/api/contact/')
         .then((res)=> setdata(res.data.data))
         .catch((e)=>console.log(e))
+
+
+        
+        axios.get("http://billiardsports.in/api/sponsers/")
+        .then((response) => setSponsor(response.data.data))
 
 
 
@@ -158,6 +165,8 @@ const Contact = props => {
         </TableBody>
       </Table>
     </TableContainer>
+            <br></br>
+    <Caroufredsel_wrapper data={sponsor}/>
 
     </div>
 

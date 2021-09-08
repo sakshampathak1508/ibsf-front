@@ -8,6 +8,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css';
 
 import { useMediaQuery } from 'react-responsive'
+import Aos from 'aos';
 
 
 
@@ -24,9 +25,11 @@ const Caroufredsel_federation = (props) => {
     {
         AOS.init({
             // initialise with other settings
-            duration : 1000,
-            once:true
+            duration : 900,
+            once:true,
+            offset: 900
           });
+          Aos.refresh()
         const width = window.innerWidth;
 
         width>768? setslidesToShow(5):setslidesToShow(1)
@@ -37,12 +40,12 @@ const Caroufredsel_federation = (props) => {
     const handleMediaQueryChange = (matches) => {
         if(matches)
         setslidesToShow(1);
-      }
+    }
 
-      const handleMediaQueryChange1 = (matches) => {
+    const handleMediaQueryChange1 = (matches) => {
         if(matches)
         setslidesToShow(5);
-      }
+    }
 
     
 
@@ -74,11 +77,11 @@ const Caroufredsel_federation = (props) => {
 
 <Slider  {...setting}>
 
-                <div key={1} data-aos={"fade-up"} data-aos-offset="-10" className="slide_image" onClick={()=>history.push(`/member_countries/1`)} ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
-                <div key={2} data-aos={"fade-up"} data-aos-offset="-10" data-aos-delay="200" onClick={()=>history.push(`/member_countries/2`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
-                <div key={3} data-aos={"fade-up"} data-aos-offset="-10" data-aos-delay="300" onClick={()=>history.push(`/member_countries/3`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
-                <div key={4} data-aos={"fade-up"} data-aos-offset="-10" data-aos-delay="400" onClick={()=>history.push(`/member_countries/4`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
-                <div key={5} data-aos={"fade-up"} data-aos-offset="-10" data-aos-delay="500" onClick={()=>history.push(`/member_countries/5`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
+                <div key={1} data-aos={"fade-up"} className="slide_image" onClick={()=>history.push(`/member_countries/1`)} ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
+                <div key={2} data-aos={"fade-up"}  data-aos-delay="200" onClick={()=>history.push(`/member_countries/2`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
+                <div key={3} data-aos={"fade-up"}  data-aos-delay="300" onClick={()=>history.push(`/member_countries/3`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
+                <div key={4} data-aos={"fade-up"}  data-aos-delay="400" onClick={()=>history.push(`/member_countries/4`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
+                <div key={5} data-aos={"fade-up"}  data-aos-delay="500" onClick={()=>history.push(`/member_countries/5`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
 
             
 

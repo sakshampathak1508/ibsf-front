@@ -82,6 +82,9 @@
     cursor: pointer;
 
 }
+.home_footer .quick_links >li:hover{
+    color: rgb(13, 161, 255);
+}
 
 
 

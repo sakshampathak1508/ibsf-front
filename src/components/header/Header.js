@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
   },
   iconButton: {
-    padding: 10,
+    padding: 5,
     fontSize:'1rem',
     border:'none',
     outline:'none'
@@ -75,26 +75,27 @@ function Header({active}) {
     <div className="topnav" id="myTopnav">
       <div className="ui container" style={{backgroundColor: ""}}>
         <a className="" onClick={()=>history.push("/")} style={active == "home" ? { color: "#0da1ff"}:{}} >Home </a>
-        <a className="" onClick={()=>history.push("/news/")} style={active == "news" ? { color: "#0da1ff"}:{}}>News</a>
-        <a className="" onClick={()=>history.push("/events")}  style={active == "events" ? { color: "#0da1ff"}:{}}>Events</a>
-        <a className="" onClick={()=>history.push("/")}>Calendar</a>
+        {/* <a className="" onClick={()=>history.push("/")}>Calendar</a> */}
 
         <div className="dropdown">
-          <button className="dropbtn" onClick={()=>history.push("/aboutus")} style={active == "aboutus" ? { color: "#0da1ff"}:{}}>
+          <button className="dropbtn" style={active == "aboutus" ? { color: "#0da1ff"}:{}}>
             About Us
             <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
-            <a className="" onClick={()=>history.push("/executive_member")}>IBSF Executives</a>
-            <a className=""  onClick={()=>history.push("/member_countries")}>Member Countries</a>
+            <a className="" onClick={()=>history.push("/aboutus")}>The IBSF</a>
+            <a className="" onClick={()=>history.push("/executive_member")}>Executives</a>
+            <a className=""  onClick={()=>history.push("/member_countries")}>Members</a>
             <a className="" onClick={()=>history.push("/champion")}>Past Champions</a>
-            <a className="" onClick={()=>history.push("/download")}>Downloads</a>
-            <a className="" onClick={()=>history.push("/rules")}>Rules of Snooker</a>
+            {/* <a className="" onClick={()=>history.push("/download")}>Downloads</a>
+            <a className="" onClick={()=>history.push("/rules")}>Rules of Snooker</a> */}
           </div>
         </div>
 
-        <a className="#home">Women Ranking</a>
-        <a className="">Coaching</a>
+        <a className="" onClick={()=>history.push("/news/")} style={active == "news" ? { color: "#0da1ff"}:{}}>Reports</a>
+        <a className="" onClick={()=>history.push("/events")}  style={active == "events" ? { color: "#0da1ff"}:{}}>Events</a>
+        <a className="" onClick={()=>history.push("/rules")}>Rules</a>
+        <a className="" onClick={()=>history.push("/download")}>Documents</a>
 
 
         <div className="dropdown">
@@ -104,10 +105,12 @@ function Header({active}) {
           </button>
           <div className="dropdown-content">
             <a href="#">Photographs</a>
+            <a href="#">Videos</a>
           </div>
+          
         </div>
         
-        <a className=""  onClick={()=>history.push("/contact")}  style={active == "contactus" ? { color: "#0da1ff"}:{}}>Contacts</a>
+        <a className=""  onClick={()=>history.push("/contact")}  style={active == "contactus" ? { color: "#0da1ff"}:{}}>Contact Us</a>
         
       
         <div className="search-container">

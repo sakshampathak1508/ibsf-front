@@ -4,10 +4,13 @@ import { useParams } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import axios from "axios"
 import animationData from '../../assets/search_file.json';
+import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
 
 const Particular_rules = (props) => {
     const [Data , setData] =useState([]);
     const {id } =useParams();
+    const [sponsor , setSponsor] = useState([])
+
 
 
     const defaultOptions = {
@@ -23,6 +26,9 @@ const Particular_rules = (props) => {
         axios.get(`http://billiardsports.in/api/champs/?id=${id}`)
         .then((res)=>setData(res.data.data))
         .catch((e)=>console.log(e))
+
+        axios.get("http://billiardsports.in/api/sponsers/")
+        .then((response) => setSponsor(response.data.data))
         
 
     } , [])
@@ -61,6 +67,7 @@ const Particular_rules = (props) => {
 
         </div>
         <br></br>
+        <Caroufredsel_wrapper data={sponsor} />
         </div>
     );
         }

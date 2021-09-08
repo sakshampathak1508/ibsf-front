@@ -17,6 +17,8 @@ import Instagram from '@material-ui/icons/Instagram';
 import Lottie from 'react-lottie';
 import animationData from '../../assets/search_file.json';
 import axios from 'axios';
+import {FaEye} from 'react-icons/fa'
+import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
 
 
 const NewsPage=({match})=> {
@@ -26,6 +28,7 @@ const NewsPage=({match})=> {
     const shareUrl = `http://billiardsports.in/news/?id=${id}/${newsData.slug}`;
     console.log(shareUrl)
     const history = useHistory()
+    const [sponsor , setSponsor] = useState([])
 
 
       
@@ -45,6 +48,10 @@ const NewsPage=({match})=> {
         axios.get(`http://billiardsports.in/api/news/?id=${id}`)
         .then((res)=>setNewsData(res.data.data))
         .catch((e)=>console.log(e))
+
+        axios.get("http://billiardsports.in/api/sponsers/")
+        .then((response) => setSponsor(response.data.data))
+
         
 
     } , [])
@@ -73,7 +80,7 @@ const NewsPage=({match})=> {
 
         <div style={{width:"96%" , maxHeight:"auto" , overflow:"hidden" , margin:"auto"}}>
 
-        <img src ={`http://billiardsports.in/${newsData.image}`}  style={{ width:"100%", maxHeight:"100%" ,  border:"1px solid"}}/>
+        <img src ={`http://billiardsports.in/${newsData.image}`}  style={{ width:"100%", maxHeight:"100%" }}/>
 
         </div>
 
@@ -85,7 +92,7 @@ const NewsPage=({match})=> {
             <div className="newspage_share_links" style={{display:"flex" , flexDirection:"column" ,width:"27%"   }}>
 
                 <ul style={{listStyleType:"none" , width:"100%"}}>
-                <li style={{marginBottom:"1.2rem"}}>Read {newsData.views} times</li>
+                <li style={{marginBottom:"1.2rem" , fontWeight:"600"}}><FaEye/> Views: {newsData.views}</li>
 
                 {/* <li style={{display:"flex" , cursor:"pointer" , fontWeight:"600" , marginTop:"0.5rem"}}>
                     <p  onClick={()=>window.print()}>
@@ -129,7 +136,7 @@ const NewsPage=({match})=> {
                             newsData && newsData.tags_name.map((data , index)=>
                             (   
                                 <>
-                                <p onClick={()=>history.push(`/newsbytag/${data}`)} key={index} style={{cursor:"pointer" , width:"fit-content" , padding:"1rem" , color:"white" , fontWeight:"500"  , backgroundColor:"#0da1ff", marginRight:"0.5rem"}}>{data}</p>
+                                <p onClick={()=>history.push(`/newsbytag/${data}`)} key={index} style={{cursor:"pointer" , width:"fit-content", fontSize:"1.3rem" , padding:"0.7rem" , color:"white" , fontWeight:"500"  , backgroundColor:"#0da1ff", marginRight:"0.5rem"}}>{data}</p>
                                 </>
 
                             )
@@ -167,6 +174,9 @@ const NewsPage=({match})=> {
         </div>
 
         </div>
+        
+        <br></br>
+        <Caroufredsel_wrapper data = {sponsor}/>
         </div>
     );
     else

@@ -22,6 +22,7 @@ import ParticularEvent from './components/Event/ParticularEvent';
 import Footer from './components/Footer/Footer';
 import Contact from './components/Contact/Contact';
 import Download from './components/Download/Download'
+import Category from './components/Category/Category';
 
 function App() {
   return (
@@ -51,8 +52,10 @@ function App() {
   
 
       <Route  path="/champion/:id" component={Particular_Champ}/>
-      <Route path='/contact' component={Contact}/>
-      <Route path='/download' component={Download}/>
+      <Route exact path='/contact' component={Contact}/>
+      <Route exact path='/download' component={Download}/>
+      <Route path='/category/:id' component ={Category}/>
+      ]
     
       </Switch>
       <Footer/>

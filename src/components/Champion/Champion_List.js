@@ -21,7 +21,7 @@ const Rules = (props) => {
         
         <Header active="aboutus"/>
         <div style={{maxWidth:"1400px" , padding:"2rem" , margin:"auto"}}>
-            <h1 style={{textAlign:"center" , fontWeight:"600" , marginBottom:"3rem"}}>CHAMPIONS</h1>
+            <h1 style={{textAlign:"center" , fontWeight:"600" , marginBottom:"3rem"}}>PAST CHAMPIONS</h1>
 
             <div style={{display:"grid" ,gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" ,justifyContent:"center"}}>
 
