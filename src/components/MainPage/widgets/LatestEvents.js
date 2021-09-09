@@ -57,7 +57,7 @@ export default function LatestEvents() {
 
   useEffect(()=>
   {
-    axios.get(`http://billiardsports.in/api/event/latest/`)
+    axios.get(`https://billiardsports.in/api/event/latest/`)
     .then((res)=>setData(res.data.data))
     .catch((e)=> console.log(e))
   } , [])

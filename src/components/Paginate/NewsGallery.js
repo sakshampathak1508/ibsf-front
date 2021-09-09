@@ -49,7 +49,7 @@ useEffect(() => {
     Alloption.text = "All";
     Alloption.value="all";
     select.appendChild(Alloption)
-    for(let i = currentyear; i>=2013;i--)
+    for(let i = currentyear; i>=2010;i--)
     {
 
     
@@ -71,7 +71,7 @@ option.value = i;
 
       }
       setloading(true)
-    axios.get(`http://billiardsports.in/api/news/${state}/?num=${page}`).
+    axios.get(`https://billiardsports.in/api/news/${state}/?num=${page}`).
     then((res)=>setdata((prev)=> {
       console.log(res.data.data)
       if(res.data.data.length===0)
@@ -87,7 +87,7 @@ option.value = i;
       setpage(1)
       setBottom(false)
       setloading(true)
-    axios.get(`http://billiardsports.in/api/news/year/?year=${state}`).
+    axios.get(`https://billiardsports.in/api/news/year/?year=${state}`).
     then((res)=>
     {setdata(res.data.data)
       setloading(false)

@@ -47,6 +47,10 @@
 {
     padding:5rem 2rem 5rem 2rem;
 }
+.event_details div
+{
+    cursor: pointer;
+}
 @media screen and (min-width: 1200px)
 {
     .particulat_event .event_details>*

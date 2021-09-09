@@ -32,15 +32,15 @@ const Main_page = () => {
 
   useEffect(()=>
   {
-  axios.get("http://billiardsports.in/api/news/latest/")
+  axios.get("https://billiardsports.in/api/news/latest/")
           .then((response) => setlatestnews(response.data.data))
 
         
-          axios.get("http://billiardsports.in/api/sponsers/")
+          axios.get("https://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
 
         
-        axios.get("http://billiardsports.in/api/event/front/")
+        axios.get("https://billiardsports.in/api/event/front/")
         .then((response)=>seteventFront(response.data.data))
 
 

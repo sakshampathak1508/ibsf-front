@@ -23,11 +23,11 @@ const Particular_rules = (props) => {
       };
     useState(()=>
     {
-        axios.get(`http://billiardsports.in/api/champs/?id=${id}`)
+        axios.get(`https://billiardsports.in/api/champs/?id=${id}`)
         .then((res)=>setData(res.data.data))
         .catch((e)=>console.log(e))
 
-        axios.get("http://billiardsports.in/api/sponsers/")
+        axios.get("https://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
         
 
@@ -55,7 +55,7 @@ const Particular_rules = (props) => {
         
 
         <section style={{width:"96%" , margin:"auto"}}>
-        <img src ={`http://billiardsports.in/${Data.image}`} style={{ width:"100%", maxHeight:"100%" ,  border:"1px solid"}}/>
+        <img src ={`https://billiardsports.in/${Data.image}`} style={{ width:"100%", maxHeight:"100%" ,  border:"1px solid"}}/>
         
         <br></br>
         <br></br>

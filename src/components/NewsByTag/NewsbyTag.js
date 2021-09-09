@@ -13,7 +13,7 @@ const NewsbyTag = props => {
 
     useEffect(()=>
     {
-    axios.get(`http://billiardsports.in/api/news/tags/?tag=${tagname}`).
+    axios.get(`https://billiardsports.in/api/news/tags/?tag=${tagname}`).
     then((res)=>
     {
         setloading(false);
@@ -31,6 +31,8 @@ const NewsbyTag = props => {
 
             <div style={{maxWidth:"1400px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
                 <h1 style={{ marginBottom:"4rem" , fontWeight:"550"}}>News by <span style={{backgroundColor:"#0da1ff",fontSize:"2.3rem" ,padding:"0.5rem"  , color:"white"}}>{tagname}</span></h1>
+                {
+            databytagname.length!=0?
                 <div style={{height:"auto",display:"flex" , flexWrap:"wrap" , justifyContent:"start" ,marginTop:"2rem" }}>
                 {
                     databytagname.map((data , index)=>
@@ -40,11 +42,11 @@ const NewsbyTag = props => {
                         </>
                     ))
                 }
+                </div>:
+                <>
                 {(loading) && <div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <CircularProgress/> </div>}
-
-
-                </div>
-
+                </>
+                }
                 </div>
         
         </div>

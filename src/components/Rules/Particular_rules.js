@@ -20,7 +20,7 @@ const Particular_rules = (props) => {
       };
     useState(()=>
     {
-        axios.get(`http://billiardsports.in/api/rule/?id=${id}`)
+        axios.get(`https://billiardsports.in/api/rule/?id=${id}`)
         .then((res)=>setData(res.data.data))
         .catch((e)=>console.log(e))
         
@@ -49,7 +49,7 @@ const Particular_rules = (props) => {
         
 
         <section style={{width:"96%" , margin:"auto"}}>
-        <img src ={`http://billiardsports.in/${Data.image}`} style={{ width:"100%", maxHeight:"100%" ,  border:"1px solid"}}/>
+        <img src ={`https://billiardsports.in/${Data.image}`} style={{ width:"100%", maxHeight:"100%" ,  border:"1px solid"}}/>
         
         <br></br>
         <br></br>

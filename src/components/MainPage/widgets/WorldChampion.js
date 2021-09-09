@@ -70,7 +70,7 @@ export default function WorldChampion() {
   useEffect(()=>
   {
 
-    axios.get(`http://billiardsports.in/api/worldchamps/`)
+    axios.get(`https://billiardsports.in/api/worldchamps/`)
     .then((res)=>setData(res.data.data))
     .catch((e)=> console.log(e))
   } , [])
@@ -83,7 +83,7 @@ export default function WorldChampion() {
           {data.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell  className={classes.champion} align="left">
-              <img src={`http://billiardsports.in/${row.flag}`} alt={row.flag} height='17rem' alt="flag"/> {row.name}
+              <img src={`https://billiardsports.in/${row.flag}`} alt={row.flag} height='17rem' alt="flag"/> {row.name}
               </StyledTableCell>
               <StyledTableCell align="left">{row.event_name}</StyledTableCell>
               {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}

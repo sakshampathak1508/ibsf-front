@@ -13,6 +13,7 @@ import {GoLocation , GoCreditCard , GoPerson} from 'react-icons/go'
 import {BsFillPersonFill} from 'react-icons/bs'
 import Header from '../header/Header'
 import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -73,15 +74,22 @@ const Contact = props => {
     const history = useHistory()
     const classes = useStyles();
     const [sponsor , setSponsor] = useState([])
+    const [loading , setloading] = useState(true);
+
+    
     useEffect(()=>
     {
-        axios.get('http://billiardsports.in/api/contact/')
-        .then((res)=> setdata(res.data.data))
+        axios.get('https://billiardsports.in/api/contact/')
+        .then((res)=> {
+          
+          setdata(res.data.data)
+          setloading(false)
+          })
         .catch((e)=>console.log(e))
 
 
         
-        axios.get("http://billiardsports.in/api/sponsers/")
+        axios.get("https://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
 
 
@@ -92,12 +100,16 @@ const Contact = props => {
         <div>
             <Header active="contactus"/>
             
-            <div style={{background:"#0067b8" , padding:"2rem 0rem 2rem 2rem"}}>
-                <h3 style={{width:"80%" , color:"white" , display:'inline-block' ,margin:'auto' , maxWidth:"1400px"}}>Contact IBSF</h3>
+            <div style={{background:"#0067b8" , padding:"2rem 0rem 2rem 3.5rem"}}>
+                <h3 style={{width:"80%" , color:"white" , display:'inline-block' ,margin:'auto' , maxWidth:"1300px"}}>Contact IBSF</h3>
             </div>
 
             <br></br>
-            <TableContainer style={{borderRadius:"0"  , maxWidth:"75rem" , margin:"auto"}} component={Paper}>
+            <div style={{padding:"2rem"}}>
+            {
+            data.length!=0?
+
+            <TableContainer style={{borderRadius:"0"  , maxWidth:"75rem"  , margin:"auto"}} component={Paper}>
       <Table className={classes.table} aria-label="customized table">
         
         <TableBody>
@@ -165,6 +177,15 @@ const Contact = props => {
         </TableBody>
       </Table>
     </TableContainer>
+
+          :
+          <>
+            {
+                loading?<div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <p><CircularProgress/></p> </div>:
+                <div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <h4>Nothing Found...</h4> </div>
+            }</>
+          }
+          </div>
             <br></br>
     <Caroufredsel_wrapper data={sponsor}/>
 

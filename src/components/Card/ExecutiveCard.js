@@ -8,7 +8,7 @@ const componentName = (props) => {
 
     props=props.data;
     return (
-        <div className="executive_card" style={{backgroundImage:`url(http://billiardsports.in/${props.image})` , backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
+        <div className="executive_card" style={{backgroundImage:`url(https://billiardsports.in/${props.image})` , backgroundRepeat:"no-repeat" , backgroundSize:"cover" }}>
 
             <div className="executive_overlap_div">
 

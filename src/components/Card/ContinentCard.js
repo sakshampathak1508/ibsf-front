@@ -33,7 +33,7 @@ export default function ContinentCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={`http://billiardsports.in/${props.logo}`} style={{}}
+          image={`https://billiardsports.in/${props.logo}`} style={{}}
           title="Contemplative Reptile"
         />
         <CardContent>

@@ -77,7 +77,7 @@ const Caroufredsel_wrapper = (props) => {
             props.data&&props.data.map((data , index)=>
             (   
 
-                <div key={index} className="slide_image" ><img src={`http://billiardsports.in/${data.image}`} alt="img" /></div>
+                <div key={index} className="slide_image" ><img src={`https://billiardsports.in/${data.image}`} alt="img" /></div>
 
             ))
 

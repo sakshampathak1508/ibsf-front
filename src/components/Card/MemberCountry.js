@@ -58,7 +58,7 @@ export default function MemberCountry(props){
 
 <CardMedia
         className={classes.cover}
-        image={`http://billiardsports.in/${props.logo}`}
+        image={`https://billiardsports.in/${props.logo}`}
         title="Live from space album cover"
       />
       <div className={classes.details}>

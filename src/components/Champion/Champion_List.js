@@ -8,7 +8,7 @@ const Rules = (props) => {
     const [loading, setloading]=useState(true)
     useState(()=>
     {
-        axios.get(`http://billiardsports.in/api/allchamps/`)
+        axios.get(`https://billiardsports.in/api/allchamps/`)
         .then((res)=> {
         setData(res.data.data)
         setloading(false)
@@ -18,26 +18,35 @@ const Rules = (props) => {
 
     return (
         <>
-        
+    
         <Header active="aboutus"/>
-        <div style={{maxWidth:"1400px" , padding:"2rem" , margin:"auto"}}>
-            <h1 style={{textAlign:"center" , fontWeight:"600" , marginBottom:"3rem"}}>PAST CHAMPIONS</h1>
+    
+        <div style={{maxWidth:"1300px" , padding:"2rem" , margin:"auto"}}>
+            <h1 style={{ fontWeight:"600" , marginBottom:"3.5rem"}}>PAST CHAMPIONS</h1>
 
-            <div style={{display:"grid" ,gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" ,justifyContent:"center"}}>
+            {
+    data.length!=0 ?
+    <>
+            <div style={{display:"flex" , flexWrap:"wrap" ,justifyContent:"flex-start"}}>
 
             {
                 data.map((data, index)=>
                 (
-                    
+                    <>
                     <Rules_Champ key={index} path="champion" data ={data}/>
+                    {/* <Rules_Champ key={index} path="champion" data ={data}/>
+                    <Rules_Champ key={index} path="champion" data ={data}/> */}
+                    </>
                     
                 ))
             }
-            {loading && <div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <CircularProgress/> </div>}
-
             </div>
-
-            
+            </>:
+            <>{
+        loading?<div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <p><CircularProgress/></p> </div>:
+        <div id="loader" style={{width:"100%" ,  textAlign:"center" }}> <h4>Nothing Found...</h4> </div>
+            }</>
+        }
         </div>
 
         </>

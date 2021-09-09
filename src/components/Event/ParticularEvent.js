@@ -30,12 +30,12 @@ const ParticularEvent = (props) => {
 
     useEffect(()=>
     {
-        axios.get(`http://billiardsports.in/api/event/?id=${id}`)
+        axios.get(`https://billiardsports.in/api/event/?id=${id}`)
         .then((res)=> setdata(res.data.data))
         .catch((e)=> console.log(e))
 
         
-        axios.get("http://billiardsports.in/api/sponsers/")
+        axios.get("https://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
 
 
@@ -90,7 +90,7 @@ const ParticularEvent = (props) => {
                         {
                         data.results!=null?
                         <div>
-                    <h4 >RESULTS <AiOutlineLink />
+                    <h4 onClick={()=> window.open(data.results ,'blank')}>RESULTS <AiOutlineLink />
                         </h4>
 
                         <p> </p>
@@ -107,7 +107,7 @@ const ParticularEvent = (props) => {
                         
                         data.photographs!=null?
                         <div>
-                    <h4>PHOTOGRAPHS  <AiOutlineLink />
+                    <h4  onClick={()=> window.open(data.photographs ,'blank')}>PHOTOGRAPHS  <AiOutlineLink />
                         </h4>
 
                         <p></p>
@@ -118,9 +118,9 @@ const ParticularEvent = (props) => {
                         } 
                 
                     {
-                        data.photographs!=null?
+                        data.video!=null?
                         <div>
-                    <h4>VIDEO  <AiOutlineLink />
+                    <h4  onClick={()=> window.open(data.video ,'blank')}>VIDEO  <AiOutlineLink />
                         </h4>
 
                         <p>  </p>
@@ -131,10 +131,10 @@ const ParticularEvent = (props) => {
                     
                 
                     {
-                        data.photographs!=null?
+                        data.live!=null?
                         <div>
                         
-                    <h4>LIVE  <AiOutlineLink />
+                    <h4  onClick={()=> window.open(data.live ,'blank')}>LIVE  <AiOutlineLink />
                         </h4>
 
                         <p></p>

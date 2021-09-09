@@ -9,7 +9,7 @@ function Card(props) {
     return (
         <div onClick={()=>history.push(`/news/${props.id}/${props.slug}`)} className="card_body" style={{  overflow:"hidden"}}>
 
-            <div className = "card_image" style={{backgroundImage:`url(http://billiardsports.in/${props.image})`, backgroundSize:"cover" , backgroundRepeat:"no-repeat"}}>
+            <div className = "card_image" style={{backgroundImage:`url(https://billiardsports.in/${props.image})`, backgroundSize:"cover" , backgroundRepeat:"no-repeat"}}>
             {/* <img src={props.image} style={{width:"auto", backgroundSize:"cover"}}/>              */}
             </div>
     

@@ -75,19 +75,7 @@ const EventPage = props => {
         },
       }))(TableRow);
       
-      function createData(name, calories, fat, carbs, protein) {
-        return { name, calories, fat, carbs, protein };
-      }
       
-      const rows = [
-        createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-        createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-        createData('Eclair', 262, 16.0, 24, 6.0),
-        createData('Cupcake', 305, 3.7, 67, 4.3),
-        createData('Gingerbread', 356, 16.0, 49, 3.9),
-      ];
-
-
       useEffect(() => {
 
         var currentyear = new Date().getFullYear();
@@ -100,7 +88,7 @@ const EventPage = props => {
             select.removeChild(select.lastChild);
         }
         
-        for(let i = currentyear; i>=2013;i--)
+        for(let i = currentyear; i>=2010;i--)
         {
     
         
@@ -114,7 +102,7 @@ const EventPage = props => {
         useEffect(() => {
             setdata([])
             setloading(true)
-            axios.get(`http://billiardsports.in/api/event/year/?year=${state}`)
+            axios.get(`https://billiardsports.in/api/event/year/?year=${state}`)
             .then((res)=> 
             {setdata(res.data.data)
             setloading(false)})

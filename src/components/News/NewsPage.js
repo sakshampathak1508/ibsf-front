@@ -25,7 +25,7 @@ const NewsPage=({match})=> {
     const [newsData , setNewsData] =useState([]);
     // let id = new URLSearchParams(location.search).get("id");
     const {id } =useParams();
-    const shareUrl = `http://billiardsports.in/news/?id=${id}/${newsData.slug}`;
+    const shareUrl = `https://billiardsports.in/news/?id=${id}/${newsData.slug}`;
     console.log(shareUrl)
     const history = useHistory()
     const [sponsor , setSponsor] = useState([])
@@ -45,11 +45,11 @@ const NewsPage=({match})=> {
 
     useEffect(()=>
     {
-        axios.get(`http://billiardsports.in/api/news/?id=${id}`)
+        axios.get(`https://billiardsports.in/api/news/?id=${id}`)
         .then((res)=>setNewsData(res.data.data))
         .catch((e)=>console.log(e))
 
-        axios.get("http://billiardsports.in/api/sponsers/")
+        axios.get("https://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
 
         
@@ -80,7 +80,7 @@ const NewsPage=({match})=> {
 
         <div style={{width:"96%" , maxHeight:"auto" , overflow:"hidden" , margin:"auto"}}>
 
-        <img src ={`http://billiardsports.in/${newsData.image}`}  style={{ width:"100%", maxHeight:"100%" }}/>
+        <img src ={`https://billiardsports.in/${newsData.image}`}  style={{ width:"100%", maxHeight:"100%" }}/>
 
         </div>
 

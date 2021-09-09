@@ -18,7 +18,7 @@ function ControlledCarousel() {
     useEffect(()=>
     {
 
-          axios.get("http://billiardsports.in/api/news/featured/")
+          axios.get("https://billiardsports.in/api/news/featured/")
           .then((response) => setNavbar(response.data.data))
 
 
@@ -39,7 +39,7 @@ function ControlledCarousel() {
         <img
         loading='lazy'
           className="d-block w-100"
-          src={`http://billiardsports.in/${data.image}`}
+          src={`https://billiardsports.in/${data.image}`}
           style = {{ height:"100%" , filter:"brightness(90%)"  }}
           alt="First slide"
         />
