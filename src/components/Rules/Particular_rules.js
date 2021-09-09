@@ -26,20 +26,9 @@ const Particular_rules = (props) => {
         
 
     } , [])
-    console.log(Data)
-
-       if(Data.length==0)
-        return(
-
-            <>
-            <Header active="aboutus"/>
-            <Lottie options={defaultOptions} style={{marginTop:"2rem"}}
-            height={400} width={350} />
-            
-            </>
-        )
-        else{
-        return (
+    
+       if(Data.length!=0)
+       return (
         <div>
             <Header active="aboutus"/>
             
@@ -62,6 +51,17 @@ const Particular_rules = (props) => {
         </div>
         </div>
     );
+        else{
+            return(
+
+                <>
+                <Header active="aboutus"/>
+                <Lottie options={defaultOptions} style={{marginTop:"2rem"}}
+                height={400} width={350} />
+                
+                </>
+            )
+        
         }
 };
 
