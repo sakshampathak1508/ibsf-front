@@ -74,7 +74,7 @@ const Caroufredsel_federation = (props) => {
     }
     
 
-    console.log(federation);
+
 
     return (
         <div className="carouselfederation_container">

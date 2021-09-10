@@ -24,7 +24,6 @@ const NewsbyTag = props => {
 
     } , [])
 
-    console.log(databytagname)
     return (
         <div>
             <Header active="news"/>

@@ -73,7 +73,6 @@ option.value = i;
       setloading(true)
     axios.get(`https://billiardsports.in/api/news/${state}/?num=${page}`).
     then((res)=>setdata((prev)=> {
-      console.log(res.data.data)
       if(res.data.data.length===0)
       setBottom(true)
 
@@ -110,7 +109,7 @@ option.value = i;
     return
     const {scrollTop , clientHeight , scrollHeight} = e.currentTarget
 
-    console.log("Here"  ,scrollTop + clientHeight + 200 , scrollHeight);
+  
     if(clientHeight + scrollTop + 300 >= scrollHeight && bottom!=true && loading==false)
         {
             

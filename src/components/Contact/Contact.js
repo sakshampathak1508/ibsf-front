@@ -64,7 +64,7 @@ const Contact = props => {
 
     }, [])
 
-    console.log(data)
+
     return (
         <div>
             <Header active="contactus"/>

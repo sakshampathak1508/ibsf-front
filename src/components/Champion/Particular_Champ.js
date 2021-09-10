@@ -32,7 +32,6 @@ const Particular_rules = (props) => {
         
 
     } , [])
-    console.log(Data)
 
        if(Data.length==0)
         return(

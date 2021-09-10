@@ -24,16 +24,9 @@ const Category_Event = props => {
     const [bottom, setBottom] = useState(false)
     const [page , setPage] = useState(1);
 
-    console.log(id);
 
 
-    // useEffect(()=>
-    // {
-    //     axios.get(`http://billiardsports.in/api/category/?num=${page}&category=${id}&type=event`)
-    //     .then((res)=> setdata(res.data.data.event))
-    //     .catch((e)=>console.log(e));
 
-    // } , [])
 
     useEffect(()=>
     {
@@ -78,11 +71,9 @@ const Category_Event = props => {
     
       }
     
-
-    console.log(data);
     return (
         
-        <div onScroll={handleScroll} style={data.length!=0 ? {height:"60vh" ,paddingTop:"1rem" ,overflow:"scroll"}:{height:"auto"}} className="news-gallery">
+        <div onScroll={handleScroll} style={data.length!=0 ? {height:"80vh" ,paddingTop:"1rem" ,overflow:"scroll"}:{height:"auto"}} className="news-gallery">
             <Grid item container>
            
            

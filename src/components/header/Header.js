@@ -57,7 +57,6 @@ function Header({active}) {
 
   const handleSearch = (event) => { // changed the "handleSearch()" function
     event.preventDefault();
-    console.log(value)
     if(value!='')
     history.push(`/query/${value}`)
   }
@@ -109,8 +108,8 @@ function Header({active}) {
             <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
-            <a className="">Photographs</a>
-            <a className="">Videos</a>
+          <a className="" onClick={() => {window.open('https://www.facebook.com/groups/ibsf.media/media','_blank')}}>Photographs</a>
+          <a className="" onClick={() => window.open('https://www.facebook.com/groups/ibsf.media/media','_blank')}>Videos</a>
           </div>
           
         </div>
@@ -126,7 +125,6 @@ function Header({active}) {
       <InputBase
       
         onKeyPress={(ev) => {
-        console.log(`Pressed keyCode ${ev.key}`);
         if (ev.key === 'Enter') {
           // Do code here
 

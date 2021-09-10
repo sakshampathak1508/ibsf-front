@@ -18,7 +18,7 @@ function About() {
             setloading(false)
           })
 
-          console.log(data)
+      
       
 
   } , [])

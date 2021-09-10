@@ -18,6 +18,7 @@ function MemberContinent() {
             setCountry(res.data.data)
             setloading(false)
         })
+        .catch((e)=>console.log(e))
 
     }, [])
     

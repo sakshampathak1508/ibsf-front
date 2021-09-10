@@ -6,7 +6,6 @@ function Rules_Champ(props) {
     const history = useHistory();
     const path = props.path;
     props = props.data
-    console.log(props)
     return (
         <div onClick={()=>history.push(`${path}/${props.id}/${props.slug}`)} className="rules_champ_card_body" style={{  overflow:"hidden"}}>
 
