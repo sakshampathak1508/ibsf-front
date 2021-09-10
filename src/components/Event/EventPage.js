@@ -169,11 +169,11 @@ const EventPage = props => {
                 {row.end_date}
               </StyledTableCell>
 
-              <StyledTableCell className="hoverable_title" align="left" onClick={()=>history.push(`/events/${row.id}/${props.slug}`)}>{row.location}</StyledTableCell>
+              <StyledTableCell className="hoverable_title" align="left" onClick={()=>history.push(`/events/${row.id}/${row.slug}`)}>{row.location}</StyledTableCell>
               {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}
   
 
-              <StyledTableCell className="hoverable_title" align="left" onClick={()=>history.push(`/events/${row.id}/${props.slug}`)}>{row.name}</StyledTableCell>
+              <StyledTableCell className="hoverable_title" align="left" onClick={()=>history.push(`/events/${row.id}/${row.slug}`)}>{row.name}</StyledTableCell>
               {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}
             </StyledTableRow>
           ))}

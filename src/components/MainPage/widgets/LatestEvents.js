@@ -72,7 +72,7 @@ export default function LatestEvents() {
               <StyledTableCell  className={classes.style_key} style = {index%2?{background:"rgb(13, 161, 255 , 0.8)"}:{background:"rgb(13, 161, 255 )"}} align="left">
                 {index+1}
               </StyledTableCell>
-              <StyledTableCell onClick={()=>history.push(`/events/${row.id}`)} className={classes.latest_event} align="left">{row.name}</StyledTableCell>
+              <StyledTableCell onClick={()=>history.push(`/events/${row.id}/${row.slug}`)} className={classes.latest_event} align="left">{row.name}</StyledTableCell>
               {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}
             </StyledTableRow>
           ))}
