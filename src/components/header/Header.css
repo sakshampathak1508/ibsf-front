@@ -229,12 +229,23 @@ body {
 
   .topnav .search-container {
     float: right;
-    /* max-width: 25vw; */
+    margin-top: 3px;
+
   }
-  
+
+  .header_input
+  {
+    width: 150px;
+    transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  .MuiInputBase-root.header_input.Mui-focused
+  {
+    width: 190px;
+
+  }
   .topnav input[type="text"] {
     padding-left: 1rem;
-    margin-top: 4px;
+    /* margin-top: 4px; */
     font-size: 17px;
     border: none;
     width: 100%;
@@ -265,9 +276,14 @@ body {
     }
     .header_input
     {
-      width: 30vw;
+      width: 120px;
       height: 4rem;
     }
+    .MuiInputBase-root.header_input.Mui-focused
+  {
+    width: 130px;
+
+  }
     .pre-header {
       padding: 2rem;
 

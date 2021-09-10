@@ -7,17 +7,14 @@ import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
 import axios from "axios"
 import Header from '../header/Header';
 import "./Main_page.css"
-import image1 from '../../assets/example1.jpg'
-import image2 from '../../assets/example3.jpg'
 import Current_Score from '../Card/Current_Score';
-import Footer from '../Footer/Footer';
-import Federation from '../Card/Federation';
 import Middle_widget_Heading from './widgets/Middle_widget_Heading';
 import Caroufredsel_federation from '../Carousel/carousel_federation';
 import WorldChampion from './widgets/WorldChampion';
 import Twitter from './widgets/Twitter';
 import {IoIosArrowForward , IoLogoTwitter} from 'react-icons/io'
 import {BiWorld, BiCalendarEvent} from 'react-icons/bi'
+import CircularProgress from '@material-ui/core/CircularProgress';
 import LatestEvents from './widgets/LatestEvents';
 
 
@@ -28,20 +25,35 @@ const Main_page = () => {
   const [latestnews , setlatestnews] = useState([]);
   const [sponsor , setSponsor] = useState([])
   const [eventFront , seteventFront] = useState([]);
+  const [loading ,setloading] = useState({
+    loading1:true , loading2:true
+  })
   
 
   useEffect(()=>
   {
   axios.get("https://billiardsports.in/api/news/latest/")
-          .then((response) => setlatestnews(response.data.data))
+          .then((response) => {
+            setlatestnews(response.data.data)
+            setloading((prev)=>(
+              {
+              ...prev , loading1:false
+              }))
 
-        
+          })
+
           axios.get("https://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
 
         
         axios.get("https://billiardsports.in/api/event/front/")
-        .then((response)=>seteventFront(response.data.data))
+        .then((response)=>{
+          seteventFront(response.data.data)
+          setloading((prev)=>(
+            {
+            ...prev , loading2:false
+            }))
+          })
 
 
         
@@ -49,7 +61,7 @@ const Main_page = () => {
 
   } , [])
   
-
+  if(loading.loading1!=true && loading.loading2!=true)
   return (
     <>
 
@@ -79,11 +91,11 @@ const Main_page = () => {
                     
                     <>
                     <div className="headlines_title">
-                    <h2><span style={{color:'#0da1ff'}}>{data.event_name[0]}</span>{data.event_name.substr(1)}</h2>
-
+                    <h2><span style={{color:'#0da1ff' , fontSize:"2.4rem"}}>{data.event_name[0]}</span>{data.event_name.substr(1)}</h2>
+                    <hr></hr>
                     </div>
                     
-                    <hr></hr>
+                  
 
                     <div className="headlines_current_score" style={{display:"flex" , flexWrap:"wrap" ,flexDirection:"row"}}>
                           {
@@ -131,7 +143,7 @@ const Main_page = () => {
 
       </div>
 
-    <div className="news_section" style={{display:"flex" ,flexDirection:"row", justifyContent:"center" ,backgroundColor: "rgba(0, 0, 0, 0.8)" ,paddingTop:"2rem"}}>
+    <div className="news_section" style={{display:"flex"   ,flexDirection:"row", justifyContent:"center" ,backgroundColor: "rgba(0, 0, 0, 0.8)" ,paddingTop:"2rem"}}>
   
     {latestnews&&latestnews.slice(0 , 4).map((e , index)=>
     (
@@ -154,6 +166,13 @@ const Main_page = () => {
 
       </>
   );
+  else
+  return(
+    <div>
+    <Header active='home'/>
+    <div id="loader"  style={{width:"100%"  , marginTop:"10%" , marginBottom:"10%", textAlign:'center'}}> <p><CircularProgress/></p> </div>
+    </div>
+  )
 };
 
 export default Main_page;

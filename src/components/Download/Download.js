@@ -30,7 +30,7 @@ function About() {
   } , [])
     return (
         <>
-         <Header active="aboutus"/>
+         <Header active="document"/>
         <div className="aboutus">
 
             

@@ -1,7 +1,6 @@
 import React from 'react';
-import "./Current_Score.css";
 import { makeStyles } from '@material-ui/core/styles';
-
+import "./Current_Score.css";
 
 const useStyles = makeStyles({
     disable_link: {

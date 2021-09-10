@@ -4,10 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useHistory } from 'react-router';
-import AOS from 'aos'
 import 'aos/dist/aos.css';
-
+import axios from 'axios';
 import { useMediaQuery } from 'react-responsive'
+import AOS  from 'aos';
 import Aos from 'aos';
 
 
@@ -19,6 +19,7 @@ const Caroufredsel_federation = (props) => {
 
 
     const [slidesToShow , setslidesToShow] = useState(5);
+    const [federation , setfederation] = useState([])
     const history =useHistory()
     
     useEffect(()=>
@@ -27,13 +28,17 @@ const Caroufredsel_federation = (props) => {
             // initialise with other settings
             duration : 900,
             once:true,
-            offset: 900
-          });
-          Aos.refresh()
+        });
+        Aos.refresh()
         const width = window.innerWidth;
 
         width>768? setslidesToShow(5):setslidesToShow(1)
-        
+
+        axios.get('https://billiardsports.in/api/all-regions/')
+        .then((res)=>
+        {
+            setfederation(res.data.data)
+        })
     },[])
 
     
@@ -69,21 +74,23 @@ const Caroufredsel_federation = (props) => {
     }
     
 
-    
+    console.log(federation);
 
     return (
         <div className="carouselfederation_container">
             {/* {isTabletOrMobile && setslidesToShow(1)} */}
 
 <Slider  {...setting}>
-
-                <div key={1} data-aos={"fade-up"} className="slide_image" onClick={()=>history.push(`/member_countries/1`)} ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
-                <div key={2} data-aos={"fade-up"}  data-aos-delay="200" onClick={()=>history.push(`/member_countries/2`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
-                <div key={3} data-aos={"fade-up"}  data-aos-delay="300" onClick={()=>history.push(`/member_countries/3`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
-                <div key={4} data-aos={"fade-up"}  data-aos-delay="400" onClick={()=>history.push(`/member_countries/4`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
-                <div key={5} data-aos={"fade-up"}  data-aos-delay="500" onClick={()=>history.push(`/member_countries/5`)} className="slide_image" ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div>
-
+    { 
+    federation.map((data, index)=>(
+                <>
+                {/* <div key={1} data-aos={"fade-up"}  onClick={()=>history.push(`/member_countries/1`)} ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div> */}
+                <div key={index} data-aos={"fade-up"}  data-aos-delay={(index)*100} data-aos-anchor-placement="top-center"  onClick={()=>history.push(`/member_countries/${data.id}`)} className="slide_image" ><img src={`https://billiardsports.in${data.logo}`} alt="img" /></div>
             
+                </>
+            
+    ))
+    }
 
     </Slider>
     

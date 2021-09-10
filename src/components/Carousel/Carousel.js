@@ -1,12 +1,9 @@
 import React , {useState , useEffect} from 'react'
 import Carousel from 'react-bootstrap/Carousel'
-import image1 from '../../assets/example1.jpg';
-import image2 from "../../assets/example2.jpg";
 import axios from "axios"
 import { useHistory } from 'react-router';
 import './carousel.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { Navbar } from 'react-bootstrap';
 
 
 function ControlledCarousel() {

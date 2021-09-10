@@ -1,5 +1,4 @@
 import React from 'react';
-import { Profiler } from 'react';
 import { useHistory } from 'react-router';
 import "./Rules_Champ.css"
 

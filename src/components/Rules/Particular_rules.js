@@ -30,7 +30,7 @@ const Particular_rules = (props) => {
        if(Data.length!=0)
        return (
         <div>
-            <Header active="aboutus"/>
+            <Header active="rules"/>
             
             <div style={{maxWidth:"1200px" , marginLeft:"auto" ,marginRight:"auto"}}>
         <h2 style={{color: "#282828",

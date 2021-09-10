@@ -1,10 +1,9 @@
-import React ,{useEffect  ,useState} from 'react';
+import React ,{useState} from 'react';
 import { useHistory, useParams } from 'react-router';
 import InputLabel from '@material-ui/core/InputLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import {  makeStyles } from '@material-ui/core/styles';
 import Header from '../header/Header';
 import Category_Event from './Category_Event'
 import Category_News from './Category_News';

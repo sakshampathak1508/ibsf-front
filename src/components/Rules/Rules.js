@@ -19,7 +19,7 @@ const Rules = (props) => {
     return (
         <>
         
-        <Header active="aboutus"/>
+        <Header active="rules"/>
         <div style={{maxWidth:"1300px" , padding:"2rem" , margin:"auto"}}>
             <h1 style={{ fontWeight:"600" , marginBottom:"3rem"}}>IBSF Rules</h1>
 

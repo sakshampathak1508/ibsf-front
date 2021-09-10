@@ -11,9 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-html{
-	scroll-behavior: smooth;
-}
+
 hr{
   /* margin-top: 25px; */
     /* margin-bottom: 25px !important; */

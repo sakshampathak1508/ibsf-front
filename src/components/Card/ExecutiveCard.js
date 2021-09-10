@@ -14,7 +14,7 @@ const componentName = (props) => {
 
 
                 <div className="executive_overlap_text">
-                <p><span style={{color:"rgb(13, 161, 255)"}}>{props.position[0]}</span>{props.position.substr(1)}</p>
+                <p>{props.position}</p>
                 <h3>{props.name}</h3>
                 <div className="executive_social_links">
             {props.email && <MailOutlineIcon onClick={()=>window.location.href=`mailto: ${props.email} `}/>}

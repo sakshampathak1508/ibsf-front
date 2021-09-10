@@ -1,16 +1,8 @@
 import React , {useEffect  , useState} from 'react';
 import "./Caroufredsel_wrapper.css"
-import adidas from "../../assets/sponsors/adidas.png"
-import facebook from "../../assets/sponsors/facebook.png"
-import google from "../../assets/sponsors/google.png"
-import instagram from "../../assets/sponsors/instagram.png"
-import nike from "../../assets/sponsors/nike.png"
-import twitter from "../../assets/sponsors/twitter.png"
-import uber from "../../assets/sponsors/uber.png"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import axios from 'axios'
 import { useMediaQuery } from 'react-responsive'
 
 
@@ -77,7 +69,7 @@ const Caroufredsel_wrapper = (props) => {
             props.data&&props.data.map((data , index)=>
             (   
 
-                <div key={index} className="slide_image" ><img src={`https://billiardsports.in/${data.image}`} alt="img" /></div>
+                <div key={index} onClick={()=>window.open(data.url , '_blank')} className="slide_image" ><img src={`https://billiardsports.in/${data.image}`} alt="img" /></div>
 
             ))
 

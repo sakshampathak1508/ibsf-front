@@ -29,9 +29,9 @@ h2{
     padding: 0;
     cursor: pointer;
 }
-.slide_image img{
-    width: 55%;
-    min-width: 120px;
+.carouselfederation_container .slide_image img{
+
+    width: 30rem;
     overflow: hidden;
     margin: auto;
 }

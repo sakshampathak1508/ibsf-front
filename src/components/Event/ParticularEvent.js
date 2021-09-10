@@ -1,15 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './ParticularEvent.css'
 import Lottie from 'react-lottie';
-import animationData from '../../assets/search_file.json';
 import {IoLocationSharp} from 'react-icons/io5'
 import {BiTimeFive, BiWorld} from 'react-icons/bi'
 import {AiOutlineLink} from 'react-icons/ai'
-import {FaPhotoVideo} from "react-icons/fa"
 import Header from '../header/Header';
 import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
+import animationData from '../../assets/search_file.json';
+import './ParticularEvent.css'
 
 const ParticularEvent = (props) => {
     const [data , setdata] = useState([]);

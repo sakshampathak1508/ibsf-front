@@ -1,7 +1,6 @@
 import React, {useState , useEffect } from 'react';
 import Header from '../header/Header';
-import image1 from '../../assets/image4.jpg';
-import {WhatsappShareButton      , LinkedinShareButton , FacebookShareButton  ,TwitterShareButton} from "react-share"
+import {WhatsappShareButton      , FacebookShareButton  ,TwitterShareButton} from "react-share"
 import Avatar from '@material-ui/core/Avatar';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook'
@@ -10,10 +9,8 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import PrintIcon from '@material-ui/icons/Print';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import { useHistory, useLocation } from 'react-router-dom';
-import search from "../../assets/search.gif"
 import { useParams } from "react-router-dom";
 import "./NewsPage.css"
-import Instagram from '@material-ui/icons/Instagram';
 import Lottie from 'react-lottie';
 import animationData from '../../assets/search_file.json';
 import axios from 'axios';
@@ -45,6 +42,7 @@ const NewsPage=({match})=> {
 
     useEffect(()=>
     {
+        window.scrollTo(0, 0)
         axios.get(`https://billiardsports.in/api/news/?id=${id}`)
         .then((res)=>setNewsData(res.data.data))
         .catch((e)=>console.log(e))
@@ -61,8 +59,10 @@ const NewsPage=({match})=> {
     // if(date!=undefined)
 
 
-    if(newsData.length!=0)
+    if(newsData.length!=0){
+        // window.scrollTo(0 ,0)
     return (
+        
 
     <div style={{display:"flex" , flexDirection:"column"}}>
 
@@ -70,7 +70,7 @@ const NewsPage=({match})=> {
 
         <div style={{maxWidth:"1200px" , marginLeft:"auto" ,marginRight:"auto"}}>
         <h2 style={{ marginRight:"auto" , marginLeft:"auto" , color: "#282828",
-            fontFamily: "PT Serif,serif",fontWeight: '800'}}>{ newsData.title}</h2>
+            fontFamily: "Montserrat,Arial,sans-serif",fontWeight: '700'}}>{ newsData.title}</h2>
         
         
         <p style={{ width:"max-content"  ,  marginLeft:"auto" , marginRight:"3rem" }}>{  newsData.timestamp && new Date(newsData.timestamp).toLocaleDateString("en", {weekday: "long",
@@ -136,7 +136,7 @@ const NewsPage=({match})=> {
                             newsData && newsData.tags_name.map((data , index)=>
                             (   
                                 <>
-                                <p onClick={()=>history.push(`/newsbytag/${data}`)} key={index} style={{cursor:"pointer" , width:"fit-content", fontSize:"1.3rem" , padding:"0.7rem" , color:"white" , fontWeight:"500"  , backgroundColor:"#0da1ff", marginRight:"0.5rem"}}>{data}</p>
+                                <p onClick={()=>history.push(`/newsbytag/${data}`)} key={index} style={{cursor:"pointer" , width:"fit-content", fontSize:"1.3rem" , padding:"0.7rem" , color:"white" , fontWeight:"500" , wordBreak:"break-all"  , backgroundColor:"#0da1ff", marginRight:"0.5rem"}}>{data}</p>
                                 </>
 
                             )
@@ -179,6 +179,7 @@ const NewsPage=({match})=> {
         <Caroufredsel_wrapper data = {sponsor}/>
         </div>
     );
+                            }
     else
     {
         return(

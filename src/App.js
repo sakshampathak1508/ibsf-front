@@ -12,7 +12,6 @@ import ExecutiveMember from './components/ExecutiveMember/ExecutiveMember';
 import Rules from './components/Rules/Rules'
 import Champion from './components/Champion/Champion_List'
 import Particular_Champ from './components/Champion/Particular_Champ'
-import './App.css'
 import AutoTopScroll from './components/AutoScroll/AutoTopScroll';
 import ScrolltoTop from './components/ScrollToTop/ScrolltoTop'
 import Particular_rules from './components/Rules/Particular_rules';
@@ -23,6 +22,8 @@ import Footer from './components/Footer/Footer';
 import Contact from './components/Contact/Contact';
 import Download from './components/Download/Download'
 import Category from './components/Category/Category';
+import Search from './components/Search/Search';
+import './App.css'
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         <>
         
         <Router>
-
+        <AutoTopScroll/>
         <Switch>
 
       <Route exact path="/" component={Main_page}/>
@@ -55,12 +56,13 @@ function App() {
       <Route exact path='/contact' component={Contact}/>
       <Route exact path='/download' component={Download}/>
       <Route path='/category/:id' component ={Category}/>
-      ]
+      <Route path='/query/:query' component={Search}/>
     
       </Switch>
       <Footer/>
       <ScrolltoTop/>
-      <AutoTopScroll/>
+
+      
       </Router>
 
       </>

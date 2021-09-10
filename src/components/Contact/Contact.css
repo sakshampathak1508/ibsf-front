@@ -1,0 +1,13 @@
+.contact_responsive
+{
+    flex-direction: column;
+    width: 50%;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .contact_responsive{
+        width: 100%;
+    }
+}

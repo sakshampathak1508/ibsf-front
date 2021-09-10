@@ -1,0 +1,7 @@
+.hoverable_titles:hover
+{
+    /* color:#0da1ff; */
+    font-weight: 600;
+    cursor: pointer;
+
+}

@@ -52,10 +52,15 @@ function Header({active}) {
   const history = useHistory();
   const classes = useStyles();
   const [navbar , setNavbar] = useState(false);
-  
+  const [value ,setValue] = useState('');
 
 
-
+  const handleSearch = (event) => { // changed the "handleSearch()" function
+    event.preventDefault();
+    console.log(value)
+    if(value!='')
+    history.push(`/query/${value}`)
+  }
     return (
       
       <>
@@ -63,7 +68,7 @@ function Header({active}) {
       <div className="ui container" style={{}}>
         <img
           className="ui_small_image"
-          src={IBSF_LOGO}
+          src={`http://ibsf.info/images/banners/IBSF%20LOGO%20half4.png`}
           onClick={()=>history.push("/")}
           style={{objectFit:"contain" , position:"absolute" }}
           
@@ -94,8 +99,8 @@ function Header({active}) {
 
         <a className="" onClick={()=>history.push("/news/")} style={active == "news" ? { color: "#0da1ff"}:{}}>Reports</a>
         <a className="" onClick={()=>history.push("/events")}  style={active == "events" ? { color: "#0da1ff"}:{}}>Events</a>
-        <a className="" onClick={()=>history.push("/rules")}>Rules</a>
-        <a className="" onClick={()=>history.push("/download")}>Documents</a>
+        <a className="" onClick={()=>history.push("/rules")}   style={active == "rules" ? { color: "#0da1ff"}:{}}>Rules</a>
+        <a className="" onClick={()=>history.push("/download")}   style={active == "document" ? { color: "#0da1ff"}:{}}>Documents</a>
 
 
         <div className="dropdown">
@@ -104,8 +109,8 @@ function Header({active}) {
             <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
-            <a href="#">Photographs</a>
-            <a href="#">Videos</a>
+            <a className="">Photographs</a>
+            <a className="">Videos</a>
           </div>
           
         </div>
@@ -113,19 +118,34 @@ function Header({active}) {
         <a className=""  onClick={()=>history.push("/contact")}  style={active == "contactus" ? { color: "#0da1ff"}:{}}>Contact Us</a>
         
       
-        <div className="search-container">
+        <div  className="search-container">
 
 
         <Paper component="form" className={classes.root}>
       
       <InputBase
+      
+        onKeyPress={(ev) => {
+        console.log(`Pressed keyCode ${ev.key}`);
+        if (ev.key === 'Enter') {
+          // Do code here
+
+          ev.preventDefault();
+          handleSearch(ev);
+        }}}
+        tabIndex='0'
         className={classes.input}
         className="header_input"
         placeholder="Search"
-        inputProps={{ 'aria-label': 'search google maps' }}
+        inputProps={{ 'aria-label': 'search' }}
+        onChange={event=>{                                 //adding the onChange event
+          setValue(event.target.value)
+        }}
         
       />
-      <IconButton type="submit" className={classes.iconButton} aria-label="search">
+      <IconButton 
+      onClick={handleSearch} 
+    className={classes.iconButton} aria-label="search">
         <SearchIcon style={{fontSize:"2rem" , outline:"none" , border:"none"}} />
       </IconButton>
       
