@@ -76,10 +76,10 @@ const Category = props => {
         <div>
             
             <Header active={stateType==='Event'?"events":"news"}/>
-            <div className="category" style={{maxWidth:"1400px" , padding:"2rem",margin:"auto" }}>
+            <div className="category" style={{maxWidth:"1130px" , padding:"2rem",margin:"auto" }}>
     
-    <div style={{display:"flex" , padding:"2rem"}}>
-    <h1> {category}</h1>
+    <div style={{display:"flex" , marginBottom:"1rem"}}>
+    <h1> {category}<br></br><hr style={{marginTop:"1rem" }}></hr></h1>
 <div className="category_search">
 
   <FormControl  variant="outlined" className={classes.formControlType} >

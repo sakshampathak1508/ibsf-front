@@ -68,18 +68,20 @@ const Contact = props => {
     return (
         <div>
             <Header active="contactus"/>
-            
-            <div style={{background:"#0067b8" , padding:"2rem 0rem 2rem 3.5rem"}}>
-                <h3 style={{width:"80%" , color:"white" , display:'inline-block' ,margin:'auto'}}>Contact IBSF</h3>
+            <div style={{maxWidth:'1130px' , margin:'auto' , padding:'2rem'}}>
+              
+            <div style={{width:'max-content'}}>
+                <h1 style={{fontFamily:'Poppins' , margin:0 }}>Contact IBSF</h1>
+                <hr  style={{marginBottom:"1rem" , marginTop:'1rem'}}></hr>
             </div>
 
             <br></br>
-            <div style={{padding:"1.5rem", maxWidth:"800px"  , margin:"auto"}}>
+            <div style={{maxWidth:"900px"  , margin:"auto"}}>
             {
             data.length!=0?
               <>
-              <div  style={{display:'flex' , flexWrap:"wrap"}}>
-                <div className="contact_responsive" style={{display:"flex"}}>
+              <div  style={{display:'flex' , flexWrap:"wrap" , justifyContent:'space-between'}}>
+                <div className="contact_responsive" style={{display:"flex" }}>
                     <h3 style={{color:"rgb(13, 161, 255)"}}>Address</h3>
                     <div dangerouslySetInnerHTML={{__html:data.address}}></div>
                 </div >
@@ -145,7 +147,8 @@ const Contact = props => {
     <Caroufredsel_wrapper data={sponsor}/>
 
     </div>
-
+          
+    </div>
     );
 
 }

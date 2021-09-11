@@ -11,7 +11,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     margin:'1rem' ,
     cursor:"pointer" , 
-    minWidth:"35rem"
+    // minWidth:"35rem",
+    width:"50rem",
+    // fontFamily:'Poppi?ns'
   },
   key:
   {

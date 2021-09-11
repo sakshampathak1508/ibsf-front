@@ -1,11 +1,13 @@
 .aboutus
 {
-    width: 100%;
-    padding:0rem 10rem;
+    max-width: 1200px;
+    padding:0rem 5.5rem;
+    margin: auto;
 }
 
 .aboutus .aboutus_title{
     width: fit-content ;
+    font-family: Poppins;
 }
 .aboutus_section
 {

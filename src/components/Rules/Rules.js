@@ -20,14 +20,14 @@ const Rules = (props) => {
         <>
         
         <Header active="rules"/>
-        <div style={{maxWidth:"1300px" , padding:"2rem" , margin:"auto"}}>
-            <h1 style={{ fontWeight:"600" , marginBottom:"3rem"}}>IBSF Rules</h1>
+        <div style={{maxWidth:"1130px" , padding:"2rem" , margin:"auto"}}>
+            <h1 style={{ fontFamily:"Poppins", width:'max-content' ,  margin:"0 0 3rem 0"}}>Rules<br></br><hr style={{marginTop:"1rem" }}></hr></h1>
 
 
             {
     data.length!=0 ?
 
-            <div style={{display:"flex" ,justifyContent:"start" , flexWrap:"wrap"}}>
+            <div style={{display:"flex" ,justifyContent:"flex-start" , flexWrap:"wrap"}}>
 
             {
                 data.map((data, index)=>

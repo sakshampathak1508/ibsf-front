@@ -17,6 +17,12 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import animationData from "../../assets/search_file.json"
 import CallIcon from '@material-ui/icons/Call';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook'
+import WhatsappIcon from '@material-ui/icons/WhatsApp';
+import TwitterIcon from '@material-ui/icons/Twitter';
+
+
 import Lottie from 'react-lottie';
 
 const useStyles = makeStyles({
@@ -79,17 +85,22 @@ function MemberCountries() {
         <div style={{maxWidth:'110rem' , margin:"auto"}}>
 
         <div className="federation_info" style={{maxWidth:"70rem", padding:"2rem" , margin:"auto"}}>
-            <h3 style={{textAlign:"center", lineHeight:"2.5rem" , fontWeight:"600" ,marginBottom:"3rem"}}>{continent.name}</h3>
+            <h3 style={{textAlign:"center", lineHeight:"2.5rem", fontFamily:'Poppins' ,marginBottom:"3rem"}}>{continent.name} <br></br><hr style={{ alignContent:"center"  , margin:'1rem auto 4rem auto', width:'70%' }}></hr> </h3>
             
             <div className="frderation_info_contact" style={{display:"flex" , justifyContent:"space-between"}}>
 
                 <div className="contact" style={{display:"flex" , flexDirection:"column"}}>
-                    <p style={{color:"rgba(255 , 0 , 0 , 0.7)"}} onClick={()=>window.location.href=`mailto: ${continent.email_id}`}>  <MailOutlineIcon style={{cursor :"pointer", fontSize:'2.5rem'}}/> Mail</p>
-                    <p style={{fontWeight:"600"}} onClick={()=>window.location.href=`tel:${continent.mobile}`}>{continent.contact},<CallIcon style={{color:"green"}}/> <span style={{cursor:"pointer"}}>{continent.mobile}</span></p>
+                    <p style={{fontWeight:"600"}} onClick={()=>window.location.href=`tel:${continent.mobile}`}>{continent.contact},<CallIcon style={{fontSize:'2rem',cursor:'pointer' ,  color:"green"}}/>  <span style={{cursor:"pointer"}}></span> <span style={{color:"rgba(255 , 0 , 0 , 0.7)"}} onClick={()=>window.location.href=`mailto: ${continent.email_id}`}>  <MailOutlineIcon style={{cursor :"pointer", fontSize:'2.2rem'}}/></span>
+                    </p>
                 </div>
 
                 <div className="website">
                     <p  style={{cursor:"pointer" , color:"rgba(0 , 0 , 255 , 0.7)"}} onClick={()=>{window.open(continent.website , 'blank')}}>{continent.website}</p>
+                    <div>
+                        {continent.fb_url!=null && <FacebookIcon style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.fb_url, '_blank')}}/>}
+                        {continent.insta_url!=null && <InstagramIcon style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.insta_url, '_blank')}}/>}
+                        {continent.twitter_url!=null && <TwitterIcon style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.twitter_url, '_blank')}}/>}
+                    </div>
                 </div>
             </div>
             <hr ></hr>
@@ -168,12 +179,14 @@ function MemberCountries() {
         <hr style={{border:"0", backgroundImage:"linear-gradient(to right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0))" , marginTop:'-1rem' , marginBottom:"0"}}></hr>
 
     
-        <div style={{display:"flex" , flexWrap:"wrap" , justifyContent:"center"  ,width:"100%" , height:"auto" , padding:"2rem 5rem"}}>
+        <div style={{display:"flex" , flexWrap:"wrap"   ,width:"100%" , height:"auto" , padding:"2rem" , maxWidth:"1130px"}}>
 
             {
                 related_country&&related_country.map((data  , index)=>
                 (
+                    <>
                     <MemberCountry key ={index} data ={data}/>
+                    </>
                 ))
             
             }

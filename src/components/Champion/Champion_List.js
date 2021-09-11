@@ -21,8 +21,11 @@ const Rules = (props) => {
     
         <Header active="aboutus"/>
     
-        <div style={{maxWidth:"1300px" , padding:"2rem" , margin:"auto"}}>
-            <h1 style={{ fontWeight:"600" , marginBottom:"3.5rem"}}>PAST CHAMPIONS</h1>
+        <div style={{maxWidth:"1130px" , padding:"2rem 2rem" , margin:"auto"}}>
+            <div style={{width:'max-content'}}>
+            <h1 style={{ fontFamily:"Poppins" , margin:"0"}}>Past Champions</h1>
+            <hr  style={{marginTop:"1rem" , marginBottom:"3rem"}}></hr>
+            </div>
 
             {
     data.length!=0 ?

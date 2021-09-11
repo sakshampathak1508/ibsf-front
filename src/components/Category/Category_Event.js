@@ -82,7 +82,6 @@ const Category_Event = props => {
                     data.map((raw ,index)=>
                     (
                         <>
-                    
                         <Category_event_card key={index} data = {raw}/>
                         </>
                     ))

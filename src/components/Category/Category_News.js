@@ -76,7 +76,7 @@ const Category_Event = props => {
         <div onScroll={handleScroll} style={data.length!=0 ? {height:"80vh" ,paddingTop:"1rem" ,overflow:"scroll"}:{height:"auto"}} className="news-gallery">
             <Grid item container>
           
-            <div  style={{display:"flex" ,paddingLeft:"2rem"   , flexWrap:"wrap"}}>
+            <div  style={{display:"flex"    , flexWrap:"wrap"}}>
                 
                 {
                     data.map((raw ,index)=>

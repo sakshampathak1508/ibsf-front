@@ -69,12 +69,19 @@ body {
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 30px;
     text-decoration: none;
     font-size: 15px;
     font-weight: 700;
     font-family: "Oswald", sans-serif;
     
+  }
+  .topnav .ui{
+    max-width: 1200px;
+  }
+  .topnav .ui .dropbtn
+  {
+    padding: 14px 30px;
   }
   
   .topnav .icon {
@@ -187,9 +194,11 @@ body {
     height: 6rem;
     margin-top: -1.5rem;
     cursor: pointer;
+    margin-left: 1rem;
   }
   
   @media screen and (max-width: 900px) {
+    
     .topnav a,
     .dropdown .dropbtn {
       display: none !important;
@@ -198,9 +207,14 @@ body {
       float: left !important;
       display: block !important;
     }
+    .topnav .ui .dropbtn
+  {
+    padding: 14px 16px;
   }
+}
   
   @media screen and (max-width: 900px) {
+    
     .topnav.responsive {
       position: relative !important;
     }
@@ -213,6 +227,7 @@ body {
       float: none;
       display: block !important;
       text-align: left !important;
+      padding: 14px 16px;
     }
     .topnav.responsive .dropdown {
       float: none !important;

@@ -28,8 +28,8 @@ const NewsbyTag = props => {
         <div>
             <Header active="news"/>
 
-            <div style={{maxWidth:"1400px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
-                <h1 style={{ marginBottom:"4rem" , fontWeight:"550"}}>News by <span style={{backgroundColor:"#0da1ff",fontSize:"2.3rem" ,padding:"0.5rem"  , color:"white"}}>{tagname}</span></h1>
+            <div style={{maxWidth:"1130px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
+                <h1 style={{width:'max-content', marginBottom:"4rem" , fontWeight:"550"}}>Reports under <span style={{backgroundColor:"#0da1ff",fontSize:"2.3rem" ,padding:"0.5rem"  , color:"white"}}>{tagname}</span><br></br><hr style={{marginTop:"1.5rem" }}></hr></h1>
                 {
             databytagname.length!=0?
                 <div style={{height:"auto",display:"flex" , flexWrap:"wrap" , justifyContent:"start" ,marginTop:"2rem" }}>

@@ -37,14 +37,14 @@ function About() {
             <div className="aboutus_title">
 
         
-            <h1>Downloads </h1>
-            <hr  style={{marginBottom:"1rem"}}></hr>
+            <h1 style={{marginBottom:'0'}}>Downloads </h1>
+            <hr  style={{marginTop:"1rem" , marginBottom:'3rem'}}></hr>
 
             </div>
             {
             data.length!=0?
 
-            <section className="aboutus_section" >
+            <section  >
             <div dangerouslySetInnerHTML={{ __html: data }} />
 
             <div>

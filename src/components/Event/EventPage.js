@@ -31,7 +31,8 @@ const useStyles = makeStyles((theme) => ({
   },
   table: {
     // maxWidth:"400px"
-    fontSize:"1.2rem"
+    fontSize:"1.2rem",
+    fontFamily:'Poppins'
   },
   style_key:{
     border:0
@@ -117,7 +118,7 @@ const EventPage = props => {
             <Header active="events"/>
             <div className="news-gallery" style={{maxWidth:"900px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
             <div style={{display:'flex'}}>
-    <h1> IBSF Events</h1>
+    <h1> Events<br></br><hr style={{marginTop:"1rem" }}></hr></h1>
 <div className="news-gallery-search_bar">
 <FormControl className="news_gallery" variant="outlined" className={classes.formControl} >
     <InputLabel  className="news_gallery-input-label"  htmlFor="outlined-year-native-simple">Year</InputLabel>

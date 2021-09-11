@@ -123,7 +123,24 @@ const Main_page = () => {
 
 
       </div>
-      <div className="middle_widgets">
+      
+    <div className="news_section" style={{display:"flex"   ,flexDirection:"row", justifyContent:"center" ,backgroundColor: "rgba(0, 0, 0, 0.8)" ,paddingTop:"2rem"}}>
+  
+    {latestnews&&latestnews.slice(0 , 4).map((e , index)=>
+    (
+  
+        <Card key={index} data={e} />
+    ))    
+    }
+
+
+    </div>
+    <div style={{background:'rgba(0,0,0 , 0.9)'}}>
+
+
+    <div className="middle_widgets">
+     
+      
             <div className="current_champion">
               <Middle_widget_Heading icon={BiWorld} link="champion" text="World Champion"/>
               <WorldChampion/>
@@ -140,20 +157,12 @@ const Main_page = () => {
 
             </div>
 
+      
+      
+      </div>
 
       </div>
 
-    <div className="news_section" style={{display:"flex"   ,flexDirection:"row", justifyContent:"center" ,backgroundColor: "rgba(0, 0, 0, 0.8)" ,paddingTop:"2rem"}}>
-  
-    {latestnews&&latestnews.slice(0 , 4).map((e , index)=>
-    (
-  
-        <Card key={index} data={e} />
-    ))    
-    }
-
-
-    </div>
 
     <br></br>
 

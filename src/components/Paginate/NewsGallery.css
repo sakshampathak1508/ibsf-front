@@ -13,9 +13,8 @@
 .news-gallery h1
 {
 
-    font-size: 3rem;
     margin: 0;
-    color:  #0da1ff;
+    font-family: Poppins;
 
 }
 .news-gallery .news_gallery-input-label{
@@ -39,7 +38,7 @@
 {
     /* float: right; */
     text-align: center;
-    margin:0 0 0 2rem;
+    margin:0 0 0 5vw;
 }
 
 #outlined-age-native-simple

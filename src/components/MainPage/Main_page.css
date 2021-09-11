@@ -81,7 +81,8 @@
     margin: auto;
     padding-top: 3rem;
     /* background: red; */
-    background-color: rgba(0, 0, 0, 0.9)
+    background-color: rgba(0, 0, 0, 0);
+    max-width: 1300px;
 
 }
 

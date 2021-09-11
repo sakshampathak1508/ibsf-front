@@ -134,11 +134,11 @@ option.value = i;
         
         
 
-        <div style={{maxWidth:"1400px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
+        <div style={{maxWidth:"1130px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
     
       <div style={{display:'flex'}}>
 
-        <h1> IBSF News</h1>
+        <h1> Reports<br></br><hr style={{marginTop:"1rem" }}></hr></h1>
 <div className="news-gallery-search_bar">
 <FormControl className="news_gallery" variant="outlined" className={classes.formControl} >
         <InputLabel  className="news_gallery-input-label"  htmlFor="outlined-year-native-simple">Year</InputLabel>
@@ -165,8 +165,7 @@ option.value = i;
 </div>
 </div>
 <br></br>
-<br></br>
-          <div style={{height:"auto",display:"flex", flexWrap:"wrap" ,justifyContent:"start",marginTop:"2rem" }}>
+          <div style={{height:"auto",display:"flex", flexWrap:"wrap" ,justifyContent:"flex-start",marginTop:"2rem" }}>
 
         
           
