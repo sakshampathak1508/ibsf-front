@@ -152,8 +152,9 @@ const EventPage = props => {
             <StyledTableCell align="center" style={{fontSize:"1.2rem"  ,width:"2rem"}}>S.No</StyledTableCell>
             <StyledTableCell align="center" style={{fontSize:"1.2rem" , width:"15rem"}}>Start Date</StyledTableCell>
             <StyledTableCell align="center"  style={{fontSize:"1.2rem" , width:"15rem"}} >End Date</StyledTableCell>
-            <StyledTableCell align="left"  style={{fontSize:"1.2rem" , width:"15rem"}} >Location</StyledTableCell>
             <StyledTableCell align="left"  style={{fontSize:"1.2rem" , minWidth:"20rem"}} >Event</StyledTableCell>
+            <StyledTableCell align="left"  style={{fontSize:"1.2rem" , width:"20rem"}} >Location</StyledTableCell>
+            
             </TableRow>
         </TableHead>
         <TableBody>
@@ -170,11 +171,12 @@ const EventPage = props => {
                 {row.end_date}
               </StyledTableCell>
 
+              <StyledTableCell className="hoverable_title" align="left" onClick={()=>history.push(`/events/${row.id}/${row.slug}`)}>{row.name}</StyledTableCell>
               <StyledTableCell className="hoverable_title" align="left" onClick={()=>history.push(`/events/${row.id}/${row.slug}`)}>{row.location}</StyledTableCell>
               {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}
   
 
-              <StyledTableCell className="hoverable_title" align="left" onClick={()=>history.push(`/events/${row.id}/${row.slug}`)}>{row.name}</StyledTableCell>
+            
               {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}
             </StyledTableRow>
           ))}

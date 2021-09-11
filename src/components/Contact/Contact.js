@@ -76,7 +76,7 @@ const Contact = props => {
             </div>
 
             <br></br>
-            <div style={{maxWidth:"900px"  , margin:"auto"}}>
+            <div style={{maxWidth:"900px"  }}>
             {
             data.length!=0?
               <>

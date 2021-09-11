@@ -27,7 +27,9 @@ function MemberContinent() {
         <Header active="aboutus"/>
 
         
-        <div style={{maxWidth:"1400px"  , margin:"auto"}}>
+        <div style={{maxWidth:"1130px" , padding:"2rem"  , margin:"auto"}}>
+
+        <h1 style={{maxWidth:'max-content' , margin:'0'}}>Members<br></br><hr style={{marginTop:"1rem" }}></hr></h1>
 
         {
     country.length!=0 ?
