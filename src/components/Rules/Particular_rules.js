@@ -38,7 +38,7 @@ const Particular_rules = (props) => {
         
 
         <section style={{width:"96%" , margin:"auto"}}>
-        <img src ={`https://billiardsports.in/${Data.image}`} style={{ width:"100%", maxHeight:"100%" ,  border:"1px solid"}}/>
+        <img src ={`https://billiardsports.in/${Data.image}`} style={{ width:"100%", maxHeight:"100%" }}/>
         
         <br></br>
         <br></br>

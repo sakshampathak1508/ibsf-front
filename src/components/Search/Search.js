@@ -32,19 +32,19 @@ const Search = props => {
             <Header/>
 
 
-            <div style={{maxWidth:"900px" , display:"flex",  flexDirection:"column" , margin:'auto' ,padding:"2rem"}}>
+            <div style={{maxWidth:"1130px" , display:"flex",  flexDirection:"column" , margin:'auto' ,padding:"2rem"}}>
 
                 {
                     searchdata.length!=0?
                     <>
-                <h2 style={{textAlign:"start" , padding:"0" ,color:"#0da1ff"}}>Search results:</h2>
+                <h2 style={{textAlign:"start" , padding:"0" , width:'max-content'}}>Search results:<br></br><hr style={{marginTop:"1rem" ,marginBottom:"2rem" }}></hr></h2>
                 {/* For news */}
                 
                 {
-                    <div>
+                    <>
                         {
                     searchdata.news.length>0&&
-                    <>
+                    <div>
                     <h3 style={{color:"#0da1ff"}}>News:</h3>
                     {
                         searchdata.news.map((data, index)=>
@@ -62,10 +62,10 @@ const Search = props => {
                         ))
                     }
 
-                        </>
+                        </div>
                         }
-                        <br></br>
-                    </div>
+                    
+                    </>
                 }
 
 

@@ -144,10 +144,11 @@ const Contact = props => {
           </div>
             <br></br>
             <br></br>
-    <Caroufredsel_wrapper data={sponsor}/>
 
     </div>
           
+          
+    <Caroufredsel_wrapper data={sponsor}/>
     </div>
     );
 
