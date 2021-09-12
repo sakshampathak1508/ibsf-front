@@ -45,7 +45,7 @@ const Particular_rules = (props) => {
         )
         else{
         return (
-        <div>
+        <>
             <Header active="aboutus"/>
             
             <div style={{maxWidth:"1200px" , marginLeft:"auto" ,marginRight:"auto"}}>
@@ -67,7 +67,7 @@ const Particular_rules = (props) => {
         </div>
         <br></br>
         <Caroufredsel_wrapper data={sponsor} />
-        </div>
+        </>
     );
         }
 };

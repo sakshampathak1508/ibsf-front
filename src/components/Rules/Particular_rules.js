@@ -29,7 +29,7 @@ const Particular_rules = (props) => {
     
        if(Data.length!=0)
        return (
-        <div>
+        <>
             <Header active="rules"/>
             
             <div style={{maxWidth:"1200px" , marginLeft:"auto" ,marginRight:"auto"}}>
@@ -49,7 +49,7 @@ const Particular_rules = (props) => {
 
 
         </div>
-        </div>
+        </>
     );
         else{
             return(

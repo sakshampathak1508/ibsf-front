@@ -73,7 +73,7 @@ const Category = props => {
     
 
     return (
-        <div>
+        <>
             
             <Header active={stateType==='Event'?"events":"news"}/>
             <div className="category" style={{maxWidth:"1130px" , padding:"2rem",margin:"auto" }}>
@@ -113,7 +113,7 @@ const Category = props => {
         }
 
         </div>
-        </div>
+        </>
     );
 };
 

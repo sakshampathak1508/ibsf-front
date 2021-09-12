@@ -113,7 +113,7 @@ const EventPage = props => {
 
 
     return (
-        <div>
+        <>
             {/* <h1>Event Page</h1> */}
             <Header active="events"/>
             <div className="news-gallery" style={{maxWidth:"900px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
@@ -193,7 +193,7 @@ const EventPage = props => {
           }
 
 </div>
-        </div>
+        </>
 
           
     );

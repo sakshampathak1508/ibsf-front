@@ -66,7 +66,7 @@ const Contact = props => {
 
 
     return (
-        <div>
+        <>
             <Header active="contactus"/>
             <div style={{maxWidth:'1130px' , margin:'auto' , padding:'2rem'}}>
               
@@ -149,7 +149,7 @@ const Contact = props => {
           
           
     <Caroufredsel_wrapper data={sponsor}/>
-    </div>
+    </>
     );
 
 }

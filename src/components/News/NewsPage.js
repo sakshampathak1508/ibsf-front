@@ -61,11 +61,12 @@ const NewsPage=({match})=> {
     if(newsData.length!=0){
         // window.scrollTo(0 ,0)
     return (
-        
+        <>
+        <Header active="news"/>
 
     <div style={{display:"flex" , flexDirection:"column"}}>
 
-        <Header active="news"/>
+    
 
         <div style={{maxWidth:"1200px" , marginLeft:"auto" ,marginRight:"auto"}}>
         <h2 style={{ marginRight:"auto" , marginLeft:"auto" , color: "#282828",
@@ -177,6 +178,7 @@ const NewsPage=({match})=> {
         <br></br>
         <Caroufredsel_wrapper data = {sponsor}/>
         </div>
+        </>
     );
                             }
     else

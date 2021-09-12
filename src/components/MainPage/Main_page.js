@@ -177,10 +177,10 @@ const Main_page = () => {
   );
   else
   return(
-    <div>
+    <>
     <Header active='home'/>
     <div id="loader"  style={{width:"100%"  , marginTop:"10%" , marginBottom:"10%", textAlign:'center'}}> <p><CircularProgress/></p> </div>
-    </div>
+    </>
   )
 };
 
