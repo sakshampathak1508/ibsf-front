@@ -76,7 +76,7 @@ const Category = props => {
         <>
             
             <Header active={stateType==='Event'?"events":"news"}/>
-            <div className="category" style={{maxWidth:"1130px" , padding:"2rem",margin:"auto" }}>
+            <div className="category ui container" style={{maxWidth:"1130px" , padding:"2rem",margin:"auto" }}>
     
     <div style={{display:"flex" , marginBottom:"1rem"}}>
     <h1> {category}<br></br><hr style={{marginTop:"1rem" }}></hr></h1>

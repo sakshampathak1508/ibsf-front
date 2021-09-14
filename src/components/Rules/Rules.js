@@ -20,7 +20,7 @@ const Rules = (props) => {
         <>
         
         <Header active="rules"/>
-        <div style={{maxWidth:"1130px" , padding:"2rem" , margin:"auto"}}>
+        <div className='ui container' style={{maxWidth:"1130px" , padding:"2rem" , margin:"auto"}}>
             <h1 style={{ fontFamily:"Poppins", width:'max-content' ,  margin:"0 0 3rem 0"}}>Rules<br></br><hr style={{marginTop:"1rem" }}></hr></h1>
 
 

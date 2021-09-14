@@ -68,7 +68,7 @@ const Contact = props => {
     return (
         <>
             <Header active="contactus"/>
-            <div style={{maxWidth:'1130px' , margin:'auto' , padding:'2rem'}}>
+            <div className='ui container' style={{maxWidth:'1130px' , margin:'auto' , padding:'2rem'}}>
               
             <div style={{width:'max-content'}}>
                 <h1 style={{fontFamily:'Poppins' , margin:0 }}>Contact IBSF</h1>

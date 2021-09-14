@@ -82,7 +82,7 @@ function MemberCountries() {
         <>
         <Header active="aboutus"/>
         
-        <div style={{maxWidth:'110rem' , margin:"auto"}}>
+        <div className='ui container' style={{maxWidth:'1130px' , padding:'2rem' , margin:"auto"}}>
 
         <div className="federation_info" style={{maxWidth:"70rem", padding:"2rem" , margin:"auto"}}>
             <h3 style={{textAlign:"center", lineHeight:"2.5rem", fontFamily:'Poppins' ,marginBottom:"3rem"}}>{continent.name} <br></br><hr style={{ alignContent:"center"  , margin:'1rem auto 4rem auto', width:'70%' }}></hr> </h3>

@@ -130,11 +130,11 @@ option.value = i;
     return (
       <>
       <Header active="news"/>
-      <div onScroll={handleScroll} style={data.length!=0 ? {height:"100vh" ,overflow:"scroll"}:{height:"auto"}}className="news-gallery">
+      <div  onScroll={handleScroll} style={data.length!=0 ? {height:"100vh" ,overflow:"scroll"}:{height:"auto"}}className="news-gallery">
         
         
 
-        <div style={{maxWidth:"1130px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
+        <div className="ui container" style={{maxWidth:"1130px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
     
       <div style={{display:'flex'}}>
 

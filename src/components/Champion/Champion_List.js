@@ -21,9 +21,9 @@ const Rules = (props) => {
     
         <Header active="aboutus"/>
     
-        <div style={{maxWidth:"1130px" , padding:"2rem 2rem" , margin:"auto"}}>
+        <div className='ui container' style={{maxWidth:"1130px" , padding:"2rem 2rem" , margin:"auto"}}>
             <div style={{width:'max-content'}}>
-            <h1 style={{ fontFamily:"Poppins" , margin:"0"}}>Past Champions</h1>
+            <h1 style={{ fontFamily:"Poppins" , margin:"0"}}>Past champions</h1>
             <hr  style={{marginTop:"1rem" , marginBottom:"3rem"}}></hr>
             </div>
 

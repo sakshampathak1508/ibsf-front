@@ -50,12 +50,11 @@
 @media screen and (max-width:723px) {
 
     .card_body
-    {
-        width: 93%;
-        max-width: 100%;
+    {   
+        height: 26rem;
         margin-right: 0;
         margin: auto;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
     
 }

@@ -32,12 +32,12 @@ const Search = props => {
             <Header/>
 
 
-            <div style={{maxWidth:"1130px" , display:"flex",  flexDirection:"column" , margin:'auto' ,padding:"2rem"}}>
+            <div className="ui container" style={{maxWidth:"1130px" , display:"flex",  flexDirection:"column" , margin:'auto' ,padding:"2rem"}}>
 
                 {
                     searchdata.length!=0?
                     <>
-                <h2 style={{textAlign:"start" , padding:"0" , width:'max-content'}}>Search results:<br></br><hr style={{marginTop:"1rem" ,marginBottom:"2rem" }}></hr></h2>
+                <h2 style={{textAlign:"start" ,margin:0, padding:"0" , width:'max-content'}}>Search results:<br></br><hr style={{marginTop:"1rem" ,marginBottom:"1.5rem" }}></hr></h2>
                 {/* For news */}
                 
                 {

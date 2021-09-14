@@ -31,7 +31,7 @@ function About() {
     return (
         <>
          <Header active="document"/>
-        <div className="aboutus">
+        <div className="aboutus ui container">
 
             
             <div className="aboutus_title">

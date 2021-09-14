@@ -32,7 +32,9 @@ const useStyles = makeStyles((theme) => ({
   table: {
     // maxWidth:"400px"
     fontSize:"1.2rem",
-    fontFamily:'Poppins'
+    fontFamily:'Poppins',
+    width:'860px'
+
   },
   style_key:{
     border:0
@@ -116,7 +118,7 @@ const EventPage = props => {
         <>
             {/* <h1>Event Page</h1> */}
             <Header active="events"/>
-            <div className="news-gallery" style={{maxWidth:"900px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
+            <div className="news-gallery ui container" style={{maxWidth:"900px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
             <div style={{display:'flex'}}>
     <h1> Events<br></br><hr style={{marginTop:"1rem" }}></hr></h1>
 <div className="news-gallery-search_bar">
@@ -144,8 +146,8 @@ const EventPage = props => {
 
   {
   data.length!=0 ?
-  <div style={{height:"auto",display:"flex", flexWrap:"wrap" ,justifyContent:"start",marginTop:"2rem" }}>
-  <TableContainer className="table_event" style={{borderRadius:"0" , maxWidth:"85rem"}} component={Paper}>
+  <div style={{height:"auto",display:"flex", flexWrap:"wrap" ,justifyContent:"start" }}>
+  <TableContainer className="table_event" style={{borderRadius:"0" }} component={Paper}>
       <Table className={classes.table}  stickyHeader aria-label="sticky table">
         <TableHead>
             <TableRow>

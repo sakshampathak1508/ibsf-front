@@ -22,6 +22,11 @@
 
     
 }
+.mainPage_carousel  .carousel-caption
+{
+    /* width: 70%; */
+    max-width: 65%;
+}
 
 .carousel_caption h3
 {
