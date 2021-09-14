@@ -43,8 +43,8 @@ function ControlledCarousel() {
 
 
         <Carousel.Caption onClick={()=> history.push(`/news/${data.id}/${data.slug}`)} className="carousel_caption">
-          
-          <h3>{data.title}</h3>
+          <span></span>
+          <h3 style={{margin:0}}>{data.title}</h3>
          
         </Carousel.Caption>
       </Carousel.Item>
