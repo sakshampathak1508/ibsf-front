@@ -21,16 +21,18 @@ const Caroufredsel_federation = (props) => {
     const [slidesToShow , setslidesToShow] = useState(5);
     const [federation , setfederation] = useState([])
     const history =useHistory()
+
     
     useEffect(()=>
     {
+        const width = window.innerWidth;
         AOS.init({
             // initialise with other settings
             duration : 900,
             once:true,
         });
         Aos.refresh()
-        const width = window.innerWidth;
+        
 
         width>768? setslidesToShow(5):setslidesToShow(1)
 
@@ -85,6 +87,7 @@ const Caroufredsel_federation = (props) => {
     federation.map((data, index)=>(
                 <>
                 {/* <div key={1} data-aos={"fade-up"}  onClick={()=>history.push(`/member_countries/1`)} ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div> */}
+                
                 <div key={index} data-aos={"fade-up"}  data-aos-delay={(index)*100} data-aos-anchor-placement="top-center"  onClick={()=>history.push(`/member_countries/${data.id}`)} className="slide_image" ><img src={`https://billiardsports.in${data.logo}`} alt="img" /></div>
             
                 </>

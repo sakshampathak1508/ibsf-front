@@ -1,8 +1,7 @@
 import React , {useState , useEffect, createElement} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Posts from './Post';
-import Pagination from './Pagination';
+
 import axios from 'axios';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
@@ -12,7 +11,6 @@ import Header from "../header/Header"
 import Card from '../Card/Card';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import "./NewsGallery.css"
-import { CodeSharp } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -126,11 +124,10 @@ option.value = i;
 
 
   }
-
     return (
       <>
       <Header active="news"/>
-      <div  onScroll={handleScroll} style={data.length!=0 ? {height:"100vh" ,overflow:"scroll"}:{height:"auto"}}className="news-gallery">
+      <div  onScroll={handleScroll} style={data.length!=0 && state=='all' ? {height:"100vh" ,marginBottom:"-4.5rem" ,overflow:"scroll"}:{height:"auto"}}className="news-gallery">
         
         
 

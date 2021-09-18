@@ -13,7 +13,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import '../Paginate/NewsGallery.css'
+import '../NewsGallery/NewsGallery.css'
 import Card from '../Card/Card';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { useHistory } from 'react-router';

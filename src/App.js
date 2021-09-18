@@ -4,7 +4,7 @@ import NewsPage from './components/News/NewsPage';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import NewsGallery from './components/Paginate/NewsGallery';
+import NewsGallery from './components/NewsGallery/NewsGallery';
 import About from './components/About/About';
 import MemberContinent from './components/MemberCountries/MemberContinent';
 import MemberCountries from './components/MemberCountries/MemberCountries';
@@ -69,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export default  App;
