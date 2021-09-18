@@ -48,53 +48,29 @@ const Category_Event = props => {
     } , [page ,id])
 
 
-    const handleScroll = (e) => {
-
-        const {scrollTop , clientHeight , scrollHeight} = e.currentTarget
-    
-        if(clientHeight + scrollTop + 300 >= scrollHeight && bottom!=true && loading==false)
-            {
-                
-    
-                  
-                        
-                        setloading(true)
-                        setPage((prev)=>  prev+1)
-                
-                    
-                return
-                  
-            }
-    
-    
-    
-      }
-    
+   
 
     return (
         
-        <div onScroll={handleScroll} style={data.length!=0 ? {height:"80vh" ,paddingTop:"1rem" ,overflow:"scroll"}:{height:"auto"}} className="news-gallery">
+        <div   className="news-gallery">
             <Grid item container>
           
             <div  style={{display:"flex"    , flexWrap:"wrap"}}>
                 
                 {
-                    data.map((raw ,index)=>
+                    props.data.map((raw ,index)=>
                     (
                         <>
                     
                         <Card key={index} data = {raw}/>
-                        {/* <Category_news_card key={index} data = {raw}/> */}
+                        
                         </>
                     ))
 
                 } 
 
               </div>
-        {
-          data.length==0 && loading==false && <div style={{width:'100%', textAlign:"center"}}><h3>Nothing Found...</h3></div>
-        }
-{(loading && bottom!=true) && <div id="loader" style={{width:'100%', textAlign:"center"}}> <CircularProgress/> </div>}
+        
             
       
         

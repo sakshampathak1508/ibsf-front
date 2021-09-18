@@ -30,7 +30,7 @@ const [state, setState] = useState('all')
 const [data , setdata] = useState([]);
 const classes = useStyles();
 const [page, setpage]= useState(1)
-const [loading, setloading]=useState(false)
+const [loading, setloading]=useState(true)
 const [bottom, setBottom] = useState(false)
 
 useEffect(() => {
@@ -127,7 +127,7 @@ option.value = i;
     return (
       <>
       <Header active="news"/>
-      <div  onScroll={handleScroll} style={data.length!=0 && state=='all' ? {height:"100vh" ,marginBottom:"-4.5rem" ,overflow:"scroll"}:{height:"auto"}}className="news-gallery">
+      <div  onScroll={handleScroll} style={data.length!=0 && state=='all' ? {height:"100vh" ,marginBottom:"-5rem" ,overflow:"scroll"}:{height:"auto"}}className="news-gallery">
         
         
 
