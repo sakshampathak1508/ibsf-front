@@ -8,9 +8,9 @@ import {  makeStyles } from '@material-ui/core/styles';
 import Header from '../header/Header';
 import Category_Event from './Category_Event'
 import Category_News from './Category_News';
-import './Category.css'
-import ScrolltoTop from '../ScrollToTop/ScrolltoTop';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import './Category.css'
+
 const useStyles = makeStyles((theme) => ({
     formControl: {
       

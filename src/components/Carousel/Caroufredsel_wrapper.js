@@ -1,9 +1,9 @@
 import React , {useEffect  , useState} from 'react';
+import Slider from "react-slick";
+import { useMediaQuery } from 'react-responsive'
 import "./Caroufredsel_wrapper.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import { useMediaQuery } from 'react-responsive'
 
 
 
@@ -69,7 +69,7 @@ const Caroufredsel_wrapper = (props) => {
             props.data&&props.data.map((data , index)=>
             (   
 
-                <div key={index} onClick={()=>window.open(data.url , '_blank')} className="slide_image" ><img src={`https://billiardsports.in/${data.image}`} alt="img" /></div>
+                <div key={index} onClick={()=>window.open(data.url , '_blank')} className="slide_image" ><img src={`https://billiardsports.in/${data.image}`} width="200" height="38" alt="img" /></div>
 
             ))
 

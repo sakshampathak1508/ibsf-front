@@ -11,8 +11,6 @@ import './Contact.css'
 
 
 
-
-
   const useStyles = makeStyles({
     table: {
         display:'flex',

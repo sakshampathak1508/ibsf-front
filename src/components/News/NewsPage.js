@@ -10,12 +10,12 @@ import PrintIcon from '@material-ui/icons/Print';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useParams } from "react-router-dom";
-import "./NewsPage.css"
 import Lottie from 'react-lottie';
 import animationData from '../../assets/search_file.json';
 import axios from 'axios';
 import {FaEye} from 'react-icons/fa'
 import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
+import "./NewsPage.css"
 
 
 const NewsPage=({match})=> {
@@ -80,7 +80,7 @@ const NewsPage=({match})=> {
 
         <div style={{width:"96%" , maxHeight:"auto" , overflow:"hidden" , margin:"auto"}}>
 
-        <img src ={`https://billiardsports.in/${newsData.image}`}  style={{ width:"100%", maxHeight:"100%" }}/>
+        <img loading="lazy" src ={`https://billiardsports.in/${newsData.image}`}  style={{ width:"100%", maxHeight:"100%" }}/>
 
         </div>
 

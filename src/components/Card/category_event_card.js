@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     minWidth: 220,
     maxWidth:320,
     marginLeft:"0.2rem",
-    marginRight:'1rem',
+    marginRight:'3rem',
     marginBottom:"1rem",
     boxShadow:"0px 1px 1px -1px rgb(0 0 0 / 30%), 0px 1px 1px 0px rgb(0 0 0 / 4%), 0px 1px 3px 0px rgb(0 0 0 / 42%)",
   },

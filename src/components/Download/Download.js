@@ -2,8 +2,8 @@ import React ,{useEffect, useState} from 'react';
 import axios from 'axios'
 import Header from '../header/Header';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import "../About/About.css"
 import {BsDownload} from 'react-icons/bs'
+import "../About/About.css"
 
 function About() {
 

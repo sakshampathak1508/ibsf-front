@@ -1,16 +1,14 @@
 import React , {useEffect  , useState} from 'react';
-import "./carousel_federation.css"
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useHistory } from 'react-router';
-import 'aos/dist/aos.css';
 import axios from 'axios';
 import { useMediaQuery } from 'react-responsive'
 import AOS  from 'aos';
 import Aos from 'aos';
-
-
+import "./carousel_federation.css"
+import "slick-carousel/slick/slick.css";
+import 'aos/dist/aos.css';
+import "slick-carousel/slick/slick-theme.css";
 
 
 
@@ -88,7 +86,7 @@ const Caroufredsel_federation = (props) => {
                 <>
                 {/* <div key={1} data-aos={"fade-up"}  onClick={()=>history.push(`/member_countries/1`)} ><img src={`http://www.ibsf.info/images/banners/african-logo.png`} alt="img" /></div> */}
                 
-                <div key={index} data-aos={"fade-up"}  data-aos-delay={(index)*100} data-aos-anchor-placement="top-center"  onClick={()=>history.push(`/member_countries/${data.id}`)} className="slide_image" ><img src={`https://billiardsports.in${data.logo}`} alt="img" /></div>
+                <div key={index} data-aos={"fade-up"}  data-aos-delay={(index)*100} data-aos-anchor-placement="top-center"  onClick={()=>history.push(`/member_countries/${data.id}`)} className="slide_image" ><img src={`https://billiardsports.in${data.logo}`} width="200" height="auto" alt="img" /></div>
             
                 </>
             

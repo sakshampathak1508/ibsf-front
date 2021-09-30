@@ -2,7 +2,6 @@ import React ,{useState , useEffect} from 'react';
 import Header from '../header/Header';
 import axios from 'axios';
 import InputLabel from '@material-ui/core/InputLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
@@ -13,12 +12,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import '../NewsGallery/NewsGallery.css'
-import Card from '../Card/Card';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { useHistory } from 'react-router';
 import './EventPage.css'
-
+import '../NewsGallery/NewsGallery.css'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -43,8 +40,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const EventPage = props => {
-    const [state, setState] = useState('2021')
+const EventPage = (props) => {
+    const [state, setState] = useState('')
     const [data , setdata] = useState([]);
     const history = useHistory()
     const classes = useStyles();
@@ -82,6 +79,7 @@ const EventPage = props => {
       useEffect(() => {
 
         var currentyear = new Date().getFullYear();
+        setState(currentyear.toString())
         
 
         var select = document.getElementById('outlined-age-native-simple')

@@ -1,21 +1,19 @@
 import React , {useEffect, useState} from 'react';
-// import 'react-gallery-carousel/dist/index.css';
-// import { useStyles } from '@material-ui/core/styles';
 import Card from '../Card/Card';
 import ControlledCarousel from '../Carousel/Carousel';
 import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
 import axios from "axios"
 import Header from '../header/Header';
-import "./Main_page.css"
 import Current_Score from '../Card/Current_Score';
 import Middle_widget_Heading from './widgets/Middle_widget_Heading';
 import Caroufredsel_federation from '../Carousel/carousel_federation';
 import WorldChampion from './widgets/WorldChampion';
 import Twitter from './widgets/Twitter';
-import {IoIosArrowForward , IoLogoTwitter} from 'react-icons/io'
+import { IoLogoTwitter} from 'react-icons/io'
 import {BiWorld, BiCalendarEvent} from 'react-icons/bi'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import LatestEvents from './widgets/LatestEvents';
+import "./Main_page.css"
 
 
 
@@ -91,8 +89,8 @@ const Main_page = () => {
                     
                     <>
                     <div className="headlines_title">
-                    <h2><span style={{color:'#0da1ff' , fontSize:"2.4rem"}}>{data.event_name[0]}</span>{data.event_name.substr(1)}</h2>
-                    <hr></hr>
+                    <h2>{data.event_name}</h2>
+                    <hr style={{backgroundColor:'#0da1ff'}}></hr>
                     </div>
                     
                   
@@ -124,17 +122,7 @@ const Main_page = () => {
 
       </div>
       
-    <div className="news_section" style={{display:"flex"   ,flexDirection:"row", justifyContent:"center" ,backgroundColor: "rgba(0, 0, 0, 0.8)" ,paddingTop:"2rem"}}>
-  
-    {latestnews&&latestnews.slice(0 , 4).map((e , index)=>
-    (
-  
-        <Card key={index} data={e} />
-    ))    
-    }
-
-
-    </div>
+    
     <div style={{background:'rgba(0,0,0 , 0.9)'}}>
 
 
@@ -147,7 +135,7 @@ const Main_page = () => {
 
             </div>
             <div className="event_name">
-            <Middle_widget_Heading icon={BiCalendarEvent} link="events" text="Latest Events"/>
+            <Middle_widget_Heading icon={BiCalendarEvent} link="events" text="Upcoming Events"/>
             <LatestEvents/>
 
             </div>
@@ -162,6 +150,16 @@ const Main_page = () => {
       </div>
 
       </div>
+
+      <div className="news_section" style={{display:"flex"   ,flexDirection:"row", justifyContent:"center" ,backgroundColor: "rgba(0, 0, 0, 0.8)" ,paddingTop:"2rem" }}>
+  
+    {latestnews&&latestnews.slice(0 , 4).map((e , index)=>
+    (
+  
+        <Card key={index} data={e} page="main" />
+    ))    
+    }
+    </div>
 
 
     <br></br>

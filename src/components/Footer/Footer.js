@@ -1,18 +1,18 @@
 import React from 'react';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook'
-import WhatsappIcon from '@material-ui/icons/WhatsApp';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import "./Footer.css"
 import { useHistory } from 'react-router';
+import "./Footer.css"
+
 function Footer(props) {
     const history = useHistory();
     return (
         <footer className="all_footer">
             
             <div className="doping_image">
-                <img src="http://ibsf.info/images/banners/wada_header.png" width="500vw"/>
+                <img loading="lazy" src="http://ibsf.info/images/banners/wada_header.png" width="500vw"/>
             </div>
 
     

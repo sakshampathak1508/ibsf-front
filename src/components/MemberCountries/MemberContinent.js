@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import ContinentCard from '../Card/ContinentCard';
-import image1 from "../../assets/example3.jpg"
 import Header from '../header/Header';
 import axios from 'axios';
 import CircularProgress from '@material-ui/core/CircularProgress';

@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import ContinentCard from '../Card/ContinentCard';
-import image1 from "../../assets/example3.jpg"
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Header from '../header/Header';
 import MemberCountry from "../Card/MemberCountry"
 import axios from 'axios';
 import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
@@ -19,7 +16,6 @@ import CallIcon from '@material-ui/icons/Call';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook'
-import WhatsappIcon from '@material-ui/icons/WhatsApp';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
 
@@ -34,6 +30,12 @@ const useStyles = makeStyles({
     value:
     {
         fontSize:"1.4rem" ,
+    },
+    hoverable:
+    {
+        '&:hover': {
+            color: "rgb(13, 161, 255)",
+         },     
     }
 });
 
@@ -42,7 +44,8 @@ const StyledTableRow = withStyles((theme) => ({
       '&:nth-of-type(odd)': {
         backgroundColor: theme.palette.action.hover,
       }
-    },
+    }
+
   }))(TableRow);
 
 
@@ -52,7 +55,6 @@ function MemberCountries() {
 
     const [continent , setContinent] =useState("");
     const [related_country  , setCountry]=useState("");
-    const location =  useLocation()
     const {id} = useParams()
     const defaultOptions = {
         loop: true,
@@ -97,9 +99,9 @@ function MemberCountries() {
                 <div className="website">
                     <p  style={{cursor:"pointer" , color:"rgba(0 , 0 , 255 , 0.7)"}} onClick={()=>{window.open(continent.website , 'blank')}}>{continent.website}</p>
                     <div>
-                        {continent.fb_url!=null && <FacebookIcon style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.fb_url, '_blank')}}/>}
-                        {continent.insta_url!=null && <InstagramIcon style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.insta_url, '_blank')}}/>}
-                        {continent.twitter_url!=null && <TwitterIcon style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.twitter_url, '_blank')}}/>}
+                        {continent.fb_url!=null && <FacebookIcon className={classes.hoverable} style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.fb_url, '_blank')}}/>}
+                        {continent.insta_url!=null && <InstagramIcon className={classes.hoverable} style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.insta_url, '_blank')}}/>}
+                        {continent.twitter_url!=null && <TwitterIcon className={classes.hoverable} style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.twitter_url, '_blank')}}/>}
                     </div>
                 </div>
             </div>

@@ -4,7 +4,6 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
@@ -36,17 +35,23 @@ const useStyles = makeStyles({
   },
   style_key:
   {
-      width:"3rem",
+      width:"8rem",
+      // padding:"5px",
       border:"0"
   },
   latest_event:
   {
+    cursor:'pointer',
     '&:hover':
     {
       color:"rgb(13, 161, 255)",
       cursor:"pointer",
       transition:"color 500ms"
     }
+  }
+  ,
+  non_hoverable:
+  { cursor:'pointer',
   }
 });
 
@@ -57,7 +62,7 @@ export default function LatestEvents() {
 
   useEffect(()=>
   {
-    axios.get(`https://billiardsports.in/api/event/latest/`)
+    axios.get(`https://billiardsports.in/api/event/future/`)
     .then((res)=>setData(res.data.data))
     .catch((e)=> console.log(e))
   } , [])
@@ -70,9 +75,10 @@ export default function LatestEvents() {
           {data.map((row ,index) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell  className={classes.style_key} style = {index%2?{background:"rgb(13, 161, 255 , 0.8)"}:{background:"rgb(13, 161, 255 )"}} align="left">
-                {index+1}
+                {row.tentative}
               </StyledTableCell>
-              <StyledTableCell onClick={()=>history.push(`/events/${row.id}/${row.slug}`)} className={classes.latest_event} align="left">{row.name}</StyledTableCell>
+              <StyledTableCell onClick={()=>{if(row.link) return window.open(row.link , '_self')}} className={row.link?classes.latest_event:classes.non_hoverable} align="left">{row.name}</StyledTableCell>
+              <StyledTableCell align="left">{row.location}</StyledTableCell>
               {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}
             </StyledTableRow>
           ))}

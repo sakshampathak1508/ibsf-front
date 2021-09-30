@@ -1,9 +1,6 @@
-import Header from './components/header/Header';
 import Main_page from './components/MainPage/Main_page';
 import NewsPage from './components/News/NewsPage';
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 import NewsGallery from './components/NewsGallery/NewsGallery';
 import About from './components/About/About';
 import MemberContinent from './components/MemberCountries/MemberContinent';

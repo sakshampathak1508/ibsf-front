@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import {IoLocationSharp} from 'react-icons/io5'
-import {BiTimeFive, BiWorld} from 'react-icons/bi'
+import {BiTimeFive} from 'react-icons/bi'
 import {AiOutlineLink} from 'react-icons/ai'
 import Header from '../header/Header';
 import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
@@ -47,7 +47,7 @@ const ParticularEvent = (props) => {
             <Header active="events"/>
             
             <div>
-                <h1>{data.name} </h1>
+                <h1 style={{fontFamily:"Poppins"}}>{data.name} </h1>
             </div>
 
             <section className="event_details">

@@ -4,11 +4,9 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -63,7 +61,6 @@ const useStyles = makeStyles({
 
 export default function WorldChampion() {
   const [data , setData] = useState([]);
-  const history = useHistory()
   const classes = useStyles();
 
 

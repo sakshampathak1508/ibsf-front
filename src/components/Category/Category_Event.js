@@ -4,7 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import axios from 'axios';
 import { useParams } from 'react-router';
 import Category_event_card from '../Card/category_event_card';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 const useStyles = makeStyles(() => ({
@@ -63,7 +62,6 @@ const Category_Event = props => {
                     (
                         <>
                         <Category_event_card key={index} data = {raw}/>
-                    
                         </>
                     ))
 

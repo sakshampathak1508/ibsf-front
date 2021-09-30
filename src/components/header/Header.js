@@ -1,15 +1,11 @@
-import React, { useState  , useEffect} from 'react';
-import "./Header.css";
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import DirectionsIcon from '@material-ui/icons/Directions';
 import { useHistory } from 'react-router-dom';
-import IBSF_LOGO from "../../assets/IBSF_LOGO.png"
+import "./Header.css";
 import 'bootstrap/dist/css/bootstrap.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -51,7 +47,6 @@ function myFunction() {
 function Header({active}) {
   const history = useHistory();
   const classes = useStyles();
-  const [navbar , setNavbar] = useState(false);
   const [value ,setValue] = useState('');
 
 
@@ -66,6 +61,7 @@ function Header({active}) {
       <div className="pre-header">
       <div className="ui container" style={{}}>
         <img
+        loading="lazy"
           className="ui_small_image"
           src={`http://ibsf.info/images/banners/IBSF%20LOGO%20half4.png`}
           onClick={()=>history.push("/")}

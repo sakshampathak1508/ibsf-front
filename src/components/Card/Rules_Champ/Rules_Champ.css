@@ -1,13 +1,13 @@
 .rules_champ_card_body
 {
     height: 26rem;
-    width:30rem;
+    width:32rem;
     border : 1px solid #ebebeb;
     outline: 0;
     transition: all 0.5s linear;
     
     /* min-height: 350px; */
-    margin-right: 1rem;
+    margin-right: 3.5rem;
     margin-bottom: 2rem;
     cursor: pointer;
 }
