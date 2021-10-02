@@ -15,6 +15,7 @@ import animationData from '../../assets/search_file.json';
 import axios from 'axios';
 import {FaEye} from 'react-icons/fa'
 import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
+import {Helmet} from "react-helmet";
 import "./NewsPage.css"
 
 
@@ -43,11 +44,17 @@ const NewsPage=({match})=> {
     {
         window.scrollTo(0, 0)
         axios.get(`https://billiardsports.in/api/news/?id=${id}`)
-        .then((res)=>setNewsData(res.data.data))
+        .then((res)=>
+        {
+        
+            setNewsData(res.data.data)
+            
+        })
         .catch((e)=>console.log(e))
 
         axios.get("https://billiardsports.in/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
+
 
         
 
@@ -62,6 +69,12 @@ const NewsPage=({match})=> {
         // window.scrollTo(0 ,0)
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>News | {newsData.title}</title>
+                
+            </Helmet>
+
         <Header active="news"/>
 
     <div style={{display:"flex" , flexDirection:"column"}}>

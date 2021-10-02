@@ -17,9 +17,8 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook'
 import TwitterIcon from '@material-ui/icons/Twitter';
-
-
 import Lottie from 'react-lottie';
+import { Helmet } from 'react-helmet';
 
 const useStyles = makeStyles({
     key:
@@ -82,6 +81,11 @@ function MemberCountries() {
     {
         return (
         <>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Members | {continent.name}</title>
+                
+            </Helmet>
         <Header active="aboutus"/>
         
         <div className='ui container' style={{maxWidth:'1130px' , padding:'2rem' , margin:"auto"}}>

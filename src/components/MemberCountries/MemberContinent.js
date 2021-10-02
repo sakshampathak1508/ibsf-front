@@ -3,6 +3,7 @@ import ContinentCard from '../Card/ContinentCard';
 import Header from '../header/Header';
 import axios from 'axios';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import {Helmet} from 'react-helmet'
 
 function MemberContinent() {
 
@@ -23,6 +24,11 @@ function MemberContinent() {
     
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Members</title>
+                
+            </Helmet>
         <Header active="aboutus"/>
 
         

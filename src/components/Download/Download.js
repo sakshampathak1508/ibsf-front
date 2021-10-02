@@ -3,6 +3,7 @@ import axios from 'axios'
 import Header from '../header/Header';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {BsDownload} from 'react-icons/bs'
+import { Helmet } from 'react-helmet';
 import "../About/About.css"
 
 function About() {
@@ -30,6 +31,12 @@ function About() {
   } , [])
     return (
         <>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Downloads</title>
+                
+            </Helmet>
+
          <Header active="document"/>
         <div className="aboutus ui container">
 

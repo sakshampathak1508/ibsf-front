@@ -5,7 +5,7 @@ import Lottie from 'react-lottie';
 import axios from "axios"
 import animationData from '../../assets/search_file.json';
 import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
-
+import { Helmet } from 'react-helmet';
 const Particular_rules = (props) => {
     const [Data , setData] =useState([]);
     const {id } =useParams();
@@ -46,6 +46,12 @@ const Particular_rules = (props) => {
         else{
         return (
         <>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Past champions | {Data.name}</title>
+                
+            </Helmet>
+        
             <Header active="aboutus"/>
             
             <div style={{maxWidth:"1200px" , marginLeft:"auto" ,marginRight:"auto"}}>

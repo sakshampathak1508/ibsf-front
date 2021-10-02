@@ -7,6 +7,7 @@ import {BsFillPersonFill} from 'react-icons/bs'
 import Header from '../header/Header'
 import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { Helmet } from 'react-helmet';
 import './Contact.css'
 
 
@@ -65,6 +66,12 @@ const Contact = props => {
 
     return (
         <>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Contact IBSF</title>
+                
+            </Helmet>
+
             <Header active="contactus"/>
             <div className='ui container' style={{maxWidth:'1130px' , margin:'auto' , padding:'2rem'}}>
               

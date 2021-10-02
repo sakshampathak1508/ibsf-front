@@ -14,6 +14,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { useHistory } from 'react-router';
+import { Helmet } from 'react-helmet';
 import './EventPage.css'
 import '../NewsGallery/NewsGallery.css'
 
@@ -115,6 +116,13 @@ const EventPage = (props) => {
     return (
         <>
             {/* <h1>Event Page</h1> */}
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Events</title>
+                
+            </Helmet>
+
+
             <Header active="events"/>
             <div className="news-gallery ui container" style={{maxWidth:"900px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>
             <div style={{display:'flex'}}>

@@ -2,7 +2,7 @@ import React ,{useEffect, useState} from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios'
 import Header from '../header/Header';
-
+import {Helmet} from "react-helmet";
 import "./About.css"
 
 function About() {
@@ -24,7 +24,13 @@ function About() {
   } , [])
     return (
         <>
-         <Header active="aboutus"/>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>About us</title>
+                
+            </Helmet>
+
+        <Header active="aboutus"/>
         <div className="aboutus ui container">
 
             

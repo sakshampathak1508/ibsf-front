@@ -8,6 +8,7 @@ import {AiOutlineLink} from 'react-icons/ai'
 import Header from '../header/Header';
 import Caroufredsel_wrapper from '../Carousel/Caroufredsel_wrapper';
 import animationData from '../../assets/search_file.json';
+import { Helmet } from 'react-helmet';
 import './ParticularEvent.css'
 
 const ParticularEvent = (props) => {
@@ -44,6 +45,12 @@ const ParticularEvent = (props) => {
     if(data.length!=0)
         return (
         <div className="particulat_event">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Events | {data.name}</title>
+                
+            </Helmet>
+
             <Header active="events"/>
             
             <div>

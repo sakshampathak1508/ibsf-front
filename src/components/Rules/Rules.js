@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Header from "../header/Header"
 import Rules_Champ from '../Card/Rules_Champ/Rules_Champ';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { Helmet } from 'react-helmet';
+
 const Rules = (props) => {
     const [data ,setData] = useState([])
     const [loading, setloading]=useState(true)
@@ -18,6 +20,12 @@ const Rules = (props) => {
 
     return (
         <>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Rules</title>
+                
+            </Helmet>
+
         
         <Header active="rules"/>
         <div className='ui container' style={{maxWidth:"1130px" , padding:"2rem" , margin:"auto"}}>

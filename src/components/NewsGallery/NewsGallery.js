@@ -7,6 +7,7 @@ import Select from '@material-ui/core/Select';
 import Header from "../header/Header"
 import Card from '../Card/Card';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import {Helmet} from 'react-helmet'
 import "./NewsGallery.css"
 
 const useStyles = makeStyles((theme) => ({
@@ -123,6 +124,12 @@ option.value = i;
   }
     return (
       <>
+       <Helmet>
+                <meta charSet="utf-8" />
+                <title>Reports</title>
+                
+            </Helmet>
+
       <Header active="news"/>
       <div  onScroll={handleScroll} style={data.length!=0 && state=='all' ? {height:"100vh" ,marginBottom:"-5rem" ,overflow:"scroll"}:{height:"auto"}}className="news-gallery">
         

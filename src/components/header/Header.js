@@ -110,7 +110,7 @@ function Header({active}) {
           
         </div>
         
-        <a className=""  onClick={()=>history.push("/contact")}  style={active == "contactus" ? { color: "#0da1ff"}:{}}>Contact Us</a>
+        <a className=""  onClick={()=>history.push("/contact")}  style={active == "contactus" ? { color: "#0da1ff"}:{}}>Contact IBSF</a>
         
       
         <div  className="search-container">

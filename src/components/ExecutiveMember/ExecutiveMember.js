@@ -3,7 +3,7 @@ import ExecutiveCard from "../Card/ExecutiveCard.js"
 import Header from "../header/Header"
 import axios from 'axios';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+import {Helmet} from 'react-helmet'
 function ExecutiveMember(props) {
     const [data, setData]= useState([]);
     const [loading , setloading] = useState(true);
@@ -20,6 +20,12 @@ function ExecutiveMember(props) {
     } ,[])
     return (
         <>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Executives</title>
+                
+            </Helmet>
+
         <Header active="aboutus"/>
         <div className="ui container" style={{maxWidth:"1130px" , padding:"2rem 2rem" , margin:"auto"}}>
             <div style={{width:'max-content'}}>

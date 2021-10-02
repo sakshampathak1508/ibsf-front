@@ -13,6 +13,7 @@ import { IoLogoTwitter} from 'react-icons/io'
 import {BiWorld, BiCalendarEvent} from 'react-icons/bi'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import LatestEvents from './widgets/LatestEvents';
+import { Helmet } from 'react-helmet';
 import "./Main_page.css"
 
 
@@ -62,6 +63,11 @@ const Main_page = () => {
   if(loading.loading1!=true && loading.loading2!=true)
   return (
     <>
+    <Helmet>
+                <meta charSet="utf-8" />
+                <title>Home | IBSF</title>
+                
+            </Helmet>
 
     <Header active="home"/>
     <div style={{height:"auto"}}>

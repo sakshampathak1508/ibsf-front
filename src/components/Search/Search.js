@@ -3,6 +3,7 @@ import Header from '../header/Header'
 import { useHistory, useParams } from 'react-router';
 import axios from 'axios';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { Helmet } from 'react-helmet';
 import './Search.css'
 
 const Search = props => {
@@ -29,6 +30,12 @@ const Search = props => {
     } , [query])
     return (
         <>
+
+<Helmet>
+                <meta charSet="utf-8" />
+                <title>Search | {query}</title>
+                
+            </Helmet>
             <Header/>
 
 

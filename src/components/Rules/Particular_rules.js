@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import axios from "axios"
 import animationData from '../../assets/search_file.json';
+import { Helmet } from 'react-helmet';
 
 const Particular_rules = (props) => {
     const [Data , setData] =useState([]);
@@ -30,6 +31,12 @@ const Particular_rules = (props) => {
        if(Data.length!=0)
        return (
         <>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Rules | {Data.name}</title>
+                
+            </Helmet>
+
             <Header active="rules"/>
             
             <div style={{maxWidth:"1200px" , marginLeft:"auto" ,marginRight:"auto"}}>

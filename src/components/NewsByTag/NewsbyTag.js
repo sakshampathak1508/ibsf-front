@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Header from '../header/Header';
 import Card from "../Card/Card"
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { Helmet } from 'react-helmet';
 
 const NewsbyTag = props => {
     const {tagname } =useParams();
@@ -26,6 +27,11 @@ const NewsbyTag = props => {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Reports | {tagname}</title>
+                
+            </Helmet>
             <Header active="news"/>
 
             <div style={{maxWidth:"1130px" , padding:"2rem"   ,marginLeft:"auto" , marginRight:"auto"}}>

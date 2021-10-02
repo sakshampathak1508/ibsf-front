@@ -9,6 +9,7 @@ import Header from '../header/Header';
 import Category_Event from './Category_Event'
 import Category_News from './Category_News';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { Helmet } from 'react-helmet';
 import './Category.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -179,7 +180,12 @@ const Category = props => {
 
     return (
         <>
-            
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Categories</title>
+                
+            </Helmet>
+
             <Header active={stateType==='Event'?"events":"news"}/>
             <div onScroll={stateType=="News" ? handleScroll_news: handleScroll_event} className="category ui container" style={ data_news.length!=0?{ height:'100vh'}:{height:'auto' , marginBottom:"0rem"}}>
     
