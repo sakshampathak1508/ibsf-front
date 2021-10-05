@@ -6,6 +6,7 @@ body{
 .carouselfederation_container
 {
     padding-top: 1rem;
+    height: 150px;
     overflow: hidden;
 }
 .carouselfederation_container h3

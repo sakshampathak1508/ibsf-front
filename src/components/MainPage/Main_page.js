@@ -129,19 +129,19 @@ const Main_page = () => {
       </div>
       
     
-    <div style={{background:'rgba(0,0,0 , 0.9)'}}>
+    <div style={{background:'#333'}}>
 
 
     <div className="middle_widgets">
      
       
             <div className="current_champion">
-              <Middle_widget_Heading icon={BiWorld} link="champion" text="World Champion"/>
+              <Middle_widget_Heading icon={BiWorld} link="champion" text="World Champions"/>
               <WorldChampion/>
 
             </div>
             <div className="event_name">
-            <Middle_widget_Heading icon={BiCalendarEvent} link="events" text="Upcoming Events"/>
+            <Middle_widget_Heading icon={BiCalendarEvent} link="events" text="FUTURE CHAMPIONSHIPS"/>
             <LatestEvents/>
 
             </div>
@@ -157,7 +157,7 @@ const Main_page = () => {
 
       </div>
 
-      <div className="news_section" style={{display:"flex"   ,flexDirection:"row", justifyContent:"center" ,backgroundColor: "rgba(0, 0, 0, 0.8)" ,paddingTop:"2rem" }}>
+      <div className="news_section" style={{display:"flex"   ,flexDirection:"row", justifyContent:"center" ,backgroundColor: "#666" ,paddingTop:"2rem" }}>
   
     {latestnews&&latestnews.slice(0 , 4).map((e , index)=>
     (

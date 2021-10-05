@@ -29,14 +29,12 @@ export default function ContinentCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={`https://billiardsports.in/${props.logo}`} style={{}}
+          image={`https://billiardsports.in/${props.logo}`} style={{backgroundSize:"contain"}}
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component="h2" style={{padding:"0"}}>
-            {props.short_form}
-          </Typography>
-          <Typography variant="body2"variant="h5" component="h2" style={{fontSize:"1.5rem"}}>
+        
+          <Typography variant="body2"variant="h5" component="h1" style={{marginTop:"0.5rem" , fontSize:"1.7rem"}}>
            {props.name}
           </Typography>
         </CardContent>

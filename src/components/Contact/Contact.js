@@ -15,17 +15,18 @@ import './Contact.css'
   const useStyles = makeStyles({
     table: {
         display:'flex',
+        justifyContent:'space-between'
 
     },
     style_key:
     {
-        minWidth:"10rem" ,maxWidth:"40%",color:'black'
+        width:"45%",color:'black'
     },
 
     value:
     {
         color:'#0da1ff',
-        maxWidth:"50%",
+        width:"45%",
         marginLeft:'3.5rem',
         wordBreak:"break-all",
         cursor:'pointer'
@@ -81,7 +82,7 @@ const Contact = props => {
             </div>
 
             <br></br>
-            <div style={{maxWidth:"900px"  }}>
+            <div style={{maxWidth:"1200px"  }}>
             {
             data.length!=0?
               <>
@@ -108,31 +109,31 @@ const Contact = props => {
                 data.name1&&
                 <div className={classes.table}>
                     <h4 className={classes.style_key}><BsFillPersonFill/> {data.name1}</h4>
-                    <h4 onClick={()=>window.location.href=`mailto: ${data.email1}`} className={classes.value}><BiMailSend style={{color:'black'}}/> {data.email1}</h4>
+                    <h4 onClick={()=>window.location.href=`mailto: ${data.email1}`} className={classes.value}><BiMailSend style={{color:'black', fontSize:"2.2rem"}}/> {data.email1}</h4>
                 </div>
 
               }
               {
                 data.name2&&
                 <div className={classes.table}>
-                    <h4 className={classes.style_key}>{data.name2}</h4>
-                    <h4 onClick={()=>window.location.href=`mailto: ${data.email2}`} className={classes.value}><BiMailSend style={{color:'black'}}/> {data.email2}</h4>
+                    <h4 className={classes.style_key}><BsFillPersonFill/>{data.name2}</h4>
+                    <h4 onClick={()=>window.location.href=`mailto: ${data.email2}`} className={classes.value}><BiMailSend style={{color:'black', fontSize:"2.2rem"}}/> {data.email2}</h4>
                 </div>
 
               }
               {
                 data.name3&&
                 <div className={classes.table}>
-                    <h4 className={classes.style_key}>{data.name3}</h4>
-                    <h4 onClick={()=>window.location.href=`mailto: ${data.email3}`} className={classes.value}><BiMailSend style={{color:'black'}}/> {data.email3}</h4>
+                    <h4 className={classes.style_key}><BsFillPersonFill/>{data.name3}</h4>
+                    <h4 onClick={()=>window.location.href=`mailto: ${data.email3}`} className={classes.value}><BiMailSend style={{color:'black', fontSize:"2.2rem"}}/> {data.email3}</h4>
                 </div>
 
               }
               {
                 data.name4&&
                 <div className={classes.table}>
-                    <h4 className={classes.style_key}>{data.name4}</h4>
-                    <h4 onClick={()=>window.location.href=`mailto: ${data.email4}`} className={classes.value}><BiMailSend style={{color:'black'}}/> {data.email4}</h4>
+                    <h4 className={classes.style_key}><BsFillPersonFill/>{data.name4}</h4>
+                    <h4 onClick={()=>window.location.href=`mailto: ${data.email4}`} className={classes.value}><BiMailSend style={{color:'black', fontSize:"2.2rem"}}/> {data.email4}</h4>
                 </div>
 
               }

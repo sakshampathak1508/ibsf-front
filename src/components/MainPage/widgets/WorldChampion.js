@@ -86,6 +86,7 @@ export default function WorldChampion() {
               {/* <StyledTableCell align="right">{row.calories}</StyledTableCell> */}
             </StyledTableRow>
           ))}
+      
         </TableBody>
       </Table>
     </TableContainer>

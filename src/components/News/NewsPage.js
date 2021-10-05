@@ -23,7 +23,7 @@ const NewsPage=({match})=> {
     const [newsData , setNewsData] =useState([]);
     // let id = new URLSearchParams(location.search).get("id");
     const {id } =useParams();
-    const shareUrl = `https://billiardsports.in/news/?id=${id}/${newsData.slug}`;
+    const shareUrl = `https://billiardsports.in/news/${id}/${newsData.slug}`;
     const history = useHistory()
     const [sponsor , setSponsor] = useState([])
 

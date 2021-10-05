@@ -37,7 +37,7 @@ function About() {
             <div className="aboutus_title">
 
         
-            <h1 style={{marginTop:0}}>About us  </h1>
+            <h1 style={{marginTop:0}}>About IBSF  </h1>
             <hr  style={{marginBottom:"1rem" , marginTop:0}}></hr>
 
             </div>

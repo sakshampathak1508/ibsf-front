@@ -19,6 +19,7 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import TwitterIcon from '@material-ui/icons/Twitter';
 import Lottie from 'react-lottie';
 import { Helmet } from 'react-helmet';
+import {FaInternetExplorer} from 'react-icons/fa'
 
 const useStyles = makeStyles({
     key:
@@ -90,23 +91,25 @@ function MemberCountries() {
         
         <div className='ui container' style={{maxWidth:'1130px' , padding:'2rem' , margin:"auto"}}>
 
-        <div className="federation_info" style={{maxWidth:"70rem", padding:"2rem" , margin:"auto"}}>
-            <h3 style={{textAlign:"center", lineHeight:"2.5rem", fontFamily:'Poppins' ,marginBottom:"3rem"}}>{continent.name} <br></br><hr style={{ alignContent:"center"  , margin:'1rem auto 4rem auto', width:'70%' }}></hr> </h3>
+        <div className="federation_info" style={{maxWidth:"70rem", padding:"1rem" , margin:"auto"}}>
+            <h3 style={{textAlign:"center", lineHeight:"3rem" , fontSize:"2.8rem", fontFamily:'Poppins' , margin:'0.5rem'  ,marginBottom:"3rem"}}>{continent.name} <br></br><hr style={{ alignContent:"center"  , margin:'1rem auto 4rem auto', width:'70%' }}></hr> </h3>
             
             <div className="frderation_info_contact" style={{display:"flex" , justifyContent:"space-between"}}>
 
                 <div className="contact" style={{display:"flex" , flexDirection:"column"}}>
-                    <p style={{fontWeight:"600"}} onClick={()=>window.location.href=`tel:${continent.mobile}`}>{continent.contact},<CallIcon style={{fontSize:'2rem',cursor:'pointer' ,  color:"green"}}/>  <span style={{cursor:"pointer"}}></span> <span style={{color:"rgba(255 , 0 , 0 , 0.7)"}} onClick={()=>window.location.href=`mailto: ${continent.email_id}`}>  <MailOutlineIcon style={{cursor :"pointer", fontSize:'2.2rem'}}/></span>
+                    <p style={{fontWeight:"600"}} >{continent.contact},{continent.mobile && <CallIcon onClick={()=>window.location.href=`tel:${continent.mobile}`} style={{fontSize:'2rem',cursor:'pointer' ,  color:"green"}}/>}
+                    <span style={{cursor:"pointer"}}></span> <span style={{color:"rgba(255 , 0 , 0 , 0.7)"}} onClick={()=>window.location.href=`mailto: ${continent.email_id}`}>  <MailOutlineIcon style={{cursor :"pointer", fontSize:'2.2rem'}}/></span>
                     </p>
                 </div>
 
                 <div className="website">
-                    <p  style={{cursor:"pointer" , color:"rgba(0 , 0 , 255 , 0.7)"}} onClick={()=>{window.open(continent.website , 'blank')}}>{continent.website}</p>
-                    <div>
+                
+        
+                    {continent.website!=null && <FaInternetExplorer className={classes.hoverable} style={{fontSize:"2.1rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.website , 'blank')}}/>}
                         {continent.fb_url!=null && <FacebookIcon className={classes.hoverable} style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.fb_url, '_blank')}}/>}
                         {continent.insta_url!=null && <InstagramIcon className={classes.hoverable} style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.insta_url, '_blank')}}/>}
                         {continent.twitter_url!=null && <TwitterIcon className={classes.hoverable} style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.twitter_url, '_blank')}}/>}
-                    </div>
+    
                 </div>
             </div>
             <hr ></hr>
@@ -125,6 +128,7 @@ function MemberCountries() {
             <TableCell className={classes.value}  align="right">{continent.president}</TableCell>
           </StyledTableRow>
           }
+          
           {continent.vice_president&&
         <StyledTableRow>
             <TableCell className={classes.key}>Vice President</TableCell>
@@ -172,8 +176,8 @@ function MemberCountries() {
     </TableContainer>
                 </div>
 
-                <div style={matches?{width:'80%',paddingLeft:"auto" , margin:"auto"}:{width:'40%'}}>
-                    <img style={{marginLeft:"1rem" , marginTop:"1rem"}} width="100%" src={`https://billiardsports.in/${continent.logo}`}/>
+                <div style={matches?{width:'80%',paddingLeft:"auto" , margin:"auto"}:{width:'40%' , maxHeight:'200px'}}>
+                    <img style={{marginLeft:"1rem" , marginTop:'0.5rem' , objectFit:"contain" }} height='100%' width="100%" src={`https://billiardsports.in/${continent.logo}`}/>
                 </div>
 
             </div>

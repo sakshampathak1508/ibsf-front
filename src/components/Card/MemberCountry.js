@@ -4,6 +4,9 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import MailOutline from '@material-ui/icons/MailOutline';
+import {FaInternetExplorer} from 'react-icons/fa'
+import { MailOutlined } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -15,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
   },
   key:
   {
-    color:'black'
+    color:'rgba(0 , 0 ,0  , 0.7)',
+    fontWeight:'600'
   },
   details: {
     display: 'flex',
@@ -26,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cover: {
     width: 180,
+    backgroundSize:'contain'
   },
   controls: {
     display: 'flex',
@@ -51,41 +56,37 @@ export default function MemberCountry(props){
 <CardMedia
         className={classes.cover}
         image={`https://billiardsports.in/${props.logo}`}
-        title="Live from space album cover"
+        title={props.logo}
       />
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">
-            {props.name}
-          </Typography>
-          <Typography component="h5" variant="h6">
+          
+          <Typography component="h3" variant="h5" style={{fontSize:"1.6rem" , color:"rgba(0 , 0  , 0 , 0.85)" ,fontWeight:"600"}}>
             {props.federation}
           </Typography>
         
           {
             props.president&&
-          <Typography variant="h5" color="textSecondary">
+          <Typography variant="h5" >
             <span className={classes.key}>President</span>: {props.president}
           </Typography>
           }
           {
             props.secretary &&
-          <Typography variant="h5" color="textSecondary">
+          <Typography variant="h5" >
           <span className={classes.key}>secretary</span>: {props.secretary}
           </Typography>
           }
           {
-            props.email_id &&
-          <Typography variant="h5" color="textSecondary">
-          <span className={classes.key}>Email</span>: <strong style={{color:"rgba(255 , 0 , 0 , 0.7)"}} onClick={()=>window.location.href=`mailto: ${props.email_id}`}>{props.email_id}</strong>
+            
+          <Typography variant="h5" >
+          {props.email_id && <MailOutlined style={{color:"rgba(255 , 0 , 0 , 0.9)" , marginRight:"0.5rem" , fontSize:"2rem"}} onClick={()=>window.location.href=`mailto: ${props.email_id}`}/>}
+          {props.website && <FaInternetExplorer style={{color:"rgba(0 , 0 , 255 , 0.7)" , fontSize:"1.8rem"}}  onClick={()=>{window.open(props.website , 'blank')}}/>}
+
           </Typography>
+
           }
-          {
-            props.website&&
-          <Typography variant="h5" color="textSecondary" >
-          <span className={classes.key}>Website</span>:<strong style={{color:"rgba(0 , 0 , 255 , 0.7)"}} onClick={()=>{window.open(props.website , 'blank')}}> {props.website}</strong>
-          </Typography>
-          }
+          
 
           
           

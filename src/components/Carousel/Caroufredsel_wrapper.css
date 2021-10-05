@@ -6,6 +6,7 @@ body{
 .carouselwrapper_container{
     
     padding:2rem 30vw;
+    max-height: 200px;
 }
 .carouselwrapper_container h3
 {
@@ -25,12 +26,13 @@ h2{
     text-align: center;
     margin: 0;
     padding: 0;
+    border: none;
 }
 .slide_image img{
     width: 55%;
     min-width: 120px;
-    overflow: hidden;
     margin: auto;
+    object-fit: contain;
 }
 
 @media screen and (max-width:723px) {
