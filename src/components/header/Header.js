@@ -5,6 +5,7 @@ import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import { useHistory } from 'react-router-dom';
+import ibsflogo from '../../assets/Ibsf_logo.png'
 import "./Header.css";
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -63,7 +64,7 @@ function Header({active}) {
         <img
         loading="lazy"
           className="ui_small_image"
-          src={`http://ibsf.info/images/banners/IBSF%20LOGO%20half4.png`}
+          src={ibsflogo}
           onClick={()=>history.push("/")}
           style={{objectFit:"contain" , position:"absolute" }}
           

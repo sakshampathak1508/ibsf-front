@@ -168,10 +168,11 @@ const Main_page = () => {
     </div>
 
 
-    <br></br>
-
-
+  
+    <div style={{background:"#999"}}>
     <Caroufredsel_wrapper data = {sponsor}/>
+    </div>
+    
     <br></br>
 
     <Caroufredsel_federation/>

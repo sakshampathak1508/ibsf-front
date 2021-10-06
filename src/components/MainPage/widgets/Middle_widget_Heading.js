@@ -11,7 +11,7 @@ const Middle_widget_Heading=(props)=>
     <div className="middle_widget_header">
         <h3><span style={{fontSize:'1.8rem'}}>{<props.icon/>} </span> {props.text}</h3>
         {
-          props.text==="Upcoming Events"&&
+          props.text==="FUTURE CHAMPIONSHIPS"&&
         <p style={{cursor:"pointer"}} onClick={()=> history.push(`/${props.link}`)}>View All {<IoIosArrowForward/>}</p>
         }
     </div>

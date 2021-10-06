@@ -19,7 +19,7 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import TwitterIcon from '@material-ui/icons/Twitter';
 import Lottie from 'react-lottie';
 import { Helmet } from 'react-helmet';
-import {FaInternetExplorer} from 'react-icons/fa'
+import {HiOutlineGlobeAlt} from 'react-icons/hi';
 
 const useStyles = makeStyles({
     key:
@@ -97,7 +97,7 @@ function MemberCountries() {
             <div className="frderation_info_contact" style={{display:"flex" , justifyContent:"space-between"}}>
 
                 <div className="contact" style={{display:"flex" , flexDirection:"column"}}>
-                    <p style={{fontWeight:"600"}} >{continent.contact},{continent.mobile && <CallIcon onClick={()=>window.location.href=`tel:${continent.mobile}`} style={{fontSize:'2rem',cursor:'pointer' ,  color:"green"}}/>}
+                    <p style={{fontWeight:"900" , fontSize:'1.5rem'}} >{continent.contact.toUpperCase()} {continent.mobile && <CallIcon onClick={()=>window.location.href=`tel:${continent.mobile}`} style={{fontSize:'2rem',cursor:'pointer' ,  color:"green"}}/>}
                     <span style={{cursor:"pointer"}}></span> <span style={{color:"rgba(255 , 0 , 0 , 0.7)"}} onClick={()=>window.location.href=`mailto: ${continent.email_id}`}>  <MailOutlineIcon style={{cursor :"pointer", fontSize:'2.2rem'}}/></span>
                     </p>
                 </div>
@@ -105,7 +105,7 @@ function MemberCountries() {
                 <div className="website">
                 
         
-                    {continent.website!=null && <FaInternetExplorer className={classes.hoverable} style={{fontSize:"2.1rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.website , 'blank')}}/>}
+                    {continent.website!=null && <HiOutlineGlobeAlt className={classes.hoverable} style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.website , 'blank')}}/>}
                         {continent.fb_url!=null && <FacebookIcon className={classes.hoverable} style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.fb_url, '_blank')}}/>}
                         {continent.insta_url!=null && <InstagramIcon className={classes.hoverable} style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.insta_url, '_blank')}}/>}
                         {continent.twitter_url!=null && <TwitterIcon className={classes.hoverable} style={{fontSize:"2.5rem" , cursor:'pointer' , marginRight:'1rem'}} onClick={() => {window.open(continent.twitter_url, '_blank')}}/>}

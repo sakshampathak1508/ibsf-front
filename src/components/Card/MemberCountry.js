@@ -4,10 +4,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import MailOutline from '@material-ui/icons/MailOutline';
-import {FaInternetExplorer} from 'react-icons/fa'
 import { MailOutlined } from '@material-ui/icons';
-
+import {HiOutlineGlobeAlt} from 'react-icons/hi'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -81,7 +79,7 @@ export default function MemberCountry(props){
             
           <Typography variant="h5" >
           {props.email_id && <MailOutlined style={{color:"rgba(255 , 0 , 0 , 0.9)" , marginRight:"0.5rem" , fontSize:"2rem"}} onClick={()=>window.location.href=`mailto: ${props.email_id}`}/>}
-          {props.website && <FaInternetExplorer style={{color:"rgba(0 , 0 , 255 , 0.7)" , fontSize:"1.8rem"}}  onClick={()=>{window.open(props.website , 'blank')}}/>}
+          {props.website && <HiOutlineGlobeAlt style={{color:"rgba(0 , 0 , 255 , 0.7)" , fontSize:"2rem"}}  onClick={()=>{window.open(props.website , 'blank')}}/>}
 
           </Typography>
 

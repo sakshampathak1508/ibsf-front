@@ -4,6 +4,7 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import TwitterIcon from '@material-ui/icons/Twitter';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { useHistory } from 'react-router';
+import Footer_ibsf from "../../assets/Footer_ibsf.png"
 import "./Footer.css"
 
 function Footer(props) {
@@ -12,7 +13,7 @@ function Footer(props) {
         <footer className="all_footer">
             
             <div className="doping_image">
-                <img loading="lazy" src="http://ibsf.info/images/banners/wada_header.png" width="500vw"/>
+                <img loading="lazy" src={Footer_ibsf} width="500vw"/>
             </div>
 
     
