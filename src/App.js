@@ -21,6 +21,7 @@ import Download from './components/Download/Download'
 import Category from './components/Category/Category';
 import Search from './components/Search/Search';
 import './App.css'
+import React, { Component }  from 'react';
 
 function App() {
   return (

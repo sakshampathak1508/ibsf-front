@@ -1,6 +1,6 @@
 import {IoIosArrowForward } from 'react-icons/io'
 import { useHistory } from 'react-router-dom'
-
+import React, { Component }  from 'react';
 
 
 const Middle_widget_Heading=(props)=>

@@ -14,14 +14,14 @@ function About() {
 
     useEffect(()=>
   {
-            axios.get("https://billiardsports.in/api/about/")
+            axios.get("https://admin.ibsf.info/api/about/")
             .then((response) => 
             {setData(response.data.data.content_download)
                     setloading(false)   
             })
             .catch((e)=>console.log(e))
 
-            axios.get("https://billiardsports.in/api/downloads/")
+            axios.get("https://admin.ibsf.info/api/downloads/")
             .then((response) => {
                 setdownloads(response.data.data)
                 

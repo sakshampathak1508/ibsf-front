@@ -12,7 +12,7 @@ function About() {
 
     useEffect(()=>
   {
-  axios.get("https://billiardsports.in/api/about/")
+  axios.get("https://admin.ibsf.info/api/about/")
           .then((response) => {
             setData(response.data.data.content_about)
             setloading(false)

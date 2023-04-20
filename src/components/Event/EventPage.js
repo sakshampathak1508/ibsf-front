@@ -104,7 +104,7 @@ const EventPage = (props) => {
         useEffect(() => {
             setdata([])
             setloading(true)
-            axios.get(`https://billiardsports.in/api/event/year/?year=${state}`)
+            axios.get(`https://admin.ibsf.info/api/event/year/?year=${state}`)
             .then((res)=> 
             {setdata(res.data.data)
             setloading(false)})

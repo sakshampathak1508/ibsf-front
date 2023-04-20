@@ -10,7 +10,7 @@ const Rules = (props) => {
     const [loading, setloading]=useState(true)
     useState(()=>
     {
-        axios.get(`https://billiardsports.in/api/all-rules/`)
+        axios.get(`https://admin.ibsf.info/api/all-rules/`)
         .then((res)=> {
         setData(res.data.data)
         setloading(false)

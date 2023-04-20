@@ -10,7 +10,7 @@ function ExecutiveMember(props) {
 
     useEffect(()=>
     {
-        axios.get('https://billiardsports.in/api/executives/')
+        axios.get('https://admin.ibsf.info/api/executives/')
         .then((res)=>
         {setData(res.data.data)
             setloading(false)

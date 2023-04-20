@@ -46,7 +46,7 @@ const Contact = props => {
     
     useEffect(()=>
     {
-        axios.get('https://billiardsports.in/api/contact/')
+        axios.get('https://admin.ibsf.info/api/contact/')
         .then((res)=> {
           
           setdata(res.data.data)
@@ -56,7 +56,7 @@ const Contact = props => {
 
 
         
-        axios.get("https://billiardsports.in/api/sponsers/")
+        axios.get("https://admin.ibsf.info/api/sponsers/")
         .then((response) => setSponsor(response.data.data))
 
 

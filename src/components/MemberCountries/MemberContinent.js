@@ -12,7 +12,7 @@ function MemberContinent() {
 
     useEffect(() =>
     {
-        axios.get('https://billiardsports.in/api/all-regions/')
+        axios.get('https://admin.ibsf.info/api/all-regions/')
         .then((res)=>
         {
             setCountry(res.data.data)
