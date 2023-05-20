@@ -62,6 +62,7 @@ function Header({active}) {
       <div className="pre-header">
       <div className="ui container" style={{}}>
         <img
+        alt='ibsf'
         loading="lazy"
           className="ui_small_image"
           src={ibsflogo}
@@ -93,7 +94,7 @@ function Header({active}) {
           </div>
         </div>
 
-        <a className="" onClick={()=>history.push("/news/")} style={active == "news" ? { color: "#0da1ff"}:{}}>Reports</a>
+        <a className="" onClick={()=>history.push("/news/")} style={active == "news" ? { color: "#0da1ff"}:{}}>Report</a>
         <a className="" onClick={()=>history.push("/events")}  style={active == "events" ? { color: "#0da1ff"}:{}}>Events</a>
         <a className="" onClick={()=>history.push("/rules")}   style={active == "rules" ? { color: "#0da1ff"}:{}}>Rules</a>
         <a className="" onClick={()=>history.push("/download")}   style={active == "document" ? { color: "#0da1ff"}:{}}>Documents</a>

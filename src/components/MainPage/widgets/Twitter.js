@@ -8,7 +8,7 @@ const Twitter = props => {
 <TwitterTimelineEmbed
   sourceType="profile"
   screenName="ibsf"
-  options={{height: "76rem"}}
+  options={{height: 500}}
 //   onComplete={action}
 />
 </div>

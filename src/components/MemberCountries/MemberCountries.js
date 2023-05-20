@@ -91,14 +91,30 @@ function MemberCountries() {
         
         <div className='ui container' style={{maxWidth:'1130px' , padding:'2rem' , margin:"auto"}}>
 
+        <br></br>
+
+        <h3 style={{textAlign:"center", lineHeight:"3rem" , fontSize:"2.8rem", fontFamily:'Poppins' , margin:'0.5rem'  ,marginBottom:"3rem"}}>{continent.body_name} <br></br><hr style={{ alignContent:"center"  , margin:'1rem auto 4rem auto', width:'20%' }}></hr> </h3>
+        <div style={{display:"flex" , flexWrap:"wrap"   ,width:"100%" , height:"auto" , padding:"2rem" , maxWidth:"1130px"}}>
+
+            {
+                related_country&&related_country.map((data  , index)=>
+                (
+                    <>
+                    <MemberCountry key ={index} data ={data}/>
+                    </>
+                ))
+            
+            }
+            
+        </div>
         <div className="federation_info" style={{maxWidth:"70rem", padding:"1rem" , margin:"auto"}}>
             <h3 style={{textAlign:"center", lineHeight:"3rem" , fontSize:"2.8rem", fontFamily:'Poppins' , margin:'0.5rem'  ,marginBottom:"3rem"}}>{continent.name} <br></br><hr style={{ alignContent:"center"  , margin:'1rem auto 4rem auto', width:'70%' }}></hr> </h3>
             
             <div className="frderation_info_contact" style={{display:"flex" , justifyContent:"space-between"}}>
 
                 <div className="contact" style={{display:"flex" , flexDirection:"column"}}>
-                    <p style={{fontWeight:"900" , fontSize:'1.5rem'}} >{continent.contact.toUpperCase()} {continent.mobile && <CallIcon onClick={()=>window.location.href=`tel:${continent.mobile}`} style={{fontSize:'2rem',cursor:'pointer' ,  color:"green"}}/>}
-                    <span style={{cursor:"pointer"}}></span> <span style={{color:"rgba(255 , 0 , 0 , 0.7)"}} onClick={()=>window.location.href=`mailto: ${continent.email_id}`}>  <MailOutlineIcon style={{cursor :"pointer", fontSize:'2.2rem'}}/></span>
+                    <p style={{fontWeight:"900" , fontSize:'1.5rem'}} >{continent.contact && continent.contact.toUpperCase()} {continent.mobile && <CallIcon onClick={()=>window.location.href=`tel:${continent.mobile}`} style={{fontSize:'2rem',cursor:'pointer' ,  color:"green"}}/>}
+                    {continent.email_id && <span style={{color:"rgba(255 , 0 , 0 , 0.7)"}} onClick={()=>window.location.href=`mailto: ${continent.email_id}`}>  <MailOutlineIcon style={{cursor :"pointer", fontSize:'2.2rem'}}/></span>}
                     </p>
                 </div>
 
@@ -184,23 +200,6 @@ function MemberCountries() {
 
             
 
-        </div>
-        <br></br>
-        <hr style={{border:"0", backgroundImage:"linear-gradient(to right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0))" , marginTop:'-1rem' , marginBottom:"0"}}></hr>
-
-    
-        <div style={{display:"flex" , flexWrap:"wrap"   ,width:"100%" , height:"auto" , padding:"2rem" , maxWidth:"1130px"}}>
-
-            {
-                related_country&&related_country.map((data  , index)=>
-                (
-                    <>
-                    <MemberCountry key ={index} data ={data}/>
-                    </>
-                ))
-            
-            }
-            
         </div>
         </div>
         </>

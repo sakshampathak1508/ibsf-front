@@ -13,10 +13,9 @@ function Footer(props) {
         <footer className="all_footer">
             
             <div className="doping_image">
-                <img loading="lazy" src={Footer_ibsf} width="500vw"/>
+                <img alt='Say No To Doping' loading="lazy" src={Footer_ibsf} width="500vw"/>
             </div>
 
-    
         <div className="home_footer" >
         
             <div>
